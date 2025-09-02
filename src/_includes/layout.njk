@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title or "Reino Eterno Online" }}</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Reino Eterno Online</a></h1>
+    </header>
+    <main>
+      {%- if title -%}
+      <h1>{{title}}</h1>
+      {%- elif page.fileSlug -%}
+      <h1>{{page.fileSlug}}</h1>
+      {%- endif -%}
+      {{ content | safe }}
+    </main>
+    <footer>
+      <p>Adam Foerster</p>
+    </footer>
+    {# <nav class="breadcrumbs">
+      <a href="/">Início</a>
+      {%- set parts = page.filePathStem.split("/") -%} {%- set href = "" -%} {%-
+      for part in parts -%} {%- set href = href + "/" + (part | urlencode) -%} ›
+      <a href="{{ href }}/">{{ part | capitalize }}</a>
+      {%- endfor -%}
+    </nav> #}
+  </body>
+</html>
