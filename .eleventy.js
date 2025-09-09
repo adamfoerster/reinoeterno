@@ -1,26 +1,25 @@
-const path = require("path");
+
 module.exports = function(eleventyConfig) {
+  const path = require("path");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addFilter("urlencode", function(str) {
     return encodeURIComponent(str);
   });
-  eleventyConfig.addCollection("folders", function(collectionApi) {
-    const folders = new Set();
-
-    collectionApi.getAll().forEach(item => {
-      const relativeDir = path.relative("src", path.dirname(item.inputPath));
-      const topFolder = relativeDir.split(path.sep)[0]; // pega a pasta de primeiro nível
-      if (topFolder) folders.add(topFolder);
-    });
-
-    return Array.from(folders).sort();
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: data => {
+      if (data.published === false) {
+        return false; // não gera saída
+      }
+      return data.permalink ?? data.page.filePathStem + "/index.html";
+    }
   });
+
   return {
     dir: {
-      input: "./src/",
+      input: "../../Documents/MegaSync/obisidian-vault/",
       output: "./dist",
-      includes: "_includes"
+      includes: "../../../projects/reinoeterno/src/_includes/"
     },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
