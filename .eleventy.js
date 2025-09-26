@@ -9,7 +9,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: data => {
       if (data.published === false || !data.published) {
-        return false; // não gera saída
+        return false;
       }
       return data.permalink ?? data.page.filePathStem + "/index.html";
     }
