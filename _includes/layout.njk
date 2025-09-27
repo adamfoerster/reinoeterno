@@ -2,7 +2,9 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>{{ title or "Reino Eterno Online" }}</title>
+    <title>
+      {{ title + " - Reino Eterno Online" if title else "Reino Eterno Online" }}
+    </title>
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
   <body>
@@ -16,16 +18,22 @@
       <h1>{{page.fileSlug}}</h1>
       {%- endif -%}
       {{ content | safe }}
+      <div class="callout">
+      {{ "👨‍💼 " + author if author}}<br />
+      {{ "🕒 " + page.date if page.date }}
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
     </footer>
-    {# <nav class="breadcrumbs">
+    {#
+    <nav class="breadcrumbs">
       <a href="/">Início</a>
       {%- set parts = page.filePathStem.split("/") -%} {%- set href = "" -%} {%-
       for part in parts -%} {%- set href = href + "/" + (part | urlencode) -%} ›
       <a href="{{ href }}/">{{ part | capitalize }}</a>
       {%- endfor -%}
-    </nav> #}
+    </nav>
+    #}
   </body>
 </html>

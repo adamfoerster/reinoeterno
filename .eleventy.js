@@ -1,12 +1,21 @@
-
-module.exports = function (eleventyConfig) {
+const markdownIt = require("markdown-it");
+module.exports = async function (eleventyConfig) {
+  const { default: markdownItCallouts } = await import("markdown-it-callouts");
+  const markdownItFootnote = require("markdown-it-footnote");
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  };
+  let mdLib = markdownIt(options).use(markdownItCallouts).use(markdownItFootnote);
+  eleventyConfig.setLibrary("md", mdLib);
   const path = require("path");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addFilter("urlencode", function (str) {
     return encodeURIComponent(str);
   });
-  eleventyConfig.addFilter("remove_underline", function (str){
+  eleventyConfig.addFilter("remove_underline", function (str) {
     return str.replaceAll("_", " ");
   })
   eleventyConfig.addGlobalData("eleventyComputed", {
@@ -34,7 +43,7 @@ module.exports = function (eleventyConfig) {
             .forEach(tag => tagSet.add(tag));
         }
       }
-    );
+      );
 
     return [...tagSet].sort();
   });

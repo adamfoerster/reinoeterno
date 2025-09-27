@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "markdown-it-callouts": "^1.1.0",
+    "markdown-it-footnote": "^4.0.0"
   }
 }
