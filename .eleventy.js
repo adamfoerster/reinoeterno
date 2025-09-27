@@ -39,12 +39,11 @@ module.exports = async function (eleventyConfig) {
             tags = [tags];
           }
           tags
-            .filter(tag => !["all", "nav", "post"].includes(tag)) // ignora tags internas
+            .filter(tag => !["all", "nav", "post"].includes(tag))
             .forEach(tag => tagSet.add(tag));
         }
       }
       );
-
     return [...tagSet].sort();
   });
 
