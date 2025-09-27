@@ -57,3 +57,33 @@ blockquote {
 .breadcrumbs a:hover {
   text-decoration: underline;
 }
+
+.footnotes {
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+  margin-top: 2em;
+  padding-top: 1em;
+  color: #555;
+}
+
+.footnotes ol {
+  margin-left: 1.5em;
+}
+
+.callout {
+  border-left: 4px solid var(--color, #666);
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  background: #f8f8f8;
+}
+
+.callout.danger {
+  border-color: red;
+  background: #ffeaea;
+}
+
+.callout.tip {
+  border-color: green;
+  background: #eaffea;
+}
