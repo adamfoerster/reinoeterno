@@ -4,6 +4,29 @@ module.exports = async function (eleventyConfig) {
   const { default: markdownItCallouts } = await import("markdown-it-callouts");
   const markdownItFootnote = require("markdown-it-footnote");
 
+  function replaceWikiLinks(text) {
+    let stringsArray = [];
+    if (!text) {
+      return text;
+    }
+    if (typeof text == 'object') {
+      stringsArray = text;
+    } else {
+      stringsArray.push(text);
+    }
+    const wikiLinkRegex = /\[\[([^|]*?)(?:\|([^|]*?))?\]\]/g;
+    const newArray = [];
+    stringsArray.forEach(element => {
+      const el = element.replace(wikiLinkRegex, (match, link, text) => {
+        const displayText = text ? text.trim() : link.trim();
+        const url = link.trim();
+        return `<a href="/${encodeURIComponent(url)}">${displayText}</a>`;
+      });
+      newArray.push(el);
+    });
+    return newArray;
+  }
+
   function markdownItWikiLinks(md, options = {}) {
     md.inline.ruler.after("link", "wikilink", function (state, silent) {
       const start = state.pos;
@@ -48,7 +71,7 @@ module.exports = async function (eleventyConfig) {
     return str.replaceAll("_", " ");
   })
   eleventyConfig.addFilter("wikilinks_attr", function (str) {
-    return markdownItWikiLinks(str);
+    return replaceWikiLinks(str);
   })
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: data => {

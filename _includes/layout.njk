@@ -17,7 +17,7 @@
       {%- elif page.fileSlug -%}
       <h1>{{page.fileSlug}}</h1>
       {%- endif -%} {%- if refs -%}
-      <p>Referências: {{ refs }}</p>
+      <p>Referências: {{ refs | wikilinks_attr | safe }}</p>
       {%- endif -%} {{ content | safe }}
       <div class="article-footer">
         {{ "👨‍💼 " + author if author}}<br />
