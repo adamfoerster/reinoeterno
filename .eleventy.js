@@ -1,15 +1,44 @@
 const markdownIt = require("markdown-it");
+
 module.exports = async function (eleventyConfig) {
   const { default: markdownItCallouts } = await import("markdown-it-callouts");
   const markdownItFootnote = require("markdown-it-footnote");
+
+  function markdownItWikiLinks(md, options = {}) {
+    md.inline.ruler.after("link", "wikilink", function (state, silent) {
+      const start = state.pos;
+      if (state.src.slice(start, start + 2) !== "[[") return false;
+      const end = state.src.indexOf("]]", start);
+      if (end === -1) return false;
+      if (!silent) {
+        const content = state.src.slice(start + 2, end);
+        const [targetRaw, aliasRaw] = content.split("|");
+        const target = targetRaw.trim();
+        const alias = aliasRaw ? aliasRaw.trim() : target;
+        const href = `/${target}/`;
+        const tokenOpen = state.push("link_open", "a", 1);
+        tokenOpen.attrs = [["href", href]];
+        const textToken = state.push("text", "", 0);
+        textToken.content = alias;
+        state.push("link_close", "a", -1);
+      }
+      state.pos = end + 2;
+      return true;
+    });
+  }
+
+
   let options = {
     html: true,
     breaks: true,
-    linkify: true
+    linkify: true,
+    typographer: true
   };
-  let mdLib = markdownIt(options).use(markdownItCallouts).use(markdownItFootnote);
+  let mdLib = markdownIt(options)
+    .use(markdownItCallouts)
+    .use(markdownItFootnote)
+    .use(markdownItWikiLinks);
   eleventyConfig.setLibrary("md", mdLib);
-  const path = require("path");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addFilter("urlencode", function (str) {
@@ -17,6 +46,9 @@ module.exports = async function (eleventyConfig) {
   });
   eleventyConfig.addFilter("remove_underline", function (str) {
     return str.replaceAll("_", " ");
+  })
+  eleventyConfig.addFilter("wikilinks_attr", function (str) {
+    return markdownItWikiLinks(str);
   })
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: data => {

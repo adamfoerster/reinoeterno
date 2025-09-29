@@ -16,11 +16,12 @@
       <h1>{{title}}</h1>
       {%- elif page.fileSlug -%}
       <h1>{{page.fileSlug}}</h1>
-      {%- endif -%}
-      {{ content | safe }}
-      <div class="callout">
-      {{ "👨‍💼 " + author if author}}<br />
-      {{ "🕒 " + page.date if page.date }}
+      {%- endif -%} {%- if refs -%}
+      <p>Referências: {{ refs }}</p>
+      {%- endif -%} {{ content | safe }}
+      <div class="article-footer">
+        {{ "👨‍💼 " + author if author}}<br />
+        {{ "🕒 " + page.date if page.date }}
       </div>
     </main>
     <footer>

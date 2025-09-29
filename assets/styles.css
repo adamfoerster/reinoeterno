@@ -87,3 +87,18 @@ blockquote {
   border-color: green;
   background: #eaffea;
 }
+
+a.wikilink {
+  text-decoration: none;
+  color: #0066cc;
+  border-bottom: 1px dashed #0066cc;
+}
+a.wikilink:hover {
+  border-bottom-style: solid;
+}
+.article-footer {
+  padding: 1em;
+  margin: 1em 0;
+  font-size: 0.8em;
+  background-color: #ddd;
+}
