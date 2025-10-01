@@ -19,10 +19,7 @@
       {%- endif -%} {%- if refs -%}
       <p>Referências: {{ refs | wikilinks_attr | safe }}</p>
       {%- endif -%} {{ content | safe }}
-      <div class="article-footer">
-        {{ "👨‍💼 " + author if author}}<br />
-        {{ "🕒 " + page.date if page.date }}
-      </div>
+      <div class="article-footer">{{ "👨‍💼 " + author if author}}<br /></div>
     </main>
     <footer>
       <p>Adam Foerster</p>

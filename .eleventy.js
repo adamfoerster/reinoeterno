@@ -1,4 +1,14 @@
 const markdownIt = require("markdown-it");
+const slugifyLib = require("slugify");
+
+function slugify(str) {
+  return slugifyLib(str, {
+    replacement: "_",           // substitui espaço por underline
+    lower: true,                // tudo minúsculo
+    locale: "pt",               // normaliza acentos
+    strict: false,              // não aplica a limpeza automática
+  });
+}
 
 module.exports = async function (eleventyConfig) {
   const { default: markdownItCallouts } = await import("markdown-it-callouts");
@@ -27,7 +37,8 @@ module.exports = async function (eleventyConfig) {
     return newArray;
   }
 
-  function markdownItWikiLinks(md, options = {}) {
+  // ---- Markdown config ----
+  function markdownItWikiLinks(md) {
     md.inline.ruler.after("link", "wikilink", function (state, silent) {
       const start = state.pos;
       if (state.src.slice(start, start + 2) !== "[[") return false;
@@ -38,7 +49,7 @@ module.exports = async function (eleventyConfig) {
         const [targetRaw, aliasRaw] = content.split("|");
         const target = targetRaw.trim();
         const alias = aliasRaw ? aliasRaw.trim() : target;
-        const href = `/${target}/`;
+        const href = `/${slugify(target)}/`; // usa slugify nos links
         const tokenOpen = state.push("link_open", "a", 1);
         tokenOpen.attrs = [["href", href]];
         const textToken = state.push("text", "", 0);
@@ -50,6 +61,51 @@ module.exports = async function (eleventyConfig) {
     });
   }
 
+  // cria um mapa: slug_da_tag => [array de páginas]
+  eleventyConfig.addCollection("tagMap", function (collectionApi) {
+    const map = {};
+    collectionApi.getAll().forEach(item => {
+      if (item.data && (item.data.published === false || !item.data.published)) return;
+
+      const tags = item.data && item.data.tags
+        ? (Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags])
+        : [];
+      tags.forEach(t => {
+        const key = slugify(t); // normaliza
+        if (!map[key]) map[key] = [];
+        map[key].push(item);
+      });
+    });
+    return map;
+  });
+
+  // ---- Normalização de tags ----
+  eleventyConfig.addCollection("tagList", function (collectionApi) {
+    let tagSet = new Set();
+    let collectionsByTag = {};
+
+    collectionApi.getAll().forEach(item => {
+      if (item.data.published === false || !item.data.published) return;
+
+      if ("tags" in item.data) {
+        let tags = Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags];
+        tags
+          .filter(tag => !["all", "nav", "post"].includes(tag))
+          .forEach(tag => {
+            // Normaliza a tag
+            let normalized = tag.toLowerCase();
+            tagSet.add(normalized);
+
+            // Adiciona o item à collection normalizada
+            if (!collectionsByTag[normalized]) {
+              collectionsByTag[normalized] = [];
+            }
+            collectionsByTag[normalized].push(item);
+          });
+      }
+    });
+    return [...tagSet].sort();
+  });
 
   let options = {
     html: true,
@@ -62,14 +118,12 @@ module.exports = async function (eleventyConfig) {
     .use(markdownItFootnote)
     .use(markdownItWikiLinks);
   eleventyConfig.setLibrary("md", mdLib);
+
+  // ---- Outras configs ----
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addGlobalData("layout", "layout.njk");
-  eleventyConfig.addFilter("urlencode", function (str) {
-    return encodeURIComponent(str);
-  });
-  eleventyConfig.addFilter("remove_underline", function (str) {
-    return str.replaceAll("_", " ");
-  })
+  eleventyConfig.addFilter("urlencode", str => encodeURIComponent(str));
+  eleventyConfig.addFilter("remove_underline", str => str.replaceAll("_", " "));
   eleventyConfig.addFilter("wikilinks_attr", function (str) {
     return replaceWikiLinks(str);
   })
@@ -78,30 +132,26 @@ module.exports = async function (eleventyConfig) {
       if (data.published === false || !data.published) {
         return false;
       }
-      return data.permalink ?? data.page.filePathStem + "/index.html";
+      if (data.pagination && data.pagination.items && data.tag) {
+        // Estamos dentro da página de tag
+        return `90._assets/tags/${slugify(data.tag.replaceAll(" ", "_"))}/index.html`;
+      }
+      // Quebra o caminho em pastas e aplica slugify
+      let parts = data.page.filePathStem.replaceAll(" ", "_").split("/").map(slugify);
+
+      // Se o último segmento for "index", remove-o
+      if (parts[parts.length - 1] === "index") {
+        parts.pop();
+      }
+
+      // Se não houver partes, significa que é o index da raiz
+      if (parts.length === 0) {
+        return "/index.html";
+      }
+
+      return `/${parts.join("/")}/index.html`;
     }
   });
-  eleventyConfig.addCollection("tagList", function (collectionApi) {
-    let tagSet = new Set();
-
-    collectionApi.getAll()
-      .forEach(item => {
-        if (item.data.published === false || !item.data.published) return;
-
-        if ("tags" in item.data) {
-          let tags = item.data.tags;
-          if (typeof tags === "string") {
-            tags = [tags];
-          }
-          tags
-            .filter(tag => !["all", "nav", "post"].includes(tag))
-            .forEach(tag => tagSet.add(tag));
-        }
-      }
-      );
-    return [...tagSet].sort();
-  });
-
 
   return {
     dir: {
