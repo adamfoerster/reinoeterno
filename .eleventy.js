@@ -49,7 +49,7 @@ module.exports = async function (eleventyConfig) {
         const [targetRaw, aliasRaw] = content.split("|");
         const target = targetRaw.trim();
         const alias = aliasRaw ? aliasRaw.trim() : target;
-        const href = target.split("/").map(slugify).join("/");
+        const href = target.indexOf("http") == -1 ? "/" + target.split("/").map(slugify).join("/") : target;
         const tokenOpen = state.push("link_open", "a", 1);
         tokenOpen.attrs = [["href", href]];
         const textToken = state.push("text", "", 0);
