@@ -30,7 +30,7 @@ module.exports = async function (eleventyConfig) {
       const el = element.replace(wikiLinkRegex, (match, link, text) => {
         const displayText = text ? text.trim() : link.trim();
         const url = link.trim();
-        return `<a href="/${encodeURIComponent(url)}">${displayText}</a>`;
+        return `<a href="/${url.split("/").map(slugify).join("/") }">${displayText}</a>`;
       });
       newArray.push(el);
     });
