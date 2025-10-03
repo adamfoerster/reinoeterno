@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const slugifyLib = require("slugify");
 
 function slugify(str) {
@@ -8,6 +9,11 @@ function slugify(str) {
     locale: "pt",               // normaliza acentos
     strict: false,              // não aplica a limpeza automática
   });
+}
+
+function slugifyKeep(str) {
+  const [target, anchor] = str.split("#")
+  return "/" + target.split("/").map(slugify).join("/") + (anchor ? "#" + anchor : "")
 }
 
 module.exports = async function (eleventyConfig) {
@@ -30,7 +36,7 @@ module.exports = async function (eleventyConfig) {
       const el = element.replace(wikiLinkRegex, (match, link, text) => {
         const displayText = text ? text.trim() : link.trim();
         const url = link.trim();
-        return `<a href="/${url.split("/").map(slugify).join("/") }">${displayText}</a>`;
+        return `<a href="${slugifyKeep(url)}">${displayText}</a>`;
       });
       newArray.push(el);
     });
@@ -49,7 +55,9 @@ module.exports = async function (eleventyConfig) {
         const [targetRaw, aliasRaw] = content.split("|");
         const target = targetRaw.trim();
         const alias = aliasRaw ? aliasRaw.trim() : target;
-        const href = target.indexOf("http") == -1 ? "/" + target.split("/").map(slugify).join("/") : target;
+        const href = target.indexOf("http") == -1 
+          ? slugifyKeep(target) 
+          : target;
         const tokenOpen = state.push("link_open", "a", 1);
         tokenOpen.attrs = [["href", href]];
         const textToken = state.push("text", "", 0);
@@ -116,7 +124,11 @@ module.exports = async function (eleventyConfig) {
   let mdLib = markdownIt(options)
     .use(markdownItCallouts)
     .use(markdownItFootnote)
-    .use(markdownItWikiLinks);
+    .use(markdownItWikiLinks)
+    .use(markdownItAnchor, {
+      permalink: false,
+      slugify: s => String(s).trim().toLowerCase().replace(/\s+/g, '-')
+    });
   eleventyConfig.setLibrary("md", mdLib);
 
   // ---- Outras configs ----
@@ -137,7 +149,7 @@ module.exports = async function (eleventyConfig) {
         return `90._assets/tags/${slugify(data.tag.replaceAll(" ", "_"))}/index.html`;
       }
       // Quebra o caminho em pastas e aplica slugify
-      let parts = data.page.filePathStem.replaceAll(" ", "_").split("/").map(slugify);
+      let parts = data.page.filePathStem.replaceAll(" ", "_").split("/").map(slugifyKeep);
 
       // Se o último segmento for "index", remove-o
       if (parts[parts.length - 1] === "index") {
