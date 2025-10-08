@@ -2,6 +2,9 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const slugifyLib = require("slugify");
 
+const obsidianVault = "../../Documents/MegaSync/obisidian-vault/";
+const distFolder = "./dist";
+
 function slugify(str) {
   return slugifyLib(str, {
     replacement: "_",           // substitui espaço por underline
@@ -55,8 +58,8 @@ module.exports = async function (eleventyConfig) {
         const [targetRaw, aliasRaw] = content.split("|");
         const target = targetRaw.trim();
         const alias = aliasRaw ? aliasRaw.trim() : target;
-        const href = target.indexOf("http") == -1 
-          ? slugifyKeep(target) 
+        const href = target.indexOf("http") == -1
+          ? slugifyKeep(target)
           : target;
         const tokenOpen = state.push("link_open", "a", 1);
         tokenOpen.attrs = [["href", href]];
@@ -66,6 +69,18 @@ module.exports = async function (eleventyConfig) {
       }
       state.pos = end + 2;
       return true;
+    });
+  }
+
+  function wikilink_images(state) {
+    const regex = /\[\[!([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+    state.tokens.forEach(token => {
+      if (token.type === "inline" && regex.test(token.content)) {
+        token.content = token.content.replace(regex, (match, filename, alt) => {
+          const altText = alt || path.basename(filename);
+          return `<img src="${filename}" alt="${altText}" />`;
+        });
+      }
     });
   }
 
@@ -124,15 +139,38 @@ module.exports = async function (eleventyConfig) {
   let mdLib = markdownIt(options)
     .use(markdownItCallouts)
     .use(markdownItFootnote)
-    .use(markdownItWikiLinks)
     .use(markdownItAnchor, {
       permalink: false,
-      slugify: s => String(s).trim().toLowerCase().replace(/\s+/g, '-')
-    });
+      slugify: slugify
+    })
+    .use(markdownItWikiLinks);
+
+  mdLib.core.ruler.push("wikilinks_images", wikilink_images);
   eleventyConfig.setLibrary("md", mdLib);
+  // Função para copiar imagens automaticamente
+  eleventyConfig.on("beforeBuild", () => {
+    const srcDir = obsidianVault;
+    const outputDir = distFolder;
+    const copyImage = (imgPath) => {
+      const srcPath = path.join(srcDir, imgPath);
+      const destPath = path.join(outputDir, imgPath);
+      if (fs.existsSync(srcPath)) {
+        fs.mkdirSync(path.dirname(destPath), { recursive: true });
+        fs.copyFileSync(srcPath, destPath);
+      }
+    };
+    eleventyConfig.addPairedShortcode("copyImage", (content, imgPath) => {
+      copyImage(imgPath);
+      return content;
+    });
+  });
 
   // ---- Outras configs ----
   eleventyConfig.addPassthroughCopy("assets");
+  // eleventyConfig.addPlugin(pageAssetsPlugin, {
+  //   mode: "parse",
+  //   postsMatching: "src/posts/*/*.md",
+  // });
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addFilter("urlencode", str => encodeURIComponent(str));
   eleventyConfig.addFilter("remove_underline", str => str.replaceAll("_", " "));
@@ -152,12 +190,12 @@ module.exports = async function (eleventyConfig) {
       let parts = data.page.filePathStem.replaceAll(" ", "_").split("/").map(slugifyKeep);
 
       // Se o último segmento for "index", remove-o
-      if (parts[parts.length - 1] === "index") {
+      if (parts[parts.length - 1] === "/index") {
         parts.pop();
       }
 
       // Se não houver partes, significa que é o index da raiz
-      if (parts.length === 0) {
+      if (parts.length === 1 && parts[0] == "/") {
         return "/index.html";
       }
 
@@ -167,8 +205,8 @@ module.exports = async function (eleventyConfig) {
 
   return {
     dir: {
-      input: "../../Documents/MegaSync/obisidian-vault/",
-      output: "./dist",
+      input: obsidianVault,
+      output: distFolder,
       includes: "../../../projects/reinoeterno/_includes/"
     },
     markdownTemplateEngine: "njk",
