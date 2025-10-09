@@ -17,9 +17,15 @@
       {%- elif page.fileSlug -%}
       <h1>{{page.fileSlug}}</h1>
       {%- endif -%} {%- if refs -%}
-      <p>Referências: {{ refs | wikilinks_attr | safe }}</p>
-      {%- endif -%} {{ content | safe }}
-      <div class="article-footer">{{ "👨‍💼 " + author if author}}<br />{{ copyright if copyright }}</div>
+      📇 Referências: {{ refs | wikilinks_attr | safe }}<br />
+      {%- endif -%} {%- if source -%}
+      ✍🏻 {{ source | wikilinks_attr | safe }}<br />
+      {%- endif -%} {%- if tags -%}
+      🔖 {{ tags }}<br />
+      {%- endif -%}{{ content | safe }}
+      <div class="article-footer">
+        {{ "👨‍💼 " + author if author}}<br />{{ copyright if copyright }}
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
