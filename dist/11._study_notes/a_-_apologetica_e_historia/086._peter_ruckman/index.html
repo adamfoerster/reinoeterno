@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Reino Eterno Online
+    </title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Reino Eterno Online</a></h1>
+    </header>
+    <main><h1>086. Peter Ruckman</h1>🔖 Apologética_e_história,Notas_de_estudo<br /><h3 id="peter_ruckman" tabindex="-1">Peter Ruckman</h3>
+<p>Peter Ruckman foi um pastor e teólogo batista fundamentalista dos Estados Unidos que teve uma influência importante no crescimento do movimento King James Only. Ruckman defendia a Bíblia King James como a única tradução precisa e inspirada, considerando todas as demais traduções inferiores e corruptas. Ruckman fundamentou suas opiniões na convicção de que a Bíblia King James foi inspirada divinamente e, por isso, não poderia apresentar erros ou discrepâncias. Ele também afirmou que as traduções contemporâneas da Bíblia foram afetadas pela teologia liberal e que isso fazia parte de uma conspiração maior para enfraquecer a autoridade bíblica.</p>
+<p>Ruckman teve um impacto considerável no movimento King James Only, e seus ensinamentos foram amplamente disseminados por meio de suas obras, pregações e cursos em instituições de ensino bíblico. Os adeptos de Ruckman assumiram sua posição rígida em relação à Bíblia King James, e muitos deles interpretaram qualquer crítica à tradução como uma ofensa à integridade da Bíblia em si. O crescimento de um movimento mais amplo de cristãos conservadores, que rejeitavam os estudos modernos e as abordagens críticas da Bíblia, em favor de uma leitura mais fundamentalista do texto, foi também influenciado por Ruckman. Apesar de as opiniões de Ruckman ainda serem polêmicas, seu legado no movimento King James Only continua a impactar as convicções e práticas de muitos cristãos fundamentalistas nos dias atuais.</p>
+<p>Atualmente, muitos movimentos rejeitam o Ruckmanismo publicamente, mas adotam várias de suas doutrinas na prática. Incluem-se entre esses os que veem o Textus Receptus ou o Texto Majoritário como infalíveis. Geralmente, consideram a ACF em português, a Reina Valera em espanhol e a King James em inglês como as únicas versões adequadas para leitura em cada idioma.</p>
+<p>Quase todos os líderes evangélicos mais respeitados e conhecidos hoje em dia não aceitam que uma tradução possa ser inspirada.</p>
+
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+    </main>
+    <footer>
+      <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    </footer>
+    
+  </body>
+</html>

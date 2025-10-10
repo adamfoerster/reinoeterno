@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Reino Eterno Online
+    </title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Reino Eterno Online</a></h1>
+    </header>
+    <main><h1>087. Tipos-Texto do Novo Testamento</h1>🔖 Apologética_e_história,Notas_de_estudo<br /><h3 id="ocidental" tabindex="-1"><strong>Ocidental</strong></h3>
+<p>O texto ocidental tende a ser mais livre e expansivo em suas traduções, frequentemente adicionando ou embelezando detalhes em relação ao original. Está geralmente ligado à tradição latina e é reconhecido por conter o final mais extenso do Evangelho de Marcos.</p>
+<p>Foi empregado principalmente pelos Pais da Igreja no Ocidente. Atualmente, é visto como a menos fiel das três famílias e deixou de ser utilizado por qualquer tradução.</p>
+<h3 id="bizantino" tabindex="-1"><strong>Bizantino</strong></h3>
+<p>Por outro lado, o tipo de texto bizantino é o mais frequente e amplamente disseminado dos três tipos, sendo encontrado na maioria dos manuscritos gregos. É caracterizado por sua propensão a suavizar e harmonizar diferenças entre diversos manuscritos, gerando um texto mais padronizado e consistente.</p>
+<p>Alegam os defensores do texto bizantino (textus receptus ou texto majoritário) que a maioria das heresias teve origem em Alexandria. Porém, o apolinarismo e o semi-arianismo (negação da divindade do Espírito Santo) originaram-se nas cidades de Bizâncio.</p>
+<p>Esse tipo de texto serve como fundamento para o Textus Receptus e Texto Majoritário, sendo empregado no Brasil nas seguintes traduções:</p>
+<ul>
+<li>ACF - Almeida Corrigida Fiel</li>
+<li>ARC - Edição Corrigida</li>
+<li>BKJ - King James 1611</li>
+<li>LTT - Literal do Texto Tradicional</li>
+</ul>
+<h3 id="alexandrino" tabindex="-1"><strong>Alexandrino</strong></h3>
+<p>Texto mais comum entre os textos antigos, anteriores ao século V e à formação da Igreja Católica Romana. Os versículos são mais breves, contêm palavras menos conhecidas (menos polidas) e apresentam menor harmonia entre os evangelhos.</p>
+<p>A maioria dos críticos textuais considera esse tipo de texto o mais confiável.</p>
+<p>É o fundamento do Texto Crítico empregado na maioria das traduções contemporâneas, como:</p>
+<ul>
+<li>ARA - Periódico e Atualizada</li>
+<li>NVI - Nova Versão Internacional</li>
+<li>NAA - Nova Almeida Atualizada</li>
+<li>NVT - Nova Versão Transformadora</li>
+<li>BTX - Bíblia Textual</li>
+</ul>
+
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+    </main>
+    <footer>
+      <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    </footer>
+    
+  </body>
+</html>
