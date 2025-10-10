@@ -1,41 +1,80 @@
+/* =========================================================
+   VARIÁVEIS DE TEMA
+   ========================================================= */
+:root {
+  /* Cores base (tema claro) */
+  --bg-color: #f9fafb;
+  --box-bg-color: #ccc;
+  --text-color: #1a1a1a;
+  --box-text-bolor: #222;
+  --accent-color: #4a90e2;
+
+  /* Links */
+  --link-color: #0077cc;
+  --link-hover: #005fa3;
+
+  /* Elementos */
+  --border-color: #ddd;
+  --muted-text: #555;
+  --footer-text: #777;
+
+  /* Tags */
+  --tag-bg: #e6f0ff;
+  --tag-border: #c8dcff;
+  --tag-text: #1a1a1a;
+  --tag-bg-hover: #d4e4ff;
+  --tag-border-hover: #a8c8ff;
+  --tag-text-hover: #000;
+}
+
+/* Tema escuro */
+body.dark {
+  --bg-color: #1a1a1a;
+  --box-bg-color: #333;
+  --text-color: #e5e7eb;
+  --box-bg-color: #eee;
+  --accent-color: #80bfff;
+  --link-color: #80bfff;
+  --link-hover: #a8d4ff;
+  --border-color: #3d4450;
+  --muted-text: #aaa;
+  --footer-text: #999;
+  --tag-bg: #2a2f3a;
+  --tag-border: #3d4450;
+  --tag-text: #e0e6f0;
+  --tag-bg-hover: #3a404d;
+  --tag-border-hover: #4d5666;
+}
+
+/* =========================================================
+   REGRAS GERAIS
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 body {
   font-family: system-ui, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
-  line-height: 1.6;
-  background: #fdfdfd;
-  color: #333;
+  min-height: 100vh;
 }
 
 header {
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid var(--border-color);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-}
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 0.5rem 0;
 }
 
 footer {
   margin-top: 2rem;
   font-size: 0.9em;
-  color: #777;
+  color: var(--box-text-color);
   text-align: center;
 }
 
@@ -43,27 +82,183 @@ blockquote {
   font-style: italic;
 }
 
-.breadcrumbs {
-  font-size: 0.9em;
-  margin-bottom: 1em;
-  color: #555;
-}
-
-.breadcrumbs a {
-  color: #0077cc;
+/* =========================================================
+   LINKS
+   ========================================================= */
+a {
+  color: var(--link-color);
   text-decoration: none;
 }
 
-.breadcrumbs a:hover {
+a:hover {
+  color: var(--link-hover);
   text-decoration: underline;
+}
+
+a.wikilink {
+  border-bottom: 1px dashed var(--link-color);
+}
+
+a.wikilink:hover {
+  border-bottom-style: solid;
+}
+
+/* =========================================================
+   BOTÃO DE TROCA DE TEMA
+   ========================================================= */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  font-size: 1.2rem;
+  padding: 0.4em 0.6em;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.8;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#theme-toggle:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   LISTAS (ul e ol)
+   ========================================================= */
+ul,
+ol {
+  margin: 1.2em 0;
+  padding-left: 1.5em;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--text-color);
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0.4em;
+  position: relative;
+}
+
+/* Listas não ordenadas */
+ul li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.2em;
+}
+
+/* Listas ordenadas */
+ol {
+  counter-reset: list-counter;
+}
+
+ol li {
+  counter-increment: list-counter;
+}
+
+ol li::before {
+  content: counter(list-counter) ".";
+  color: var(--accent-color);
+  font-weight: 600;
+  display: inline-block;
+  width: 1.4em;
+  margin-left: -1.6em;
+  text-align: right;
+}
+
+/* Subníveis */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  padding-left: 1.2em;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+/* =========================================================
+   TAGS (pills)
+   ========================================================= */
+.tag {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0.25em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--tag-text);
+  background-color: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tag:hover,
+.tag:focus {
+  background-color: var(--tag-bg-hover);
+  border-color: var(--tag-border-hover);
+  color: var(--tag-text-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+/* Cores temáticas */
+.tag.primary {
+  --tag-bg: #e6f0ff;
+  --tag-border: #c8dcff;
+  --tag-text: #1a3a8a;
+}
+
+.tag.success {
+  --tag-bg: #e7f8ec;
+  --tag-border: #bde8c7;
+  --tag-text: #155724;
+}
+
+.tag.warning {
+  --tag-bg: #fff4e5;
+  --tag-border: #ffdfb3;
+  --tag-text: #8a5500;
+}
+
+.tag.danger {
+  --tag-bg: #ffeaea;
+  --tag-border: #ffc2c2;
+  --tag-text: #8a1f1f;
+}
+
+.tag.neutral {
+  --tag-bg: #f2f3f5;
+  --tag-border: #d9dce0;
+  --tag-text: #333;
+}
+
+/* =========================================================
+   OUTROS ELEMENTOS
+   ========================================================= */
+.breadcrumbs {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  color: var(--muted-text);
 }
 
 .footnotes {
   font-size: 0.9em;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
   margin-top: 2em;
   padding-top: 1em;
-  color: #555;
+  color: var(--muted-text);
 }
 
 .footnotes ol {
@@ -71,11 +266,12 @@ blockquote {
 }
 
 .callout {
-  border-left: 4px solid var(--color, #666);
+  border-left: 4px solid var(--border-color);
   padding: 1em;
   margin: 1em;
   border-radius: 6px;
-  background: #f8f8f8;
+  background: var(--box-bg-color);
+  color: var(--box-text-bolor);
 }
 
 .callout.danger {
@@ -88,21 +284,12 @@ blockquote {
   background: #eaffea;
 }
 
-a.wikilink {
-  text-decoration: none;
-  color: #0066cc;
-  border-bottom: 1px dashed #0066cc;
-}
-
-a.wikilink:hover {
-  border-bottom-style: solid;
-}
-
 .article-footer {
   padding: 1em;
   margin: 1em 0;
   font-size: 0.8em;
-  background-color: rgb(248, 248, 248);
+  color: var(--box-text-bolor);
+  background-color: var(--box-bg-color);
 }
 
 h5,

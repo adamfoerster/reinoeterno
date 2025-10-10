@@ -6,12 +6,34 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
       <h1><a href="/">Reino Eterno Online</a></h1>
     </header>
-    <main><h1>03. Evangelho</h1><p>Como vimos na lição anterior todos somos pecadores e o problema é que o padrão de Deus é a perfeição. Então que esperança existe para nós?</p>
+    <main><h1>03. Evangelho</h1>🔖 Cristianismo_para_Crianças<br /><p>Como vimos na lição anterior todos somos pecadores e o problema é que o padrão de Deus é a perfeição. Então que esperança existe para nós?</p>
 <p>O Evangelho é a boa notícia de que, apesar se sermos maus e merecermos estar separados de Deus para sempre, ele nos ama e providenciou um meio de sermos reconciliados com Ele por meio de Jesus Cristo.</p>
 <p>Essa é a grande demonstração de amor de Deus.</p>
 <div class="callout callout-bible">
@@ -83,10 +105,13 @@
 <p>Todas essas coisas são boas e acontecem na vida dos crentes, mas não pelo nosso esforço e sim por descansarmos em Cristo e crermos na obra dele.</p>
 <p>Se você crê em tudo isso que foi ensinado até aqui tenha essa certeza: você é um(a) filho(a) de Deus!</p>
 
-      <div class="article-footer">👨‍💼 Adam Foerster<br /></div>
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

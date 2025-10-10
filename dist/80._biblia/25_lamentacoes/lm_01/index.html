@@ -6,6 +6,28 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -58,10 +80,13 @@
 <p>Que toda a maldade deles seja conhecida diante de ti; faze com eles o que fizeste comigo por causa de todos os meus pecados. Os meus gemidos são muitos e o meu coração desfalece. &quot;</p>
 <p><a href="/80._biblia/25_lamentacoes/lm_01">lamentações de jeremias 1 ⏮</a> | <a href="/80._biblia/24_jeremias/jr_52">jeremias 52 ◀</a> | <a href="/lamentacoes_de_jeremias">lamentações de jeremias</a> | <a href="/80._biblia/25_lamentacoes/lm_02">▶ lamentações de jeremias 2</a> | <a href="/80._biblia/25_lamentacoes/lm_05">⏭ lamentações de jeremias 5</a></p>
 
-      <div class="article-footer"><br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.</div>
+      <div class="article-footer">
+        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

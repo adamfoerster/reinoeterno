@@ -6,6 +6,28 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -76,10 +98,13 @@
 <p>Eles também tiraram sortes na presença do rei Davi e de Zadoque, de Aimeleque, e dos chefes de famílias dos sacerdotes e dos levitas, assim como fizeram seus irmãos, os descendentes de Arão. As famílias dos irmãos mais velhos foram tratadas da mesma maneira que as dos mais novos.</p>
 <p><a href="/80._biblia/13_1_cronicas/1cr_01">o primeiro livro das crônicas 1 ⏮</a> | <a href="/80._biblia/13_1_cronicas/1cr_23">o primeiro livro das crônicas 23 ◀</a> | <a href="/o_primeiro_livro_das_cronicas">o primeiro livro das crônicas</a> | <a href="/80._biblia/13_1_cronicas/1cr_25">▶ o primeiro livro das crônicas 25</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">⏭ o primeiro livro das crônicas 29</a></p>
 
-      <div class="article-footer"><br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.</div>
+      <div class="article-footer">
+        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

@@ -6,12 +6,34 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
       <h1><a href="/">Reino Eterno Online</a></h1>
     </header>
-    <main><h1>01. Deus</h1><div class="callout callout-bible">
+    <main><h1>01. Deus</h1>🔖 Cristianismo_para_Crianças<br /><div class="callout callout-bible">
 <h3 class="callout-title">João 17:3</h3><p>E a vida eterna é isto: conhecer a ti, o único Deus verdadeiro, e a Jesus Cristo, a quem enviaste ao mundo.</p>
 </div>
 <p>Deus é único. Não existe ninguém ou nada como Ele. Mesmo que não possamos entendê-lo completamente, Ele quer se relacionar conosco. Deus se apresenta a nós de várias formas para que possamos conhecê-lo.</p>
@@ -45,7 +67,7 @@
 </div>
 <p>A Bíblia é o conjunto de livros que Deus nos deu. Ela nos mostra quem Ele é e como podemos conhecê-lo.</p>
 <h2 id="deus_e_uma_trindade" tabindex="-1">Deus é uma Trindade</h2>
-<p>!<a href="/90._assets/pasted_image_20250108200452.png">90. Assets/Pasted image 20250108200452.png</a><br>
+<p><img src="/90._assets/pasted_image_20250108200452.png" alt="Pasted image 20250108200452.png" loading="lazy"><br>
 Deus é formado por três Pessoas em um só Ser: Pai, Filho e Espírito Santo. Isso é difícil de entender porque não existe nada igual a Deus.</p>
 <p>Essas três Pessoas estão sempre em perfeita harmonia e felizes em sua comunhão. Cada uma destas três pessoas tem sua própria persona­lidade, mente e vontade, mas sempre concordam entre si.</p>
 <h3 id="deus_pai" tabindex="-1">Deus Pai</h3>
@@ -82,10 +104,13 @@ Deus é formado por três Pessoas em um só Ser: Pai, Filho e Espírito Santo. I
 <h3 class="callout-title">1 João 3:20</h3><p>E, ainda que a consciência nos condene, Deus é maior que nossa consciência e sabe todas as coisas.</p>
 </div>
 
-      <div class="article-footer">👨‍💼 Adam Foerster<br /></div>
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

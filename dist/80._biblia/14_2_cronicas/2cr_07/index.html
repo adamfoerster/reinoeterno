@@ -6,6 +6,28 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -58,10 +80,13 @@
 <p>E a resposta será: ‘Porque abandonaram o Senhor, o Deus dos seus antepassados, que os tirou do Egito, e se apegaram a outros deuses, adorando-os e prestando-lhes culto; por isso ele trouxe sobre eles toda esta desgraça’ &quot;.</p>
 <p><a href="/80._biblia/14_2_cronicas/2cr_01">o segundo livro das crônicas 1 ⏮</a> | <a href="/80._biblia/14_2_cronicas/2cr_06">o segundo livro das crônicas 6 ◀</a> | <a href="/o_segundo_livro_das_cronicas">o segundo livro das crônicas</a> | <a href="/80._biblia/14_2_cronicas/2cr_08">▶ o segundo livro das crônicas 8</a> | <a href="/80._biblia/14_2_cronicas/2cr_36">⏭ o segundo livro das crônicas 36</a></p>
 
-      <div class="article-footer"><br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.</div>
+      <div class="article-footer">
+        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

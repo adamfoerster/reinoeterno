@@ -6,6 +6,28 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -64,10 +86,13 @@
 <p>Não precisava que ninguém lhe desse testemunho a respeito do homem, pois ele bem sabia o que havia no homem.</p>
 <p><a href="/80._biblia/43_joao/jo_01">o evangelho de joão 1 ⏮</a> | <a href="/80._biblia/43_joao/jo_01">o evangelho de joão 1 ◀</a> | <a href="/o_evangelho_de_joao">o evangelho de joão</a> | <a href="/80._biblia/43_joao/jo_03">▶ o evangelho de joão 3</a> | <a href="/80._biblia/43_joao/jo_21">⏭ o evangelho de joão 21</a></p>
 
-      <div class="article-footer"><br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.</div>
+      <div class="article-footer">
+        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

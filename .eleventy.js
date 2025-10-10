@@ -2,6 +2,13 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const slugifyLib = require("slugify");
 
+const fs = require("fs");
+const path = require("path");
+
+const obsidianVault = "../obsidian/";
+// const obsidianVault = "../test-vault/";
+const distFolder = "./dist";
+
 function slugify(str) {
   return slugifyLib(str, {
     replacement: "_",           // substitui espaço por underline
@@ -55,8 +62,8 @@ module.exports = async function (eleventyConfig) {
         const [targetRaw, aliasRaw] = content.split("|");
         const target = targetRaw.trim();
         const alias = aliasRaw ? aliasRaw.trim() : target;
-        const href = target.indexOf("http") == -1 
-          ? slugifyKeep(target) 
+        const href = target.indexOf("http") == -1
+          ? slugifyKeep(target)
           : target;
         const tokenOpen = state.push("link_open", "a", 1);
         tokenOpen.attrs = [["href", href]];
@@ -68,6 +75,78 @@ module.exports = async function (eleventyConfig) {
       return true;
     });
   }
+
+  function wikilink_images(md) {
+    // registra um inline rule antes dos links
+    md.inline.ruler.before("link", "wikilink_image", function (state, silent) {
+      const src = state.src;
+      const start = state.pos;
+
+      // precisa começar com "![["
+      if (src.charCodeAt(start) !== 0x21 /* ! */) return false;
+      if (src.slice(start + 1, start + 3) !== "[[") return false;
+
+      // tenta casar a estrutura ![[caminho|alt]] ou ![[caminho]]
+      const match = /^!\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/.exec(src.slice(start));
+      if (!match) return false;
+
+      const wholeMatch = match[0];
+      const filenameRaw = match[1].trim();
+      const altRaw = match[2] ? match[2].trim() : "";
+
+      // só processa imagens com extensões comuns
+      if (!/\.(png|jpe?g|gif|svg|webp)$/i.test(filenameRaw)) {
+        return false;
+      }
+
+      if (!silent) {
+        const altText = altRaw || path.basename(filenameRaw);
+
+        // gera o src público com seu slugifyKeep (ex: /90_Assets/pasted_image.png)
+        const srcSlug = slugifyKeep(filenameRaw);
+
+        // copia o arquivo do vault para dist (removendo a barra inicial para path.join)
+        const srcPath = path.join(obsidianVault, filenameRaw);
+        const destPath = path.join(distFolder, srcSlug.replace(/^\/+/, ""));
+        try {
+          if (fs.existsSync(srcPath)) {
+            fs.mkdirSync(path.dirname(destPath), { recursive: true });
+            fs.copyFileSync(srcPath, destPath);
+            console.log(`[eleventy] copied image: ${filenameRaw} -> ${srcSlug}`);
+          } else {
+            console.warn(`[eleventy] imagem não encontrada: ${srcPath}`);
+          }
+        } catch (e) {
+          console.warn(`[eleventy] erro ao copiar imagem ${filenameRaw}:`, e);
+        }
+
+        // cria token de imagem real
+        const token = state.push("image", "img", 0);
+        token.attrs = [
+          ["src", srcSlug],
+          ["alt", altText],
+          ["loading", "lazy"]
+        ];
+        token.content = altText;
+
+        // cria children (necessário para evitar o erro de .length em renderInlineAsText)
+        const Token = state.Token || (state.md && state.md.Token);
+        if (Token) {
+          const textToken = new Token("text", "", 0);
+          textToken.content = altText;
+          token.children = [textToken];
+        } else {
+          // fallback mínimo: assegura que children não seja null
+          token.children = [{ type: "text", content: altText }];
+        }
+      }
+
+      // avança a posição do parser
+      state.pos += wholeMatch.length;
+      return true;
+    });
+  }
+
 
   // cria um mapa: slug_da_tag => [array de páginas]
   eleventyConfig.addCollection("tagMap", function (collectionApi) {
@@ -122,17 +201,69 @@ module.exports = async function (eleventyConfig) {
     typographer: true
   };
   let mdLib = markdownIt(options)
+    .use(wikilink_images)
     .use(markdownItCallouts)
     .use(markdownItFootnote)
-    .use(markdownItWikiLinks)
     .use(markdownItAnchor, {
       permalink: false,
-      slugify: s => String(s).trim().toLowerCase().replace(/\s+/g, '-')
-    });
+      slugify: slugify
+    })
+    .use(markdownItWikiLinks);
+
   eleventyConfig.setLibrary("md", mdLib);
+  // Função para copiar imagens automaticamente
+  eleventyConfig.on("beforeBuild", () => {
+    const srcDir = obsidianVault;
+    const outputDir = distFolder;
+    const mdRegex = /\.md$/i;
+    const wikiImgRegex = /\[\[!([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+
+    // varredura recursiva simples para encontrar todos os .md
+    function walkDir(dir, filelist = []) {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          walkDir(full, filelist);
+        } else if (entry.isFile() && mdRegex.test(entry.name)) {
+          filelist.push(full);
+        }
+      }
+      return filelist;
+    }
+
+    const mdFiles = walkDir(srcDir);
+    const imagesToCopy = new Set();
+
+    for (const mdFile of mdFiles) {
+      const content = fs.readFileSync(mdFile, "utf8");
+      let m;
+      while ((m = wikiImgRegex.exec(content)) !== null) {
+        const imgPath = m[1].trim().replace(/^\/+/, "");
+        imagesToCopy.add(imgPath);
+      }
+    }
+
+    for (const imgRel of imagesToCopy) {
+      const srcPath = path.join(srcDir, imgRel);
+      const destPath = path.join(outputDir, imgRel);
+      if (fs.existsSync(srcPath)) {
+        fs.mkdirSync(path.dirname(destPath), { recursive: true });
+        fs.copyFileSync(srcPath, destPath);
+        console.log(`[eleventy] copied image: ${imgRel}`);
+      } else {
+        console.warn(`[eleventy] imagem referenciada não encontrada: ${imgRel}`);
+      }
+    }
+  });
+
 
   // ---- Outras configs ----
   eleventyConfig.addPassthroughCopy("assets");
+  // eleventyConfig.addPlugin(pageAssetsPlugin, {
+  //   mode: "parse",
+  //   postsMatching: "src/posts/*/*.md",
+  // });
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addFilter("urlencode", str => encodeURIComponent(str));
   eleventyConfig.addFilter("remove_underline", str => str.replaceAll("_", " "));
@@ -152,12 +283,12 @@ module.exports = async function (eleventyConfig) {
       let parts = data.page.filePathStem.replaceAll(" ", "_").split("/").map(slugifyKeep);
 
       // Se o último segmento for "index", remove-o
-      if (parts[parts.length - 1] === "index") {
+      if (parts[parts.length - 1] === "/index") {
         parts.pop();
       }
 
       // Se não houver partes, significa que é o index da raiz
-      if (parts.length === 0) {
+      if (parts.length === 1 && parts[0] == "/") {
         return "/index.html";
       }
 
@@ -167,9 +298,9 @@ module.exports = async function (eleventyConfig) {
 
   return {
     dir: {
-      input: "../../Documents/MegaSync/obisidian-vault/",
-      output: "./dist",
-      includes: "../../../projects/reinoeterno/_includes/"
+      input: obsidianVault,
+      output: distFolder,
+      includes: "../reinoeterno/_includes/"
     },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"

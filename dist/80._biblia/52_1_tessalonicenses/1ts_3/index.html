@@ -6,6 +6,28 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -40,10 +62,13 @@
 <p>Que ele fortaleça os seus corações para serem irrepreensíveis em santidade diante de nosso Deus e Pai, na vinda de nosso Senhor Jesus com todos os seus santos.</p>
 <p><a href="/80._biblia/52_1_tessalonicenses/1ts_1">primeira carta de paulo aos tessalonicenses 1 ⏮</a> | <a href="/80._biblia/52_1_tessalonicenses/1ts_2">primeira carta de paulo aos tessalonicenses 2 ◀</a> | <a href="/80._biblia/1a_carta_de_paulo_aos_tessalonicenses">80. Bíblia/1a carta de Paulo aos tessalonicenses</a> | <a href="/80._biblia/52_1_tessalonicenses/1ts_4">▶ primeira carta de paulo aos tessalonicenses 4</a> | <a href="/80._biblia/52_1_tessalonicenses/1ts_5">⏭ primeira carta de paulo aos tessalonicenses 5</a></p>
 
-      <div class="article-footer"><br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.</div>
+      <div class="article-footer">
+        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

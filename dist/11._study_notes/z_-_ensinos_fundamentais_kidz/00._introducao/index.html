@@ -6,12 +6,34 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
       <h1><a href="/">Reino Eterno Online</a></h1>
     </header>
-    <main><h1>00. Introdução</h1><h2 id="objetivo" tabindex="-1">Objetivo</h2>
+    <main><h1>00. Introdução</h1>🔖 Cristianismo_para_Crianças<br /><h2 id="objetivo" tabindex="-1">Objetivo</h2>
 <p>Esta apostila foi criada para servir como uma ferramenta prática e acessível para quem deseja aprender os fundamentos da doutrina cristã de maneira fácil, rápida e com uma linguagem clara.</p>
 <p>Nosso objetivo é alcançar tanto crianças quanto adultos não alfabetizados que nunca tiveram contato com a “cultura evangélica”. Acreditamos que este material será especialmente útil para esses públicos.</p>
 <p>Se você não sabe onde encontrar o livro de Sofonias ou o que significam siglas como “Ec” e “Fl”, prepare-se: nossa jornada será bela, intrigante e surpreendentemente simples.</p>
@@ -32,10 +54,13 @@
 <p>Alguns termos teológicos são usados nos subtítulos das sessões mas evitados em seu corpo. Desta maneira, caso você considere que seu aluno teria dificuldade em decorar termos como trindade ou onisciência basta ler o texto e ignorar o subtítulo. Afinal, o conceito é mais importante que o termo pelo qual ele é chamado.</p>
 <p>Essas lições também podem ser usadas como preparação para o batismo. Nesse caso, o curso pode ser realizado ao longo de dois meses, com o batismo ocorrendo na quinta semana (após a lição sobre o batismo) ou na oitava semana, ao término do curso.</p>
 
-      <div class="article-footer">👨‍💼 Adam Foerster<br /></div>
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>

@@ -6,6 +6,28 @@
       Reino Eterno Online
     </title>
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -44,10 +66,13 @@
 <p>Assim, todo o povo foi a Gilgal e proclamou Saul como rei na presença do Senhor. Ali ofereceram sacrifícios de comunhão ao Senhor, e Saul e todos os israelitas se alegraram muito.</p>
 <p><a href="/80._biblia/09_1_samuel/1sm_01">o primeiro livro de samuel 1 ⏮</a> | <a href="/80._biblia/09_1_samuel/1sm_10">o primeiro livro de samuel 10 ◀</a> | <a href="/o_primeiro_livro_de_samuel">o primeiro livro de samuel</a> | <a href="/80._biblia/09_1_samuel/1sm_12">▶ o primeiro livro de samuel 12</a> | <a href="/80._biblia/09_1_samuel/1sm_31">⏭ o primeiro livro de samuel 31</a></p>
 
-      <div class="article-footer"><br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.</div>
+      <div class="article-footer">
+        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+      </div>
     </main>
     <footer>
       <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
     </footer>
     
   </body>
