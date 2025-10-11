@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Reino Eterno Online
+    </title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle")
+        if (!btn) return // guarda contra null
+
+        btn.onclick = () => {
+          document.body.classList.toggle("dark")
+          btn.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙"
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light",
+          )
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark")
+          btn.textContent = "☀️"
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Reino Eterno Online</a></h1>
+    </header>
+    <main><h1>023. Ambrosiastro</h1>📆 Quando: Século IV<br />🔖 Notas_de_estudo,Apologética_e_história<br /><p>Ambrosiastro é o nome dado por estudiosos a um escritor cristão anônimo do século IV, que produziu um importante comentário sobre as Epístolas de Paulo. Por muito tempo, esses escritos foram atribuídos a Santo Ambrósio de Milão, mas a análise histórica e textual mostrou que o verdadeiro autor permanece desconhecido, sendo chamado então de “Ambrosiastro” (ou “Pseudo-Ambrósio”).</p>
+<p>A obra do Ambrosiastro é valiosa para o estudo do cristianismo primitivo, especialmente porque reflete uma visão teológica prática e menos influenciada pelas formulações dogmáticas das controvérsias posteriores. Ele defendia uma interpretação literal das Escrituras e abordava questões teológicas como a graça, o pecado original, o livre-arbítrio e a relação entre fé e obras. Em suas doutrinas, o Ambrosiastro acreditava na depravação humana devido ao pecado original, mas atribuía grande valor ao livre-arbítrio, entendendo que a graça de Deus era essencial para a salvação, sem excluir a cooperação humana.</p>
+<p>Tanto <a href="/026._agostinho_de_hipona">026. Agostinho de Hipona</a> quanto <a href="/pelagio">Pelágio</a> fizeram uso das obras de Ambrosiastro.</p>
+
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+    </main>
+    <footer>
+      <p>Adam Foerster</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    </footer>
+    
+  </body>
+</html>

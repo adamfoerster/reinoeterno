@@ -40,6 +40,9 @@
       <h1>{{page.fileSlug}}</h1>
       {%- endif -%} {%- if refs -%} 📇 Referências: {{ refs | wikilinks_attr |
       safe }}<br />
+      {%- endif -%}{%- if when -%} 📆 Quando: {{ when | wikilinks_attr | safe }}<br />
+      {%- endif -%}{%- if where -%} 🧭 Onde: {{ where | wikilinks_attr | safe }}<br />
+      {%- endif -%}{%- if refutes -%} ⚔️ Refuta: {{ refutes | wikilinks_attr | safe }}<br />
       {%- endif -%} {%- if source -%} ✍🏻 {{ source | wikilinks_attr | safe }}<br />
       {%- endif -%} {%- if tags -%} 🔖 {{ tags }}<br />
       {%- endif -%}{{ content | safe }}
