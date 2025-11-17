@@ -5,6 +5,18 @@
     <title>
       {{ title + " - Reino Eterno Online" if title else "Reino Eterno Online" }}
     </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/assets/styles.css" />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -31,7 +43,14 @@
   </head>
   <body>
     <header>
-      <h1><a href="/">Reino Eterno Online</a></h1>
+      <a href="/">
+        <img
+          src="/90._assets/reinoeterno-logo.png"
+          alt="Reino Eterno - Online"
+          loading="lazy"
+        />
+        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
+      >
     </header>
     <main>
       {%- if title -%}
@@ -40,9 +59,12 @@
       <h1>{{page.fileSlug}}</h1>
       {%- endif -%} {%- if refs -%} 📇 Referências: {{ refs | wikilinks_attr |
       safe }}<br />
-      {%- endif -%}{%- if when -%} 📆 Quando: {{ when | wikilinks_attr | safe }}<br />
-      {%- endif -%}{%- if where -%} 🧭 Onde: {{ where | wikilinks_attr | safe }}<br />
-      {%- endif -%}{%- if refutes -%} ⚔️ Refuta: {{ refutes | wikilinks_attr | safe }}<br />
+      {%- endif -%}{%- if when -%} 📆 Quando: {{ when | wikilinks_attr | safe
+      }}<br />
+      {%- endif -%}{%- if where -%} 🧭 Onde: {{ where | wikilinks_attr | safe
+      }}<br />
+      {%- endif -%}{%- if refutes -%} ⚔️ Refuta: {{ refutes | wikilinks_attr |
+      safe }}<br />
       {%- endif -%} {%- if source -%} ✍🏻 {{ source | wikilinks_attr | safe }}<br />
       {%- endif -%} {%- if tags -%} 🔖 {{ tags }}<br />
       {%- endif -%}{{ content | safe }}
