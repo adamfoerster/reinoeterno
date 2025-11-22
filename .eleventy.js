@@ -270,6 +270,21 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addFilter("wikilinks_attr", function (str) {
     return replaceWikiLinks(str);
   })
+  eleventyConfig.addFilter("markdown_inline", function (str) {
+    if (!str) return str;
+    return mdLib.renderInline(str);
+  });
+  eleventyConfig.addFilter("linkify_tags", function (tags) {
+    if (!tags) return "";
+    const tagList = Array.isArray(tags) ? tags : [tags];
+    return tagList
+      .filter(tag => !["all", "nav", "post"].includes(tag))
+      .map(tag => {
+        const slug = slugify(tag.replaceAll(" ", "_"));
+        return `<a href="/90._assets/tags/${slug}/" class="tag-link">${tag}</a>`;
+      })
+      .join(", ");
+  });
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: data => {
       if (data.published === false || !data.published) {

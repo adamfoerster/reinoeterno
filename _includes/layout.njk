@@ -65,8 +65,8 @@
       }}<br />
       {%- endif -%}{%- if refutes -%} ⚔️ Refuta: {{ refutes | wikilinks_attr |
       safe }}<br />
-      {%- endif -%} {%- if source -%} ✍🏻 {{ source | wikilinks_attr | safe }}<br />
-      {%- endif -%} {%- if tags -%} 🔖 {{ tags }}<br />
+      {%- endif -%} {%- if source -%} ✍🏻 {{ source | markdown_inline | safe }}<br />
+      {%- endif -%} {%- if tags -%} 🔖 {{ tags | linkify_tags | safe }}<br />
       {%- endif -%}{{ content | safe }}
       <div class="article-footer">
         {{ "👨‍💼 " + author if author}}<br />{{ copyright if copyright }}
