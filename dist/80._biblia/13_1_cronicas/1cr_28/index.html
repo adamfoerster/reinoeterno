@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>1cr 28</h1><p><a href="/80._biblia/13_1_cronicas/1cr_01">o primeiro livro das crônicas 1 ⏮</a> | <a href="/80._biblia/13_1_cronicas/1cr_27">o primeiro livro das crônicas 27 ◀</a> | <a href="/o_primeiro_livro_das_cronicas">o primeiro livro das crônicas</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">▶ o primeiro livro das crônicas 29</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">⏭ o primeiro livro das crônicas 29</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>1cr 28</h1><p><a href="/80._biblia/13_1_cronicas/1cr_01">o primeiro livro das crônicas 1 ⏮</a> | <a href="/80._biblia/13_1_cronicas/1cr_27">o primeiro livro das crônicas 27 ◀</a> | <a href="/o_primeiro_livro_das_cronicas">o primeiro livro das crônicas</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">▶ o primeiro livro das crônicas 29</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">⏭ o primeiro livro das crônicas 29</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Davi reuniu em Jerusalém todos os líderes de Israel: os líderes das tribos, os líderes das divisões a serviço do rei, os comandantes de mil e de cem, e os líderes encarregados de todos os bens e rebanhos que pertenciam ao rei e a seus filhos, juntamente com os funcionários do palácio, os principais guerreiros e todos os soldados valentes.</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -97,14 +89,31 @@
 <p>As divisões dos sacerdotes e dos levitas estão definidas para todas as tarefas que se farão no templo de Deus, e você receberá ajuda de homens peritos em todo tipo de serviço. Os líderes e todo o povo obedecerão a todas as suas ordens&quot;.</p>
 <p><a href="/80._biblia/13_1_cronicas/1cr_01">o primeiro livro das crônicas 1 ⏮</a> | <a href="/80._biblia/13_1_cronicas/1cr_27">o primeiro livro das crônicas 27 ◀</a> | <a href="/o_primeiro_livro_das_cronicas">o primeiro livro das crônicas</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">▶ o primeiro livro das crônicas 29</a> | <a href="/80._biblia/13_1_cronicas/1cr_29">⏭ o primeiro livro das crônicas 29</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/13 1 crônicas/1cr 27.md">../obsidian/80. Bíblia/13 1 crônicas/1cr 27.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/13 1 crônicas/1cr 29.md">../obsidian/80. Bíblia/13 1 crônicas/1cr 29.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

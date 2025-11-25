@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>Gn 31</h1><p><a href="/80._biblia/01_genesis/gn_01">gênesis 1 ⏮</a> | <a href="/80._biblia/01_genesis/gn_30">gênesis 30 ◀</a> | <a href="/genesis">gênesis</a> | <a href="/80._biblia/01_genesis/gn_32">▶ gênesis 32</a> | <a href="/80._biblia/01_genesis/gn_50">⏭ gênesis 50</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>Gn 31</h1><p><a href="/80._biblia/01_genesis/gn_01">gênesis 1 ⏮</a> | <a href="/80._biblia/01_genesis/gn_30">gênesis 30 ◀</a> | <a href="/genesis">gênesis</a> | <a href="/80._biblia/01_genesis/gn_32">▶ gênesis 32</a> | <a href="/80._biblia/01_genesis/gn_50">⏭ gênesis 50</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Jacó, porém, ouviu falar que os filhos de Labão estavam dizendo: “Jacó tomou tudo que o nosso pai tinha e juntou toda a sua riqueza à custa do nosso pai”.</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -165,14 +157,31 @@
 <p>Na manhã seguinte, Labão beijou seus netos e suas filhas e os abençoou, e depois voltou para a sua terra.</p>
 <p><a href="/80._biblia/01_genesis/gn_01">gênesis 1 ⏮</a> | <a href="/80._biblia/01_genesis/gn_30">gênesis 30 ◀</a> | <a href="/genesis">gênesis</a> | <a href="/80._biblia/01_genesis/gn_32">▶ gênesis 32</a> | <a href="/80._biblia/01_genesis/gn_50">⏭ gênesis 50</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/01 gênesis/Gn 30.md">../obsidian/80. Bíblia/01 gênesis/Gn 30.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/01 gênesis/Gn 32.md">../obsidian/80. Bíblia/01 gênesis/Gn 32.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

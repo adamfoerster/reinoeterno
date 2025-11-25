@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>jr 31</h1><p><a href="/80._biblia/24_jeremias/jr_01">jeremias 1 ⏮</a> | <a href="/80._biblia/24_jeremias/jr_30">jeremias 30 ◀</a> | <a href="/jeremias">jeremias</a> | <a href="/80._biblia/24_jeremias/jr_32">▶ jeremias 32</a> | <a href="/80._biblia/24_jeremias/jr_52">⏭ jeremias 52</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>jr 31</h1><p><a href="/80._biblia/24_jeremias/jr_01">jeremias 1 ⏮</a> | <a href="/80._biblia/24_jeremias/jr_30">jeremias 30 ◀</a> | <a href="/jeremias">jeremias</a> | <a href="/80._biblia/24_jeremias/jr_32">▶ jeremias 32</a> | <a href="/80._biblia/24_jeremias/jr_52">⏭ jeremias 52</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>“Naquele tempo”, diz o Senhor, &quot;serei o Deus de todas as famílias de Israel, e eles serão o meu povo. &quot;</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -135,14 +127,31 @@
 <p>Todo o vale, onde cadáveres e cinzas são jogados, e todos os terraços que dão para o vale do Cedrom a leste, até a esquina da porta dos Cavalos, serão consagrados ao Senhor. A cidade nunca mais será arrasada ou destruída. &quot;</p>
 <p><a href="/80._biblia/24_jeremias/jr_01">jeremias 1 ⏮</a> | <a href="/80._biblia/24_jeremias/jr_30">jeremias 30 ◀</a> | <a href="/jeremias">jeremias</a> | <a href="/80._biblia/24_jeremias/jr_32">▶ jeremias 32</a> | <a href="/80._biblia/24_jeremias/jr_52">⏭ jeremias 52</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/24 jeremias/jr 32.md">../obsidian/80. Bíblia/24 jeremias/jr 32.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/24 jeremias/jr 30.md">../obsidian/80. Bíblia/24 jeremias/jr 30.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

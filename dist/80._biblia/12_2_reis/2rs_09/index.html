@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>2rs 09</h1><p><a href="/80._biblia/12_2_reis/2rs_01">o segundo livro dos reis 1 ⏮</a> | <a href="/80._biblia/12_2_reis/2rs_08">o segundo livro dos reis 8 ◀</a> | <a href="/o_segundo_livro_dos_reis">o segundo livro dos reis</a> | <a href="/o_segundo_livro_dos_reis_10">▶ o segundo livro dos reis 10</a> | <a href="/o_segundo_livro_dos_reis_25">⏭ o segundo livro dos reis 25</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>2rs 09</h1><p><a href="/80._biblia/12_2_reis/2rs_01">o segundo livro dos reis 1 ⏮</a> | <a href="/80._biblia/12_2_reis/2rs_08">o segundo livro dos reis 8 ◀</a> | <a href="/o_segundo_livro_dos_reis">o segundo livro dos reis</a> | <a href="/o_segundo_livro_dos_reis_10">▶ o segundo livro dos reis 10</a> | <a href="/o_segundo_livro_dos_reis_25">⏭ o segundo livro dos reis 25</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Enquanto isso o profeta Eliseu chamou um dos discípulos dos profetas e lhe disse: &quot;Ponha a capa por dentro do cinto, pegue este frasco de óleo e vá a Ramote-Gileade.</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -129,14 +121,31 @@
 <p>os seus restos mortais serão espalhados num terreno em Jezreel, como esterco no campo, de modo que ninguém será capaz de dizer: ‘Esta é Jezabel’ &quot;.</p>
 <p><a href="/80._biblia/12_2_reis/2rs_01">o segundo livro dos reis 1 ⏮</a> | <a href="/80._biblia/12_2_reis/2rs_08">o segundo livro dos reis 8 ◀</a> | <a href="/o_segundo_livro_dos_reis">o segundo livro dos reis</a> | <a href="/o_segundo_livro_dos_reis_10">▶ o segundo livro dos reis 10</a> | <a href="/o_segundo_livro_dos_reis_25">⏭ o segundo livro dos reis 25</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/12 2 reis/2rs 10.md">../obsidian/80. Bíblia/12 2 reis/2rs 10.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/12 2 reis/2rs 08.md">../obsidian/80. Bíblia/12 2 reis/2rs 08.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

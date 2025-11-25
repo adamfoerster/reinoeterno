@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>Nm 01</h1><p><a href="/80._biblia/04_numeros/nm_01">números 1 ⏮</a> | <a href="/80._biblia/03_levitico/lv_27">levítico 27 ◀</a> | <a href="/numeros">números</a> | <a href="/80._biblia/04_numeros/nm_02">▶ números 2</a> | <a href="/80._biblia/04_numeros/nm_36">⏭ números 36</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>Nm 01</h1><p><a href="/80._biblia/04_numeros/nm_01">números 1 ⏮</a> | <a href="/80._biblia/03_levitico/lv_27">levítico 27 ◀</a> | <a href="/numeros">números</a> | <a href="/80._biblia/04_numeros/nm_02">▶ números 2</a> | <a href="/80._biblia/04_numeros/nm_36">⏭ números 36</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>O Senhor falou a Moisés na Tenda do Encontro, no deserto do Sinai, no primeiro dia do segundo mês do segundo ano, depois que os israelitas saíram do Egito. Ele disse:</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -163,14 +155,171 @@
 <p>Os israelitas fizeram tudo exatamente como o Senhor tinha ordenado a Moisés.</p>
 <p><a href="/80._biblia/04_numeros/nm_01">números 1 ⏮</a> | <a href="/80._biblia/03_levitico/lv_27">levítico 27 ◀</a> | <a href="/numeros">números</a> | <a href="/80._biblia/04_numeros/nm_02">▶ números 2</a> | <a href="/80._biblia/04_numeros/nm_36">⏭ números 36</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/03 levítico/Lv 27.md">../obsidian/80. Bíblia/03 levítico/Lv 27.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 01.md">../obsidian/80. Bíblia/04 números/Nm 01.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 04.md">../obsidian/80. Bíblia/04 números/Nm 04.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 02.md">../obsidian/80. Bíblia/04 números/Nm 02.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 03.md">../obsidian/80. Bíblia/04 números/Nm 03.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 05.md">../obsidian/80. Bíblia/04 números/Nm 05.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 07.md">../obsidian/80. Bíblia/04 números/Nm 07.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 08.md">../obsidian/80. Bíblia/04 números/Nm 08.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 06.md">../obsidian/80. Bíblia/04 números/Nm 06.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 11.md">../obsidian/80. Bíblia/04 números/Nm 11.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 10.md">../obsidian/80. Bíblia/04 números/Nm 10.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 09.md">../obsidian/80. Bíblia/04 números/Nm 09.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 12.md">../obsidian/80. Bíblia/04 números/Nm 12.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 14.md">../obsidian/80. Bíblia/04 números/Nm 14.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 13.md">../obsidian/80. Bíblia/04 números/Nm 13.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 15.md">../obsidian/80. Bíblia/04 números/Nm 15.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 16.md">../obsidian/80. Bíblia/04 números/Nm 16.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 20.md">../obsidian/80. Bíblia/04 números/Nm 20.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 18.md">../obsidian/80. Bíblia/04 números/Nm 18.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 17.md">../obsidian/80. Bíblia/04 números/Nm 17.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 19.md">../obsidian/80. Bíblia/04 números/Nm 19.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 24.md">../obsidian/80. Bíblia/04 números/Nm 24.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 21.md">../obsidian/80. Bíblia/04 números/Nm 21.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 22.md">../obsidian/80. Bíblia/04 números/Nm 22.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 23.md">../obsidian/80. Bíblia/04 números/Nm 23.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 28.md">../obsidian/80. Bíblia/04 números/Nm 28.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 27.md">../obsidian/80. Bíblia/04 números/Nm 27.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 25.md">../obsidian/80. Bíblia/04 números/Nm 25.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 26.md">../obsidian/80. Bíblia/04 números/Nm 26.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 29.md">../obsidian/80. Bíblia/04 números/Nm 29.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 31.md">../obsidian/80. Bíblia/04 números/Nm 31.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 32.md">../obsidian/80. Bíblia/04 números/Nm 32.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 30.md">../obsidian/80. Bíblia/04 números/Nm 30.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 33.md">../obsidian/80. Bíblia/04 números/Nm 33.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 35.md">../obsidian/80. Bíblia/04 números/Nm 35.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 34.md">../obsidian/80. Bíblia/04 números/Nm 34.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/04 números/Nm 36.md">../obsidian/80. Bíblia/04 números/Nm 36.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

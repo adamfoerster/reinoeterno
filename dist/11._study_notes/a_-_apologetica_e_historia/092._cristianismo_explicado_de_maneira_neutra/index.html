@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>092. Cristianismo explicado de maneira neutra</h1>✍🏻 <a href="https://www.youtube.com/watch?v=Fh03GrF8viM">https://www.youtube.com/watch?v=Fh03GrF8viM</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/evangelismo/" class="tag-link">Evangelismo</a><br /><div class="callout callout-note">
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>092. Cristianismo explicado de maneira neutra</h1>✍🏻 <a href="https://www.youtube.com/watch?v=Fh03GrF8viM">https://www.youtube.com/watch?v=Fh03GrF8viM</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/evangelismo/" class="tag-link">Evangelismo</a><br /><div class="callout callout-note">
 <p>No vídeo original, Joshua se propõe a explicar o que é o cristianismo de uma maneira neutra, isto é, sem partir da premissa que seja verdade.</p>
 </div>
 <h2 id="sumario_executivo" tabindex="-1">Sumário Executivo</h2>
@@ -191,14 +183,15 @@
 <li><strong>Unitários (ex: Testemunhas de Jeová):</strong> Rejeitam a doutrina da Trindade. Eles acreditam que Jesus é mais do que um homem, talvez até divino em algum sentido, mas não o próprio Deus Todo-Poderoso. Essa visão é considerada uma heresia fundamental pelos cristãos trinitários.</li>
 </ul>
 
-      <div class="article-footer">
-        👨‍💼 Ready to Harvest<br />
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      👨‍💼 Ready to Harvest<br />
+    </div>
     
-  </body>
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>rm 16</h1><p><a href="/80._biblia/45_romanos/rm_01">carta de paulo aos romanos 1 ⏮</a> | <a href="/80._biblia/45_romanos/rm_15">carta de paulo aos romanos 15 ◀</a> | <a href="/carta_de_paulo_aos_romanos">carta de paulo aos romanos</a> | <a href="/80._biblia/46_1_corintios/1co_01">▶ primeira carta de paulo aos coríntios 1</a> | <a href="/80._biblia/45_romanos/rm_16">⏭ carta de paulo aos romanos 16</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>rm 16</h1><p><a href="/80._biblia/45_romanos/rm_01">carta de paulo aos romanos 1 ⏮</a> | <a href="/80._biblia/45_romanos/rm_15">carta de paulo aos romanos 15 ◀</a> | <a href="/carta_de_paulo_aos_romanos">carta de paulo aos romanos</a> | <a href="/80._biblia/46_1_corintios/1co_01">▶ primeira carta de paulo aos coríntios 1</a> | <a href="/80._biblia/45_romanos/rm_16">⏭ carta de paulo aos romanos 16</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Recomendo-lhes nossa irmã Febe, serva da igreja em Cencréia.</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -109,14 +101,91 @@
 <p>ao único Deus sábio seja dada glória para todo o sempre, por meio de Jesus Cristo. Amém.</p>
 <p><a href="/80._biblia/45_romanos/rm_01">carta de paulo aos romanos 1 ⏮</a> | <a href="/80._biblia/45_romanos/rm_15">carta de paulo aos romanos 15 ◀</a> | <a href="/carta_de_paulo_aos_romanos">carta de paulo aos romanos</a> | <a href="/80._biblia/46_1_corintios/1co_01">▶ primeira carta de paulo aos coríntios 1</a> | <a href="/80._biblia/45_romanos/rm_16">⏭ carta de paulo aos romanos 16</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 02.md">../obsidian/80. Bíblia/45 romanos/rm 02.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 01.md">../obsidian/80. Bíblia/45 romanos/rm 01.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 05.md">../obsidian/80. Bíblia/45 romanos/rm 05.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 06.md">../obsidian/80. Bíblia/45 romanos/rm 06.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 03.md">../obsidian/80. Bíblia/45 romanos/rm 03.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 04.md">../obsidian/80. Bíblia/45 romanos/rm 04.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 09.md">../obsidian/80. Bíblia/45 romanos/rm 09.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 10.md">../obsidian/80. Bíblia/45 romanos/rm 10.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 07.md">../obsidian/80. Bíblia/45 romanos/rm 07.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 08.md">../obsidian/80. Bíblia/45 romanos/rm 08.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 13.md">../obsidian/80. Bíblia/45 romanos/rm 13.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 11.md">../obsidian/80. Bíblia/45 romanos/rm 11.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 14.md">../obsidian/80. Bíblia/45 romanos/rm 14.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 12.md">../obsidian/80. Bíblia/45 romanos/rm 12.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/46 1 coríntios/1co 01.md">../obsidian/80. Bíblia/46 1 coríntios/1co 01.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 15.md">../obsidian/80. Bíblia/45 romanos/rm 15.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/45 romanos/rm 16.md">../obsidian/80. Bíblia/45 romanos/rm 16.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

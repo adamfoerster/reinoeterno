@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>sl 001</h1><p><a href="/80._biblia/19_salmos/sl_001">salmos 1 ⏮</a> | <a href="/80._biblia/18_jo/jo_42">jó 42 ◀</a> | <a href="/salmos">salmos</a> | <a href="/salmos_2">▶ salmos 2</a> | <a href="/80._biblia/19_salmos/sl_150">⏭ salmos 150</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>sl 001</h1><p><a href="/80._biblia/19_salmos/sl_001">salmos 1 ⏮</a> | <a href="/80._biblia/18_jo/jo_42">jó 42 ◀</a> | <a href="/salmos">salmos</a> | <a href="/salmos_2">▶ salmos 2</a> | <a href="/80._biblia/19_salmos/sl_150">⏭ salmos 150</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Como é feliz aquele que não segue o conselho dos ímpios, não imita a conduta dos pecadores, nem se assenta na roda dos zombadores!</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -67,14 +59,223 @@
 <p>Pois o Senhor aprova o caminho dos justos, mas o caminho dos ímpios leva à destruição!</p>
 <p><a href="/80._biblia/19_salmos/sl_001">salmos 1 ⏮</a> | <a href="/80._biblia/18_jo/jo_42">jó 42 ◀</a> | <a href="/salmos">salmos</a> | <a href="/salmos_2">▶ salmos 2</a> | <a href="/80._biblia/19_salmos/sl_150">⏭ salmos 150</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 001.md">../obsidian/80. Bíblia/19 salmos/sl 001.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 004.md">../obsidian/80. Bíblia/19 salmos/sl 004.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 003.md">../obsidian/80. Bíblia/19 salmos/sl 003.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 008.md">../obsidian/80. Bíblia/19 salmos/sl 008.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 012.md">../obsidian/80. Bíblia/19 salmos/sl 012.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 011.md">../obsidian/80. Bíblia/19 salmos/sl 011.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 013.md">../obsidian/80. Bíblia/19 salmos/sl 013.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 015.md">../obsidian/80. Bíblia/19 salmos/sl 015.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 014.md">../obsidian/80. Bíblia/19 salmos/sl 014.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 020.md">../obsidian/80. Bíblia/19 salmos/sl 020.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 023.md">../obsidian/80. Bíblia/19 salmos/sl 023.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 028.md">../obsidian/80. Bíblia/19 salmos/sl 028.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 043.md">../obsidian/80. Bíblia/19 salmos/sl 043.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 047.md">../obsidian/80. Bíblia/19 salmos/sl 047.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 053.md">../obsidian/80. Bíblia/19 salmos/sl 053.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 052.md">../obsidian/80. Bíblia/19 salmos/sl 052.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 054.md">../obsidian/80. Bíblia/19 salmos/sl 054.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 061.md">../obsidian/80. Bíblia/19 salmos/sl 061.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 067.md">../obsidian/80. Bíblia/19 salmos/sl 067.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 070.md">../obsidian/80. Bíblia/19 salmos/sl 070.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 082.md">../obsidian/80. Bíblia/19 salmos/sl 082.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 087.md">../obsidian/80. Bíblia/19 salmos/sl 087.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 093.md">../obsidian/80. Bíblia/19 salmos/sl 093.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 098.md">../obsidian/80. Bíblia/19 salmos/sl 098.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 099.md">../obsidian/80. Bíblia/19 salmos/sl 099.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 100.md">../obsidian/80. Bíblia/19 salmos/sl 100.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 101.md">../obsidian/80. Bíblia/19 salmos/sl 101.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 110.md">../obsidian/80. Bíblia/19 salmos/sl 110.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 114.md">../obsidian/80. Bíblia/19 salmos/sl 114.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 113.md">../obsidian/80. Bíblia/19 salmos/sl 113.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 117.md">../obsidian/80. Bíblia/19 salmos/sl 117.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 122.md">../obsidian/80. Bíblia/19 salmos/sl 122.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 121.md">../obsidian/80. Bíblia/19 salmos/sl 121.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 120.md">../obsidian/80. Bíblia/19 salmos/sl 120.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 126.md">../obsidian/80. Bíblia/19 salmos/sl 126.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 125.md">../obsidian/80. Bíblia/19 salmos/sl 125.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 124.md">../obsidian/80. Bíblia/19 salmos/sl 124.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 123.md">../obsidian/80. Bíblia/19 salmos/sl 123.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 128.md">../obsidian/80. Bíblia/19 salmos/sl 128.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 127.md">../obsidian/80. Bíblia/19 salmos/sl 127.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 129.md">../obsidian/80. Bíblia/19 salmos/sl 129.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 131.md">../obsidian/80. Bíblia/19 salmos/sl 131.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 133.md">../obsidian/80. Bíblia/19 salmos/sl 133.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 130.md">../obsidian/80. Bíblia/19 salmos/sl 130.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 137.md">../obsidian/80. Bíblia/19 salmos/sl 137.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 134.md">../obsidian/80. Bíblia/19 salmos/sl 134.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 138.md">../obsidian/80. Bíblia/19 salmos/sl 138.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 142.md">../obsidian/80. Bíblia/19 salmos/sl 142.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 150.md">../obsidian/80. Bíblia/19 salmos/sl 150.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/19 salmos/sl 149.md">../obsidian/80. Bíblia/19 salmos/sl 149.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>is 66</h1><p><a href="/80._biblia/23_isaias/is_01">isaías 1 ⏮</a> | <a href="/80._biblia/23_isaias/is_65">isaías 65 ◀</a> | <a href="/isaias">isaías</a> | <a href="/80._biblia/24_jeremias/jr_01">▶ jeremias 1</a> | <a href="/80._biblia/23_isaias/is_66">⏭ isaías 66</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>is 66</h1><p><a href="/80._biblia/23_isaias/is_01">isaías 1 ⏮</a> | <a href="/80._biblia/23_isaias/is_65">isaías 65 ◀</a> | <a href="/isaias">isaías</a> | <a href="/80._biblia/24_jeremias/jr_01">▶ jeremias 1</a> | <a href="/80._biblia/23_isaias/is_66">⏭ isaías 66</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Assim diz o Senhor: &quot;O céu é o meu trono, e a terra, o estrado dos meus pés. Que espécie de casa vocês me edificarão? É este o meu lugar de descanso?</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -103,14 +95,291 @@
 <p>&quot;Sairão e verão os cadáveres dos que se rebelaram contra mim; o seu verme não morrerá, e o seu fogo não se apagará, e causarão repugnância a toda a humanidade. &quot;</p>
 <p><a href="/80._biblia/23_isaias/is_01">isaías 1 ⏮</a> | <a href="/80._biblia/23_isaias/is_65">isaías 65 ◀</a> | <a href="/isaias">isaías</a> | <a href="/80._biblia/24_jeremias/jr_01">▶ jeremias 1</a> | <a href="/80._biblia/23_isaias/is_66">⏭ isaías 66</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 02.md">../obsidian/80. Bíblia/23 isaías/is 02.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 01.md">../obsidian/80. Bíblia/23 isaías/is 01.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 04.md">../obsidian/80. Bíblia/23 isaías/is 04.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 05.md">../obsidian/80. Bíblia/23 isaías/is 05.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 06.md">../obsidian/80. Bíblia/23 isaías/is 06.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 03.md">../obsidian/80. Bíblia/23 isaías/is 03.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 10.md">../obsidian/80. Bíblia/23 isaías/is 10.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 09.md">../obsidian/80. Bíblia/23 isaías/is 09.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 08.md">../obsidian/80. Bíblia/23 isaías/is 08.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 07.md">../obsidian/80. Bíblia/23 isaías/is 07.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 14.md">../obsidian/80. Bíblia/23 isaías/is 14.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 13.md">../obsidian/80. Bíblia/23 isaías/is 13.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 12.md">../obsidian/80. Bíblia/23 isaías/is 12.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 11.md">../obsidian/80. Bíblia/23 isaías/is 11.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 15.md">../obsidian/80. Bíblia/23 isaías/is 15.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 17.md">../obsidian/80. Bíblia/23 isaías/is 17.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 16.md">../obsidian/80. Bíblia/23 isaías/is 16.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 18.md">../obsidian/80. Bíblia/23 isaías/is 18.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 21.md">../obsidian/80. Bíblia/23 isaías/is 21.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 19.md">../obsidian/80. Bíblia/23 isaías/is 19.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 22.md">../obsidian/80. Bíblia/23 isaías/is 22.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 20.md">../obsidian/80. Bíblia/23 isaías/is 20.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 23.md">../obsidian/80. Bíblia/23 isaías/is 23.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 26.md">../obsidian/80. Bíblia/23 isaías/is 26.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 24.md">../obsidian/80. Bíblia/23 isaías/is 24.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 25.md">../obsidian/80. Bíblia/23 isaías/is 25.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 27.md">../obsidian/80. Bíblia/23 isaías/is 27.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 28.md">../obsidian/80. Bíblia/23 isaías/is 28.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 29.md">../obsidian/80. Bíblia/23 isaías/is 29.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 30.md">../obsidian/80. Bíblia/23 isaías/is 30.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 33.md">../obsidian/80. Bíblia/23 isaías/is 33.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 31.md">../obsidian/80. Bíblia/23 isaías/is 31.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 32.md">../obsidian/80. Bíblia/23 isaías/is 32.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 34.md">../obsidian/80. Bíblia/23 isaías/is 34.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 35.md">../obsidian/80. Bíblia/23 isaías/is 35.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 38.md">../obsidian/80. Bíblia/23 isaías/is 38.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 37.md">../obsidian/80. Bíblia/23 isaías/is 37.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 36.md">../obsidian/80. Bíblia/23 isaías/is 36.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 40.md">../obsidian/80. Bíblia/23 isaías/is 40.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 42.md">../obsidian/80. Bíblia/23 isaías/is 42.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 39.md">../obsidian/80. Bíblia/23 isaías/is 39.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 41.md">../obsidian/80. Bíblia/23 isaías/is 41.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 43.md">../obsidian/80. Bíblia/23 isaías/is 43.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 46.md">../obsidian/80. Bíblia/23 isaías/is 46.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 45.md">../obsidian/80. Bíblia/23 isaías/is 45.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 44.md">../obsidian/80. Bíblia/23 isaías/is 44.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 48.md">../obsidian/80. Bíblia/23 isaías/is 48.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 50.md">../obsidian/80. Bíblia/23 isaías/is 50.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 49.md">../obsidian/80. Bíblia/23 isaías/is 49.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 47.md">../obsidian/80. Bíblia/23 isaías/is 47.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 54.md">../obsidian/80. Bíblia/23 isaías/is 54.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 51.md">../obsidian/80. Bíblia/23 isaías/is 51.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 52.md">../obsidian/80. Bíblia/23 isaías/is 52.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 53.md">../obsidian/80. Bíblia/23 isaías/is 53.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 55.md">../obsidian/80. Bíblia/23 isaías/is 55.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 57.md">../obsidian/80. Bíblia/23 isaías/is 57.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 56.md">../obsidian/80. Bíblia/23 isaías/is 56.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 58.md">../obsidian/80. Bíblia/23 isaías/is 58.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 61.md">../obsidian/80. Bíblia/23 isaías/is 61.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 62.md">../obsidian/80. Bíblia/23 isaías/is 62.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 60.md">../obsidian/80. Bíblia/23 isaías/is 60.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 59.md">../obsidian/80. Bíblia/23 isaías/is 59.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 63.md">../obsidian/80. Bíblia/23 isaías/is 63.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 64.md">../obsidian/80. Bíblia/23 isaías/is 64.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 65.md">../obsidian/80. Bíblia/23 isaías/is 65.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/23 isaías/is 66.md">../obsidian/80. Bíblia/23 isaías/is 66.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/24 jeremias/jr 01.md">../obsidian/80. Bíblia/24 jeremias/jr 01.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

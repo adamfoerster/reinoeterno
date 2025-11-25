@@ -166,6 +166,29 @@ module.exports = async function (eleventyConfig) {
     return map;
   });
 
+  // Backlinks collection
+  eleventyConfig.addCollection("backlinks", function (collectionApi) {
+    const backlinks = [];
+    collectionApi.getAll().forEach(page => {
+      if (!page.data.published || page.data.published === false) return;
+      try {
+        const fileContent = fs.readFileSync(page.inputPath, "utf8");
+        const regex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+        let match;
+        while ((match = regex.exec(fileContent)) !== null) {
+          const target = match[1].trim();
+          let url = slugifyKeep(target);
+          if (!url.endsWith("/")) url += "/";
+          if (!backlinks[url]) backlinks[url] = new Set();
+          backlinks[url].add(page.inputPath);
+        }
+      } catch (e) {
+        console.warn(`[backlinks] Error reading file ${page.inputPath}:`, e);
+      }
+    });
+    return backlinks;
+  });
+
   // ---- Normalização de tags ----
   eleventyConfig.addCollection("tagList", function (collectionApi) {
     let tagSet = new Set();

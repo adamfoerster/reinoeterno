@@ -1,69 +1,62 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>023. Ambrosiastro</h1>📆 Quando: Século IV<br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a><br /><p>Ambrosiastro é o nome dado por estudiosos a um escritor cristão anônimo do século IV, que produziu um importante comentário sobre as Epístolas de Paulo. Por muito tempo, esses escritos foram atribuídos a Santo Ambrósio de Milão, mas a análise histórica e textual mostrou que o verdadeiro autor permanece desconhecido, sendo chamado então de “Ambrosiastro” (ou “Pseudo-Ambrósio”).</p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>023. Ambrosiastro</h1>📆 Quando: Século IV<br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a><br /><p>Ambrosiastro é o nome dado por estudiosos a um escritor cristão anônimo do século IV, que produziu um importante comentário sobre as Epístolas de Paulo. Por muito tempo, esses escritos foram atribuídos a Santo Ambrósio de Milão, mas a análise histórica e textual mostrou que o verdadeiro autor permanece desconhecido, sendo chamado então de “Ambrosiastro” (ou “Pseudo-Ambrósio”).</p>
 <p>A obra do Ambrosiastro é valiosa para o estudo do cristianismo primitivo, especialmente porque reflete uma visão teológica prática e menos influenciada pelas formulações dogmáticas das controvérsias posteriores. Ele defendia uma interpretação literal das Escrituras e abordava questões teológicas como a graça, o pecado original, o livre-arbítrio e a relação entre fé e obras. Em suas doutrinas, o Ambrosiastro acreditava na depravação humana devido ao pecado original, mas atribuía grande valor ao livre-arbítrio, entendendo que a graça de Deus era essencial para a salvação, sem excluir a cooperação humana.</p>
 <p>Tanto <a href="/026._agostinho_de_hipona">026. Agostinho de Hipona</a> quanto <a href="/pelagio">Pelágio</a> fizeram uso das obras de Ambrosiastro.</p>
 
-      <div class="article-footer">
-        👨‍💼 Adam Foerster<br />
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      👨‍💼 Adam Foerster<br />
+    </div>
     
-  </body>
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

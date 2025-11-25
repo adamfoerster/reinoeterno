@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>084. Perspectivas da Criação</h1>✍🏻 <a href="https://youtu.be/f2zOiTvASaM?list=TLGGVKWh0qdeINAwODExMjAyNQ">https://youtu.be/f2zOiTvASaM?list=TLGGVKWh0qdeINAwODExMjAyNQ</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p>Existem diversas linhas interpretativas que os cristãos adotam para entender o Livro de Gênesis e os relatos da Criação, mesmo entre aqueles que consideram a Bíblia como a Palavra de Deus, infalível e autoritária. O debate não é sobre a veracidade do texto, mas sobre o seu <strong>significado</strong>.</p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>084. Perspectivas da Criação</h1>✍🏻 <a href="https://youtu.be/f2zOiTvASaM?list=TLGGVKWh0qdeINAwODExMjAyNQ">https://youtu.be/f2zOiTvASaM?list=TLGGVKWh0qdeINAwODExMjAyNQ</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p>Existem diversas linhas interpretativas que os cristãos adotam para entender o Livro de Gênesis e os relatos da Criação, mesmo entre aqueles que consideram a Bíblia como a Palavra de Deus, infalível e autoritária. O debate não é sobre a veracidade do texto, mas sobre o seu <strong>significado</strong>.</p>
 <p>A seguir estão listadas cerca de dez interpretações diferentes, que podem ser agrupadas em visões mais literais/concordistas (que buscam paralelos históricos e científicos) e visões não-concordistas (que priorizam a mensagem teológica):</p>
 <h2 id="1._criacionismo_da_terra_jovem_(young_earth_creationism)" tabindex="-1">1. Criacionismo da Terra Jovem (Young Earth Creationism)</h2>
 <p>Esta é a perspectiva de que a Terra foi criada em <strong>sete dias literais de 24 horas</strong>. Esta visão combina os sete dias literais da criação com as genealogias de Gênesis, vistas como uma cadeia ininterrupta de idades literais, resultando na criação do mundo há cerca de <strong>6.000 a 10.000 anos</strong>.</p>
@@ -100,14 +92,15 @@
 • O desafio desta visão é determinar quais partes de Gênesis são historicamente literais e quais são mais arquétipos. Pode ser compatível com a criação da Terra Antiga e com a evolução, mas não depende dela.</p>
 <p>É importante notar que crentes genuínos e salvos se encaixam em todas essas categorias. Embora nem todas as visões possam estar igualmente corretas, a aceitação de uma delas não determina a salvação, e o foco principal de Gênesis é a mensagem teológica.</p>
 
-      <div class="article-footer">
-        👨‍💼 Mike Winger<br />
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      👨‍💼 Mike Winger<br />
+    </div>
     
-  </body>
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

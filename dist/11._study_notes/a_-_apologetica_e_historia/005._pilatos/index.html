@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      005. Pilatos - Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    005. Pilatos - Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>005. Pilatos</h1>📇 Referências: <a href="/80._biblia/42_lucas/lc_13#1">Lc 13:1</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><div class="callout callout-bible">
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>005. Pilatos</h1>📇 Referências: <a href="/80._biblia/42_lucas/lc_13#1">Lc 13:1</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><div class="callout callout-bible">
 <h3 class="callout-title"><a href="https://www.biblegateway.com/passage/?search=Lucas+13:1&amp;version=almeida">Lucas 13:1 - ALMEIDA</a></h3><p></p>
 <ol>
 <li>Ora, naquele mesmo tempo estavam presentes alguns que lhe falavam dos galileus cujo sangue Pilatos misturara com os sacrifícios deles.</li>
@@ -61,14 +53,15 @@
 <p>Nesta passagem é relatado que alguns galileus transgressores da lei foram a Jerusalém para fazer sacrifícios. A proximidade do altar deveria ser o lugar mais seguro para um judeu, pois os romanos não poderiam entrar lá. Mesmo assim, Pilatos invade o Templo durante o sacrifício, profanando-o pela presença estrangeira e pelo derramamento de sangue. O Templo de Jerusalém continha um sistema de comportas que inundavam o átrio para lavar o sangue dos sacrifícios, mas dessa vez sangue humano teve que ser lavado junto.</p>
 <p>É possível que aqueles que contaram essa estória para Jesus criam que alguém que sofreu um destino tão terrível num lugar tão santo deveria ser profundamente malvado e sua execução representaria a recusa de Deus em receber seus sacrifícios.</p>
 
-      <div class="article-footer">
-        👨‍💼 Adam Foerster<br />
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      👨‍💼 Adam Foerster<br />
+    </div>
     
-  </body>
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>1sm 01</h1><p><a href="/80._biblia/09_1_samuel/1sm_01">o primeiro livro de samuel 1 ⏮</a> | <a href="/80._biblia/08_rute/rt_04">rute 4 ◀</a> | <a href="/o_primeiro_livro_de_samuel">o primeiro livro de samuel</a> | <a href="/80._biblia/09_1_samuel/1sm_02">▶ o primeiro livro de samuel 2</a> | <a href="/80._biblia/09_1_samuel/1sm_31">⏭ o primeiro livro de samuel 31</a></p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>1sm 01</h1><p><a href="/80._biblia/09_1_samuel/1sm_01">o primeiro livro de samuel 1 ⏮</a> | <a href="/80._biblia/08_rute/rt_04">rute 4 ◀</a> | <a href="/o_primeiro_livro_de_samuel">o primeiro livro de samuel</a> | <a href="/80._biblia/09_1_samuel/1sm_02">▶ o primeiro livro de samuel 2</a> | <a href="/80._biblia/09_1_samuel/1sm_31">⏭ o primeiro livro de samuel 31</a></p>
 <h6 id="1" tabindex="-1">1</h6>
 <p>Havia certo homem de Ramataim, zufita, dos montes de Efraim, chamado Elcana, filho de Jeroão, neto de Eliú e bisneto de Toú, filho do efraimita Zufe.</p>
 <h6 id="2" tabindex="-1">2</h6>
@@ -111,14 +103,147 @@
 <p>Por isso, agora, eu o dedico ao Senhor. Por toda a sua vida será dedicado ao Senhor&quot;. E ali adorou o Senhor.</p>
 <p><a href="/80._biblia/09_1_samuel/1sm_01">o primeiro livro de samuel 1 ⏮</a> | <a href="/80._biblia/08_rute/rt_04">rute 4 ◀</a> | <a href="/o_primeiro_livro_de_samuel">o primeiro livro de samuel</a> | <a href="/80._biblia/09_1_samuel/1sm_02">▶ o primeiro livro de samuel 2</a> | <a href="/80._biblia/09_1_samuel/1sm_31">⏭ o primeiro livro de samuel 31</a></p>
 
-      <div class="article-footer">
-        <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
     
-  </body>
+    <hr />
+    <div class="backlinks">
+      <h3>Links para esta página</h3>
+      <ul>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 03.md">../obsidian/80. Bíblia/09 1 samuel/1sm 03.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 01.md">../obsidian/80. Bíblia/09 1 samuel/1sm 01.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/08 rute/rt 04.md">../obsidian/80. Bíblia/08 rute/rt 04.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 02.md">../obsidian/80. Bíblia/09 1 samuel/1sm 02.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 04.md">../obsidian/80. Bíblia/09 1 samuel/1sm 04.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 06.md">../obsidian/80. Bíblia/09 1 samuel/1sm 06.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 07.md">../obsidian/80. Bíblia/09 1 samuel/1sm 07.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 05.md">../obsidian/80. Bíblia/09 1 samuel/1sm 05.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 08.md">../obsidian/80. Bíblia/09 1 samuel/1sm 08.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 09.md">../obsidian/80. Bíblia/09 1 samuel/1sm 09.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 11.md">../obsidian/80. Bíblia/09 1 samuel/1sm 11.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 10.md">../obsidian/80. Bíblia/09 1 samuel/1sm 10.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 15.md">../obsidian/80. Bíblia/09 1 samuel/1sm 15.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 12.md">../obsidian/80. Bíblia/09 1 samuel/1sm 12.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 14.md">../obsidian/80. Bíblia/09 1 samuel/1sm 14.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 13.md">../obsidian/80. Bíblia/09 1 samuel/1sm 13.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 17.md">../obsidian/80. Bíblia/09 1 samuel/1sm 17.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 16.md">../obsidian/80. Bíblia/09 1 samuel/1sm 16.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 19.md">../obsidian/80. Bíblia/09 1 samuel/1sm 19.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 18.md">../obsidian/80. Bíblia/09 1 samuel/1sm 18.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 23.md">../obsidian/80. Bíblia/09 1 samuel/1sm 23.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 21.md">../obsidian/80. Bíblia/09 1 samuel/1sm 21.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 22.md">../obsidian/80. Bíblia/09 1 samuel/1sm 22.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 25.md">../obsidian/80. Bíblia/09 1 samuel/1sm 25.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 27.md">../obsidian/80. Bíblia/09 1 samuel/1sm 27.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 26.md">../obsidian/80. Bíblia/09 1 samuel/1sm 26.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 24.md">../obsidian/80. Bíblia/09 1 samuel/1sm 24.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 29.md">../obsidian/80. Bíblia/09 1 samuel/1sm 29.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 31.md">../obsidian/80. Bíblia/09 1 samuel/1sm 31.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 30.md">../obsidian/80. Bíblia/09 1 samuel/1sm 30.md</a>
+        </li>
+        
+        <li>
+          <a href="../obsidian/80. Bíblia/09 1 samuel/1sm 28.md">../obsidian/80. Bíblia/09 1 samuel/1sm 28.md</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>

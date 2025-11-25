@@ -1,58 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Reino Eterno Online
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("theme-toggle")
-        if (!btn) return // guarda contra null
 
-        btn.onclick = () => {
-          document.body.classList.toggle("dark")
-          btn.textContent = document.body.classList.contains("dark")
-            ? "☀️"
-            : "🌙"
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light",
-          )
-        }
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
 
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark")
-          btn.textContent = "☀️"
-        }
-      })
-    </script>
-  </head>
-  <body>
-    <header>
-      <a href="/">
-        <img
-          src="/90._assets/reinoeterno-logo.png"
-          alt="Reino Eterno - Online"
-          loading="lazy"
-        />
-        <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1></a
-      >
-    </header>
-    <main><h1>Reuniões de Oração - W. Nee</h1>🔖 <a href="/90._assets/tags/ortopraxia/" class="tag-link">Ortopraxia</a><br /><p>A reunião de oração também é uma reunião importante. Cada tipo de reunião tem sua característica particular. O testemunho que Deus deseja que mantenhamos na Terra deve ser cumprido em conjunto, pregando o evangelho, partindo o pão e orando juntos. As reuniões de oração podem ser difíceis e fáceis. Os novos crentes precisam aprender sobre esse tipo de reunião.</p>
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>Reuniões de Oração - W. Nee</h1>🔖 <a href="/90._assets/tags/ortopraxia/" class="tag-link">Ortopraxia</a><br /><p>A reunião de oração também é uma reunião importante. Cada tipo de reunião tem sua característica particular. O testemunho que Deus deseja que mantenhamos na Terra deve ser cumprido em conjunto, pregando o evangelho, partindo o pão e orando juntos. As reuniões de oração podem ser difíceis e fáceis. Os novos crentes precisam aprender sobre esse tipo de reunião.</p>
 <h1 id="1._em_concordancia" tabindex="-1">1. EM CONCORDÂNCIA</h1>
 <p>Um requisito fundamental para irmãos e irmãs orarem juntos é estarem em concordância. O Senhor nos diz em Mateus 18 que devemos estar em concordância na Terra. Antes e no dia de Pentecostes, os cento e vinte crentes oraram em concordância (Atos 4:1-2).</p>
 <p>Portanto, a primeira condição de uma reunião de oração é ser unânimes em coração e mente. Como as pessoas podem se reunir para orar se cada um tem sua própria mente? A palavra “concordar” em Mateus é extremamente importante. O Senhor promete que: “Se dois de vocês concordarem na terra acerca de qualquer coisa que pedirem, isso lhes será feito…” (v. 19).</p>
@@ -90,14 +82,15 @@
 <p>Embora a oração pública seja difícil e tenda a ser falsa, longa e agradável aos homens, as orações nas reuniões de oração são mais fortes do que as orações particulares no que diz respeito a realizar coisas. Deus pode responder às orações da igreja muito mais do que às orações pessoais. O problema hoje, porém, é que há mais respostas para orações individuais do que para orações coletivas. Por que isso acontece?</p>
 <p>Porque há tanta falsidade, confusão e palavras vãs nas orações coletivas. Como Deus se deleitaria em responder às orações de Seus filhos se eles orassem juntos com simplicidade e em unanimidade!</p>
 
-      <div class="article-footer">
-        👨‍💼 Watchman Nee<br />
-      </div>
-    </main>
-    <footer>
-      <p>Adam Foerster</p>
-      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-    </footer>
+    <div class="article-footer">
+      👨‍💼 Watchman Nee<br />
+    </div>
     
-  </body>
+  </main>
+  <footer>
+    <p>Adam Foerster</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
 </html>
