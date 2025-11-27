@@ -308,6 +308,14 @@ module.exports = async function (eleventyConfig) {
       })
       .join(", ");
   });
+  eleventyConfig.addFilter("sortByTitle", function (posts) {
+    if (!posts || !Array.isArray(posts)) return posts;
+    return posts.slice().sort((a, b) => {
+      const titleA = (a.data.title || a.fileSlug || "").toLowerCase();
+      const titleB = (b.data.title || b.fileSlug || "").toLowerCase();
+      return titleA.localeCompare(titleB, 'pt');
+    });
+  });
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: data => {
       if (data.published === false || !data.published) {
