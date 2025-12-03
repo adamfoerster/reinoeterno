@@ -174,19 +174,28 @@ module.exports = async function (eleventyConfig) {
       try {
         const fileContent = fs.readFileSync(page.inputPath, "utf8");
         const regex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+
         let match;
         while ((match = regex.exec(fileContent)) !== null) {
           const target = match[1].trim();
           let url = slugifyKeep(target);
           if (!url.endsWith("/")) url += "/";
           if (!backlinks[url]) backlinks[url] = new Set();
-          backlinks[url].add(page.inputPath);
+          backlinks[url].add(slugifyKeep(page.inputPath.substring(obsidianVault.length).replaceAll(".md", "")));
         }
       } catch (e) {
         console.warn(`[backlinks] Error reading file ${page.inputPath}:`, e);
       }
     });
-    return backlinks;
+    return backlinks.sort((a, b) => {
+      if (a.url > b.url) {
+        return 1;
+      }
+      if (a.url < b.url) {
+        return -1;
+      }
+      return 0;
+    });
   });
 
   // ---- Normalização de tags ----
