@@ -189,7 +189,8 @@ ul li::before {
   content: "•";
   color: var(--accent-color);
   font-weight: bold;
-  display: inline-block;
+  display: inline;
+  position: absolute;
   width: 1em;
   margin-left: -1.2em;
 }
@@ -207,7 +208,8 @@ ol li::before {
   content: counter(list-counter) ".";
   color: var(--accent-color);
   font-weight: 600;
-  display: inline-block;
+  display: inline;
+  position: absolute;
   width: 1.4em;
   margin-left: -1.6em;
   text-align: right;
