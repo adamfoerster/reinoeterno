@@ -1,1 +1,1 @@
-/mnt/c/Users/Adam/Documents/MegaSync/obisidian-vault/index.md
+../../../Documents/megasync/obisidian-vault/index.md
