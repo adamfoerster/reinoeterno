@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
+
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>jó 28(1)</h1><p>Onde se pode achar a sabedoria</p>
+<p>1“Certamente, existem minas de prata</p>
+<p>e locais onde se refina ouro.</p>
+<p>2O ferro é extraído da terra,</p>
+<p>e do minério se funde o cobre.</p>
+<p>3O homem dá fim à escuridão;</p>
+<p>vasculha os recônditos mais remotos</p>
+<p>em busca de minério nas mais densas trevas.</p>
+<p>4Ele cava um poço longe de locais habitados,</p>
+<p>em lugares intocados por pés humanos;</p>
+<p>longe de todos, ele se pendura e balança.</p>
+<p>5A terra, da qual vem o alimento,</p>
+<p>é revolvida embaixo como que pelo fogo;</p>
+<p>6das suas rochas, saem safiras,</p>
+<p>e o seu pó contém pepitas de ouro.</p>
+<p>7Nenhuma ave de rapina conhece aquele caminho oculto,</p>
+<p>e os olhos de nenhum falcão o viram.</p>
+<p>8Nenhuma fera altiva pôs nele os pés,</p>
+<p>e nenhum leão ronda por ali.</p>
+<p>9As mãos dos homens atacam a dura rocha</p>
+<p>e transtornam as raízes das montanhas.</p>
+<p>10Cavam túneis através da rocha,</p>
+<p>e os seus olhos enxergam todos os tesouros dali.</p>
+<p>11Eles vasculham as nascentes dos rios</p>
+<p>e trazem à luz coisas ocultas.</p>
+<p>12“Mas onde se pode achar a sabedoria?</p>
+<p>Onde habita o entendimento?</p>
+<p>13O homem não percebe o valor da sabedoria;</p>
+<p>ela não se encontra na terra dos viventes.</p>
+<p>14O abismo diz: ‘Em mim não está’;</p>
+<p>o mar diz: ‘Não está comigo’.</p>
+<p>15Não pode ser comprada,</p>
+<p>mesmo com o ouro mais puro,</p>
+<p>nem se pode pesar o seu preço em prata.</p>
+<p>16Não pode ser comprada</p>
+<p>nem com o ouro puro de Ofir,</p>
+<p>nem com o precioso ônix,</p>
+<p>nem com safiras.</p>
+<p>17O ouro e o cristal não se comparam com ela,</p>
+<p>e é impossível tê‑la em troca de joias de ouro.</p>
+<p>18O coral e o jaspe nem merecem menção;</p>
+<p>o preço da sabedoria ultrapassa o dos rubis.</p>
+<p>19O topázio de Cuxe não se compara com ela;</p>
+<p>nem com ouro puro se compra a sabedoria!</p>
+<p>20“De onde vem, então, a sabedoria?</p>
+<p>Onde habita o entendimento?</p>
+<p>21Escondida está dos olhos de toda criatura viva,</p>
+<p>até das aves dos céus.</p>
+<p>22A Destruição e a Morte dizem:</p>
+<p>‘Aos nossos ouvidos só chegou um leve rumor seu’.</p>
+<p>23Deus conhece o caminho até ela;</p>
+<p>só ele sabe onde ela habita,</p>
+<p>24pois enxerga os confins da terra</p>
+<p>e vê tudo o que há debaixo dos céus.</p>
+<p>25Quando ele determinou a força do vento</p>
+<p>e estabeleceu a medida exata para as águas,</p>
+<p>26quando estabeleceu um limite para a chuva</p>
+<p>e o caminho para a tempestade trovejante,</p>
+<p>27ele olhou para a sabedoria e a avaliou;</p>
+<p>confirmou‑a e a pôs à prova.</p>
+<p>28Disse, então, ao homem:</p>
+<p>‘No temor do Senhor está a sabedoria,</p>
+<p>e evitar o mal é ter entendimento’ ”.</p>
+
+    <div class="article-footer">
+      <br />Bíblia Sagrada, Nova Versão Internacional®, NVI®  © 1993, 2000, 2011, 2023 por Biblica, Inc. Todos os direitos reservados mundialmente.
+    </div>
+    
+  </main>
+  <footer>
+    <p>AF</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
+</html>
