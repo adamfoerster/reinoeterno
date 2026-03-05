@@ -168,7 +168,7 @@ module.exports = async function (eleventyConfig) {
 
   // Backlinks collection
   eleventyConfig.addCollection("backlinks", function (collectionApi) {
-    const backlinks = [];
+    const backlinks = {};
     collectionApi.getAll().forEach(page => {
       if (!page.data.published || page.data.published === false) return;
       try {
@@ -178,7 +178,9 @@ module.exports = async function (eleventyConfig) {
         let match;
         while ((match = regex.exec(fileContent)) !== null) {
           const target = match[1].trim();
-          let url = slugifyKeep(target);
+          // Remove anchors from the target to get the base page url
+          const targetBase = target.split("#")[0];
+          let url = slugifyKeep(targetBase);
           if (!url.endsWith("/")) url += "/";
           if (!backlinks[url]) backlinks[url] = new Set();
           backlinks[url].add(slugifyKeep(page.inputPath.substring(obsidianVault.length).replaceAll(".md", "")));
@@ -187,15 +189,7 @@ module.exports = async function (eleventyConfig) {
         console.warn(`[backlinks] Error reading file ${page.inputPath}:`, e);
       }
     });
-    return backlinks.sort((a, b) => {
-      if (a.url > b.url) {
-        return 1;
-      }
-      if (a.url < b.url) {
-        return -1;
-      }
-      return 0;
-    });
+    return backlinks;
   });
 
   // ---- Normalização de tags ----
