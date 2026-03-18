@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
+
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>099. Gottschalk de Orbais</h1>📆 Quando: século IX<br />🧭 Onde: Frância Ocidental (na atual França)<br />⚔️ Refuta: <a href="/livre-arbitrio">Livre-Arbítrio</a><br />🔖 <a href="/90._assets/tags/notas_de_estudo/" class="tag-link">Notas_de_estudo</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p><strong>Época e região:</strong><br>
+Gottschalk de Orbais (c. 804–c. 868) foi um monge e teólogo do período carolíngio, ativo principalmente na <strong>Frância Ocidental</strong> (atual França) durante o século IX. Ele esteve ligado a mosteiros como Orbais e Corbie, em um contexto marcado por debates teológicos intensos sob o Império Carolíngio.</p>
+<p><strong>Resumo histórico:</strong><br>
+Gottschalk nasceu por volta de 804, possivelmente na Saxônia, e foi oferecido ainda criança à vida monástica (oblato). Mais tarde tentou deixar o mosteiro, mas acabou permanecendo na vida religiosa. Tornou-se conhecido por suas ideias sobre a <a href="/predestinacao">predestinação</a>, que defendia com grande rigor. Por volta de 848–849, suas doutrinas foram condenadas em sínodos como o de <strong>Quierzy (849)</strong>, sob a liderança do arcebispo Hincmar de Reims. Ele foi publicamente castigado (inclusive com açoites) e forçado a queimar seus escritos.</p>
+<p>Após sua condenação, Gottschalk foi preso no mosteiro de Hautvillers, onde permaneceu até sua morte por volta de 868. Mesmo encarcerado, continuou escrevendo e defendendo suas posições, influenciando debates posteriores sobre graça, predestinação e livre-arbítrio.</p>
+<h2 id="posicoes_teologicas_e_filosoficas" tabindex="-1">Posições teológicas e filosóficas</h2>
+<p><strong>Predestinação (dupla predestinação):</strong><br>
+Gottschalk é mais conhecido por sua defesa da <strong>dupla predestinação</strong> — a ideia de que Deus, desde a eternidade, predestinou alguns para a salvação e outros para a condenação. Ele baseava-se fortemente em <a href="/026._agostinho_de_hipona">Agostinho de Hipona</a>, interpretando-o de forma mais rígida do que muitos de seus contemporâneos.</p>
+<p><strong>Justificação e soteriologia:</strong><br>
+Sua visão enfatizava a <strong>soberania absoluta da graça divina</strong>, com pouca ou nenhuma participação do livre-arbítrio humano na salvação. Nesse sentido, sua posição é frequentemente vista como um precursor de correntes posteriores como o calvinismo. Sua teologia tende a ser <strong>monergista radical</strong> (Deus como único agente na salvação).</p>
+<p><strong>Escatologia:</strong><br>
+Gottschalk mantinha uma visão tradicional agostiniana:</p>
+<ul>
+<li>existência de condenação eterna para os réprobos (sem aniquilacionismo)</li>
+<li>juízo final irrevogável</li>
+<li>sem grandes desenvolvimentos especulativos escatológicos além disso</li>
+</ul>
+<p><strong>Estado intermediário (Hades/Sheol):</strong><br>
+Ele seguia a tradição latina ocidental:</p>
+<ul>
+<li>consciência após a morte</li>
+<li>distinção entre destino dos salvos e dos condenados</li>
+<li>alinhado com o pensamento agostiniano predominante</li>
+</ul>
+<p><strong>Igreja institucional e sacramentos:</strong><br>
+Gottschalk não foi um reformador e não rejeitou a Igreja institucional. Pelo contrário:</p>
+<ul>
+<li>aceitava os sacramentos e a autoridade da Igreja</li>
+<li>seu conflito foi <strong>intraeclesiástico</strong>, especialmente contra Hincmar de Reims</li>
+<li>sua condenação mostra os limites do debate teológico tolerado na época</li>
+</ul>
+<h2 id="influencia_e_legado" tabindex="-1">Influência e legado</h2>
+<p>Apesar de condenado, Gottschalk teve um impacto duradouro. Seus escritos influenciaram debates medievais sobre graça e predestinação e foram redescobertos na época da Reforma. Reformadores como João Calvino viram nele um precedente histórico para a doutrina da predestinação.</p>
+<p>Ele também foi defendido por alguns contemporâneos, como <a href="/098._ratramno_de_corbie">Ratramno de Corbie</a>, que escreveram em seu favor contra seus críticos.</p>
+
+    <div class="article-footer">
+      👨‍💼 Adam Foerster<br />
+    </div>
+    
+  </main>
+  <footer>
+    <p>AF</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
+</html>

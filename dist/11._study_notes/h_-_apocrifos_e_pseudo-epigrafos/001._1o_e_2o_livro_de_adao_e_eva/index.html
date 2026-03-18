@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    1o e 2o livro de Adão e Eva - Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
+
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>1o e 2o livro de Adão e Eva</h1>📆 Quando: ca. século VI<br />🔖 <a href="/90._assets/tags/livros_e_citacoes/" class="tag-link">Livros_e_Citações</a>, <a href="/90._assets/tags/cosmologia/" class="tag-link">Cosmologia</a>, <a href="/90._assets/tags/apocrifos/" class="tag-link">Apócrifos</a><br /><h1 id="1o_e_2o_livro_de_adao_e_eva_(ca._6_sec)" tabindex="-1">1⁠º e 2⁠º livro de Adão e Eva (ca. 6 séc)</h1>
+<p>Livro ge`ez etíope que conta a história de Adão e Eva logo após a queda. Parte da Caverna dos Tesouros (siríaco).</p>
+<p>Claramente escrito por cristãos que conheciam o Gênesis e o Novo Testamento.</p>
+<p>Mesmo se excluirmos o fato de ninguém mencionar o livro antes do 6o século o feel da narrativa cai nos mesmos erros que outros apócrifos. Tenta explicar demais as coisas. Uma narrativa repetitiva e arrastada…</p>
+<p>A obra tem dois lados. Por um lado o autor demonstra um bom conhecimento das escrituras, interpretações sofisticadas de tipologias e uma Cristologia sólida mas ao mesmo tempo comete erros básicos na doutrina o que me leva a crer que este era um autor com pouco talento mas que a igreja síria ainda tinha um ensinamento sólido nesta época.</p>
+<p>Algumas heresias encontradas no texto:</p>
+<ul>
+<li>Adão e Eva se suicidam diversas vezes mas são trazidos de volta por Deus</li>
+<li>a matéria é vista como inferior e o ato de comer e beber é visto como uma corrupção, contrário a ordem de Deus que toda erva verde lhes seria por alimento</li>
+<li>o <a href="/100._ascetismo">ascetismo</a>, manifestado principalmente por ficar isolado na caverna jejuando e orando é tido em alta conta</li>
+<li>as relações sexuais são vistas negativamente mesmo no contexto do casamento e mesmo depois de finalmente ter filhos com Eva, Adão não a toca mais</li>
+<li>os corpos dos antepassados são velados continuamente na Caverna</li>
+<li>objetos usados por Adão se tornam relíquias e abençoam as pessoas pela sua mera presença</li>
+<li>parece que a crença no Céu e Inferno já estava se desenvolvendo</li>
+</ul>
+<p>Mostra que os cristãos do quinto século ainda criam em algumas coisas que se perderam mais tarde:</p>
+<ul>
+<li>que a criação de Adão foi 5500 anos antes de Cristo (5 dias e meio) e que portanto, a partir de 500dC começaria o sexto dia e Jesus voltaria e que o sétimo dia seria o Milênio.</li>
+<li>a natureza inocente de Adão é entendida como sua vestimenta, a qual ele perdeu quando pecou e ficou nú;</li>
+<li>o Diabo é colocado seguidamente como alguém que odeia Adão. É colocado como um anjo caído que tem o domínio sobre a Terra e o ser humano por causa da queda de Adão.</li>
+<li>o motivo da queda (tanto dos anjos como do homem) é entendido como querer ser igual a Deus (soberba)</li>
+<li>Satã e seus anjos tem relações com as mulheres descendentes de Caim, mostrando um meio termo entre a crença que os Filhos de Deus em Gn6 seriam anjos e a que diz que seriam os descendentes de Seth</li>
+</ul>
+
+    <div class="article-footer">
+      <br />
+    </div>
+    
+  </main>
+  <footer>
+    <p>AF</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
+</html>
