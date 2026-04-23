@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle")
+      if (!btn) return // guarda contra null
+
+      btn.onclick = () => {
+        document.body.classList.toggle("dark")
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙"
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        )
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark")
+        btn.textContent = "☀️"
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
+    </a>
+  </header>
+  <main><h1>2cr 27</h1><h6 id="1" tabindex="-1">1</h6>
+<p>Tinha Jotão vinte e cinco anos quando começou a reinar e reinou dezesseis anos em Jerusalém. Sua mãe chamava-se Jerusa, filha de Zadoque.</p>
+<h6 id="2" tabindex="-1">2</h6>
+<p>Ele fez o que era reto aos olhos de Jeová, conforme tudo o que tinha feito seu pai Uzias; todavia, não entrou no templo de Jeová. O povo ainda se corrompia.</p>
+<h6 id="3" tabindex="-1">3</h6>
+<p>Ele edificou a Porta Superior da Casa de Jeová e mandou fazer muitas obras sobre o muro de Ofel.</p>
+<h6 id="4" tabindex="-1">4</h6>
+<p>Também edificou cidades na região montanhosa de Judá e, nos bosques, edificou castelos e torres.</p>
+<h6 id="5" tabindex="-1">5</h6>
+<p>Ele também fez guerra contra o rei dos filhos de Amom e os venceu. No mesmo ano, os filhos de Amom deram-lhe cem talentos de prata, dez mil coros de trigo e dez mil de cevada. Isso lhe trouxeram os filhos de Amom também no segundo ano e no terceiro.</p>
+<h6 id="6" tabindex="-1">6</h6>
+<p>Tornou-se Jotão poderoso, porque ordenou os seus caminhos perante Jeová, seu Deus.</p>
+<h6 id="7" tabindex="-1">7</h6>
+<p>Ora, o resto dos atos de Jotão, e todas as suas guerras, e os seus caminhos, eis que estão escritos no Livro dos Reis de Israel e de Judá.</p>
+<h6 id="8" tabindex="-1">8</h6>
+<p>Tinha vinte e cinco anos quando começou a reinar e reinou dezesseis anos em Jerusalém.</p>
+<h6 id="9" tabindex="-1">9</h6>
+<p>Adormeceu Jotão com seus pais, e sepultaram-no na Cidade de Davi. Em lugar dele, reinou seu filho Acaz.</p>
+
+    <div class="article-footer">
+      <br />TB © 1917, 2010 Sociedade Bíblica do Brasil.
+    </div>
+    
+  </main>
+  <footer>
+    <p>AF</p>
+    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </footer>
+</body>
+
+</html>
