@@ -1,6 +1,7 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const slugifyLib = require("slugify");
+const yaml = require("js-yaml");
 
 const fs = require("fs");
 const path = require("path");
@@ -24,6 +25,14 @@ function slugifyKeep(str) {
 }
 
 module.exports = async function (eleventyConfig) {
+  // Strip Obsidian Templater syntax (<% %>) from frontmatter before Eleventy parses it,
+  // so files like template notes don't cause invalid date/field errors.
+  eleventyConfig.setFrontMatterParsingOptions({
+    engines: {
+      yaml: (s) => yaml.load(s.replace(/<%[\s\S]*?%>/g, "null")),
+    },
+  });
+
   const { default: markdownItCallouts } = await import("markdown-it-callouts");
   const markdownItFootnote = require("markdown-it-footnote");
 
