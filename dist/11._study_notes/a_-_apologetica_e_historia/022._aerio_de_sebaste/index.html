@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>022. Aerio de Sebaste</h1>📆 Quando: ca. 375<br />🧭 Onde: Ponto<br />⚔️ Refuta: <a href="/igreja_catolica">igreja católica</a>,<a href="/episcopado">episcopado</a>,<a href="/guarda_de_dias">guarda de dias</a>,<a href="/oracao_pelos_mortos">oração pelos mortos</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a><br /><p><strong>Aério de Sebaste</strong> (em grego: <em>Aerius</em>) foi um líder cristão do século IV conhecido principalmente por suas posições consideradas heréticas pela Igreja antiga. Ele atuou na região da Capadócia/Armênia (Sebaste ficava na atual Turquia) e é lembrado sobretudo por suas críticas à estrutura e às práticas da Igreja institucional.</p>
+
+  <main class="container"><article class="prose"><h1>022. Aerio de Sebaste</h1>📆 Quando: ca. 375<br />🧭 Onde: Ponto<br />⚔️ Refuta: <a href="/igreja_catolica">igreja católica</a>,<a href="/episcopado">episcopado</a>,<a href="/guarda_de_dias">guarda de dias</a>,<a href="/oracao_pelos_mortos">oração pelos mortos</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a><br /><p><strong>Aério de Sebaste</strong> (em grego: <em>Aerius</em>) foi um líder cristão do século IV conhecido principalmente por suas posições consideradas heréticas pela Igreja antiga. Ele atuou na região da Capadócia/Armênia (Sebaste ficava na atual Turquia) e é lembrado sobretudo por suas críticas à estrutura e às práticas da Igreja institucional.</p>
 <h2 id="contexto_historico" tabindex="-1">📍 Contexto histórico</h2>
 <p>Aério viveu aproximadamente no século IV, contemporâneo de figuras importantes como Eustácio de Sebaste (seu antigo amigo) e Epifânio de Salamina, que é nossa principal fonte sobre ele.</p>
 <p>Grande parte do que sabemos vem da obra <em>Panarion</em>, onde Epifânio lista e refuta diversas heresias — incluindo a de Aério.</p>
@@ -106,14 +92,20 @@
 <li>Pode ter sido <a href="/arius">Ariano</a></li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

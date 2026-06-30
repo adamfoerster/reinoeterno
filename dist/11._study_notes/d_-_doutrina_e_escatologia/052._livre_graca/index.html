@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>052. Livre Graça</h1>🔖 <a href="/90._assets/tags/doutrina_e_escatologia/" class="tag-link">Doutrina_e_Escatologia</a><br /><h1 id="livre_graca_(free_grace)" tabindex="-1">Livre Graça (<em>Free Grace</em>)</h1>
+
+  <main class="container"><article class="prose"><h1>052. Livre Graça</h1>🔖 <a href="/90._assets/tags/doutrina_e_escatologia/" class="tag-link">Doutrina_e_Escatologia</a><br /><h1 id="livre_graca_(free_grace)" tabindex="-1">Livre Graça (<em>Free Grace</em>)</h1>
 <p>O movimento <strong>Livre Graça</strong> (<em>Free Grace</em>) é uma corrente teológica evangélica que defende que a salvação é obtida exclusivamente pela fé em Jesus Cristo, sem qualquer exigência adicional — seja arrependimento como condição, comprometimento com o senhorio de Cristo, ou perseverança nas obras. A posição se opõe principalmente ao que seus defensores chamam de <strong>Salvação pelo Senhorio</strong> (<em>Lordship Salvation</em>), corrente que vê a submissão ao senhorio de Cristo como parte integrante da fé salvadora.</p>
 <h2 id="contexto_historico" tabindex="-1">Contexto histórico</h2>
 <p>O movimento ganhou forma sistemática a partir dos escritos de <strong>Zane C. Hodges</strong> (1932–2008), professor do Seminário Teológico de Dallas por muitos anos. Hodges foi o principal interlocutor teológico da corrente, desenvolvendo-a especialmente nos livros <em>The Gospel Under Siege</em> (1981) e <em>Absolutely Free!</em> (1989). Em resposta à crescente influência de John MacArthur e seu livro <em>The Gospel According to Jesus</em> (1988), a controvérsia foi formalizada publicamente.</p>
@@ -165,42 +151,48 @@
 </tbody>
 </table>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/050._bema_-_o_tribunal_de_cristo">/11._study_notes/d_-_doutrina_e_escatologia/050._bema_-_o_tribunal_de_cristo</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/justificacao_mediante_a_fe">/11._study_notes/d_-_doutrina_e_escatologia/justificacao_mediante_a_fe</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/m_-_notas_expositivas_e_miscelanea/040._d._m._panton">/11._study_notes/m_-_notas_expositivas_e_miscelanea/040._d._m._panton</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang">/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside">/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/050._bema_-_o_tribunal_de_cristo">/11._study_notes/d_-_doutrina_e_escatologia/050._bema_-_o_tribunal_de_cristo</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/justificacao_mediante_a_fe">/11._study_notes/d_-_doutrina_e_escatologia/justificacao_mediante_a_fe</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/m_-_notas_expositivas_e_miscelanea/040._d._m._panton">/11._study_notes/m_-_notas_expositivas_e_miscelanea/040._d._m._panton</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang">/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside">/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

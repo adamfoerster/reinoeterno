@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>046. Jan Hus</h1>📆 Quando: 1369-1415<br />🧭 Onde: Boêmia (atual República Checa)<br />⚔️ Refuta: <a href="/igreja_catolica">igreja católica</a><br />🔖 <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a>, <a href="/90._assets/tags/historia_da_igreja/" class="tag-link">História_da_Igreja</a><br /><p><strong>Jan Hus</strong> foi um reformador religioso, teólogo e pregador da Boêmia (atual República Tcheca), ativo no final da Idade Média, entre os séculos XIV e início do XV. Viveu principalmente em Praga, onde atuou como professor e depois reitor da Universidade Carolina de Praga. Influenciado pelas ideias de <a href="/11._study_notes/a_-_apologetica_e_historia/050._john_wycliffe_-_1350_-_english">John Wycliffe</a>, Hus passou a criticar abusos morais e doutrinários da Igreja. Em 1415, foi convocado ao Concílio de Constança, onde acabou condenado como herege e executado na fogueira em Constança.</p>
+
+  <main class="container"><article class="prose"><h1>046. Jan Hus</h1>📆 Quando: 1369-1415<br />🧭 Onde: Boêmia (atual República Checa)<br />⚔️ Refuta: <a href="/igreja_catolica">igreja católica</a><br />🔖 <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a>, <a href="/90._assets/tags/historia_da_igreja/" class="tag-link">História_da_Igreja</a><br /><p><strong>Jan Hus</strong> foi um reformador religioso, teólogo e pregador da Boêmia (atual República Tcheca), ativo no final da Idade Média, entre os séculos XIV e início do XV. Viveu principalmente em Praga, onde atuou como professor e depois reitor da Universidade Carolina de Praga. Influenciado pelas ideias de <a href="/11._study_notes/a_-_apologetica_e_historia/050._john_wycliffe_-_1350_-_english">John Wycliffe</a>, Hus passou a criticar abusos morais e doutrinários da Igreja. Em 1415, foi convocado ao Concílio de Constança, onde acabou condenado como herege e executado na fogueira em Constança.</p>
 <p>Hus ganhou notoriedade por suas pregações na Capela de Belém, em Praga, onde defendia a <a href="/11._study_notes/a_-_apologetica_e_historia/sola_scriptura">autoridade das Escrituras</a> acima das tradições humanas e denunciava a corrupção do clero, especialmente a venda de indulgências. Sua recusa em retratar suas posições levou à excomunhão e, posteriormente, à condenação formal. Sua <a href="/11._study_notes/a_-_apologetica_e_historia/105._o_julgamento_e_execucao_de_jan_hus">morte em 6 de julho de 1415</a> desencadeou as Guerras Hussitas (1419–1434), um movimento religioso e nacional que marcou profundamente a história da Boêmia e antecipou elementos da Reforma Protestante.</p>
 <h2 id="posicoes_teologicas_e_filosoficas" tabindex="-1">Posições teológicas e filosóficas</h2>
 <p>Teologicamente, Jan Hus defendia a supremacia da Bíblia como autoridade final (um precursor do princípio da <em>sola scriptura</em>). Ele não desenvolveu uma doutrina sistemática de <strong>justificação pela fé</strong> como seria articulada posteriormente por Martinho Lutero, mas enfatizava que a verdadeira Igreja é composta pelos eleitos e não meramente pela instituição visível — uma distinção importante entre igreja espiritual e institucional.</p>
@@ -58,26 +44,32 @@
 <li><a href="/predestinacao">Predestinação</a></li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/a_-_apologetica_e_historia/105._o_julgamento_e_execucao_de_jan_hus">/11._study_notes/a_-_apologetica_e_historia/105._o_julgamento_e_execucao_de_jan_hus</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/a_-_apologetica_e_historia/105._o_julgamento_e_execucao_de_jan_hus">/11._study_notes/a_-_apologetica_e_historia/105._o_julgamento_e_execucao_de_jan_hus</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>016. Tratamento de escravos</h1>📇 Referências: <a href="/80._biblia/02_exodo/ex_21#16">Ex 21:16</a>,<a href="/80._biblia/01_genesis/gn_01#26">Gn 1:26-27</a><br />✍🏻 <a href="https://www.youtube.com/watch?v=ZImmDmr8pxk">https://www.youtube.com/watch?v=ZImmDmr8pxk</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/objecoes_ao_cristianismo/" class="tag-link">Objeções_ao_Cristianismo</a><br /><h2 id="a_urgencia_do_debate_sobre_a_escravidao" tabindex="-1">A Urgência do Debate sobre a Escravidão</h2>
+
+  <main class="container"><article class="prose"><h1>016. Tratamento de escravos</h1>📇 Referências: <a href="/80._biblia/02_exodo/ex_21#16">Ex 21:16</a>,<a href="/80._biblia/01_genesis/gn_01#26">Gn 1:26-27</a><br />✍🏻 <a href="https://www.youtube.com/watch?v=ZImmDmr8pxk">https://www.youtube.com/watch?v=ZImmDmr8pxk</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/objecoes_ao_cristianismo/" class="tag-link">Objeções_ao_Cristianismo</a><br /><h2 id="a_urgencia_do_debate_sobre_a_escravidao" tabindex="-1">A Urgência do Debate sobre a Escravidão</h2>
 <p>A questão de se a Bíblia é pró-escravidão é um argumento significativo contra o cristianismo, especialmente por parte de críticos seculares, e revela divisões na forma como os cristãos interpretam a Bíblia e abordam questões sociais.</p>
 <p>YouTubers ateus e agnósticos comumente argumentam que a Bíblia endossa explicitamente a escravidão, particularmente no Antigo Testamento, e não a repudia no Novo Testamento.</p>
 <p>Críticos como Sam Harris e Mind Shift afirmam que a Bíblia não somente tolera, mas endossa e se beneficia da escravidão, distinguindo-a da mera servidão por contrato. Alguns críticos vão além, sugerindo que a apologética bíblica, ao defender tais passagens, demonstra um contorcionismo moral que influenciou negativamente a cultura ocidental.</p>
@@ -140,14 +126,20 @@
 <p>Aqui está uma linha do tempo dos principais marcos abolicionistas com influência cristã:</p>
 <p><img src="/90._assets/abolitionist_milestones_e_christian_influence.png" alt="Abolitionist Milestones &amp; Christian Influence.png" loading="lazy"></p>
 
-    <div class="article-footer">
-      👨‍💼 Gavin Ortlund<br />
+      <div class="article-footer">
+        👨‍💼 Gavin Ortlund<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>Justificação mediante a fé</h1>📇 Referências: <a href="/80._biblia/45_romanos/rm_01#16">Rm 1:16-17</a>,<a href="/80._biblia/45_romanos/rm_03#21">Rm 3:21-22</a>,<a href="/80._biblia/45_romanos/rm_03#24">Rm 3:24-26</a>,<a href="/80._biblia/45_romanos/rm_03#27">Rm 3:27-28</a>,<a href="/80._biblia/45_romanos/rm_04">Rm 4:1-5</a>,<a href="/80._biblia/45_romanos/rm_04#9">Rm 4-11</a>,<a href="/80._biblia/45_romanos/rm_04#13">Rm 4:13-16</a>,<a href="/80._biblia/45_romanos/rm_05">Rm 5:1</a>,<a href="/80._biblia/45_romanos/rm_09#30">Rm 9:30-32</a>,<a href="/80._biblia/45_romanos/rm_10#04">Rm 10:4</a>,<a href="/80._biblia/45_romanos/rm_10#9">Rm 10:9-10</a>,<a href="/80._biblia/48_galatas/gl_2#16">Gl 2:16</a>,<a href="/80._biblia/48_galatas/gl_2#20">Gl 2:20-21</a>,<a href="/80._biblia/48_galatas/gl_3#2">Gl 3:2</a>,<a href="/80._biblia/48_galatas/gl_3#5">Gl 3:5-9</a><br />🔖 <a href="/90._assets/tags/doutrina_e_escatologia/" class="tag-link">Doutrina_e_Escatologia</a><br /><p>A justificação pela fé é a doutrina central do novo testamento. Todos os autores<br>
+
+  <main class="container"><article class="prose"><h1>Justificação mediante a fé</h1>📇 Referências: <a href="/80._biblia/45_romanos/rm_01#16">Rm 1:16-17</a>,<a href="/80._biblia/45_romanos/rm_03#21">Rm 3:21-22</a>,<a href="/80._biblia/45_romanos/rm_03#24">Rm 3:24-26</a>,<a href="/80._biblia/45_romanos/rm_03#27">Rm 3:27-28</a>,<a href="/80._biblia/45_romanos/rm_04">Rm 4:1-5</a>,<a href="/80._biblia/45_romanos/rm_04#9">Rm 4-11</a>,<a href="/80._biblia/45_romanos/rm_04#13">Rm 4:13-16</a>,<a href="/80._biblia/45_romanos/rm_05">Rm 5:1</a>,<a href="/80._biblia/45_romanos/rm_09#30">Rm 9:30-32</a>,<a href="/80._biblia/45_romanos/rm_10#04">Rm 10:4</a>,<a href="/80._biblia/45_romanos/rm_10#9">Rm 10:9-10</a>,<a href="/80._biblia/48_galatas/gl_2#16">Gl 2:16</a>,<a href="/80._biblia/48_galatas/gl_2#20">Gl 2:20-21</a>,<a href="/80._biblia/48_galatas/gl_3#2">Gl 3:2</a>,<a href="/80._biblia/48_galatas/gl_3#5">Gl 3:5-9</a><br />🔖 <a href="/90._assets/tags/doutrina_e_escatologia/" class="tag-link">Doutrina_e_Escatologia</a><br /><p>A justificação pela fé é a doutrina central do novo testamento. Todos os autores<br>
 Aqui está uma <strong>lista incompleta</strong> dos principais textos bíblicos que <strong>afirmam explicitamente</strong> (ou de forma inequívoca) que a <strong>salvação / justificação é pela fé</strong>, não pelas obras.<br>
 Organizo em duas partes:</p>
 <ol>
@@ -271,34 +257,40 @@ Organizo em duas partes:</p>
 </li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/052._livre_graca">/11._study_notes/d_-_doutrina_e_escatologia/052._livre_graca</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang">/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside">/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/052._livre_graca">/11._study_notes/d_-_doutrina_e_escatologia/052._livre_graca</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang">/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside">/11._study_notes/d_-_doutrina_e_escatologia/049._h._a._ironside</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

@@ -3,45 +3,35 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
-    Defesa da Fé - Parte 1
+    Defesa da Fé - Parte 1 - Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>Defesa da Fé - Parte 1</h1>🔖 <a href="/90._assets/tags/pregacoes/" class="tag-link">Pregações</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p><img src="/90._assets/pasted_image_20260428062101.png" alt="Pasted image 20260428062101.png" loading="lazy"></p>
+
+  <main class="container">
+    <article class="prose"><h1>Defesa da Fé - Parte 1</h1>🔖 <a href="/90._assets/tags/pregacoes/" class="tag-link">Pregações</a>, <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p><img src="/90._assets/pasted_image_20260428062101.png" alt="Pasted image 20260428062101.png" loading="lazy"></p>
 <h2 id="mensagem_em_audio" tabindex="-1">Mensagem em Áudio</h2>
 <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40reinoeterno.online%3A7%2FDefesa-da-F%C3%A9-Defesa-Interna%3Af?r=FypXEycH95e9rpSUy4KiyRJL7jQuZRj7" allowfullscreen></iframe>
 *Áudio da Pregação*
@@ -134,26 +124,33 @@
 <p>Mesmo que não avalou o seu aspecto, mas você não soube responder para a pessoa. Uma pessoa veio te perguntar, você não soube, falou que a Bíblia tem alguma incoerência, mostrou ali, você não soube retocar. Enfim, aí dentro da condição de que ela tem um linkzinho, daí também tem um golofone que vocês podem mandar.</p>
 <p>Aí eu vou basear isso para trazer a próxima compartilhagem também. Tá bem?</p>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
-    </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/p_-_pregacoes/023._defesa_da_fe_-_parte_2_-_transcricao">/11._study_notes/p_-_pregacoes/023._defesa_da_fe_-_parte_2_-_transcricao</a>
-        </li>
-        
-      </ul>
-    </div>
-    
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/p_-_pregacoes/023._defesa_da_fe_-_parte_2_-_transcricao">/11._study_notes/p_-_pregacoes/023._defesa_da_fe_-_parte_2_-_transcricao</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article>
   </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

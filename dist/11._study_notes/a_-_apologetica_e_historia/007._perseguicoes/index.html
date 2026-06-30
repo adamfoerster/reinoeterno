@@ -3,106 +3,116 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>007. Perseguições</h1>🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p>Lista das perseguições ao cristianismo historicamente atestadas por parte do Império Romano.</p>
-<h2 id="decada_de_30" tabindex="-1">década de 30</h2>
+
+  <main class="container"><article class="prose"><h1>007. Perseguições</h1>🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p>Lista das perseguições ao cristianismo historicamente atestadas por parte do Império Romano. A tradição patrística — especialmente em Lactâncio e Orósio — sistematizou <strong>dez grandes perseguições</strong>, analogia deliberada com as dez pragas do Êxodo. Antes delas, houve perseguições locais e judaicas que precederam o envolvimento imperial.</p>
+<h2 id="perseguicoes_pre-imperiais" tabindex="-1">Perseguições Pré-Imperiais</h2>
+<h3 id="decada_de_30_jerusalem_(sinedrio)" tabindex="-1">Década de 30 — Jerusalém (Sinédrio)</h3>
+<p>A primeira oposição organizada ao movimento cristão veio do establishment judaico em Jerusalém. O Sinédrio prendeu os apóstolos (At 4–5), promoveu a morte de Estêvão (At 7) e autorizou Saulo a perseguir cristãos em Damasco (At 9:1-2). Não era perseguição imperial, mas religiosa e local.</p>
+<h3 id="decada_de_40_judeia_(herodes_agripa_i)" tabindex="-1">Década de 40 — Judeia (Herodes Agripa I)</h3>
+<p>Herodes Agripa I (41–44 d.C.) executou o apóstolo Tiago, filho de Zebedeu, e prendeu Pedro — provavelmente para agradar os líderes judeus (At 12:1-4). Ação regional, não política imperial.</p>
+<h3 id="decada_de_40-50_roma_(claudio)" tabindex="-1">Década de 40-50 — Roma (Cláudio)</h3>
+<p>O imperador Cláudio expulsou os judeus de Roma por volta de 49 d.C., o que provavelmente incluiu cristãos judeus. Suetônio menciona tumultos provocados por um certo “Cresto” (<em>Vita Claudii</em> 25.4), possivelmente referência a Cristo. Aquila e Priscila, mencionados em At 18:2, fugiram como resultado dessa expulsão.</p>
+<hr>
+<h2 id="as_dez_perseguicoes_imperiais" tabindex="-1">As Dez Perseguições Imperiais</h2>
+<h3 id="1a_nero_(64-68_d.c.)" tabindex="-1">1ª — Nero (64–68 d.C.)</h3>
+<p>A primeira perseguição imperial foi desencadeada pelo Grande Incêndio de Roma em 64 d.C. Nero culpou os cristãos para desviar suspeitas de si mesmo. Tácito descreve a crueldade: cristãos eram cobertos com peles de animais e lançados a cães, crucificados, ou usados como tochas humanas nos jardins do imperador (<em>Anais</em> XV.44). <strong>Pedro e Paulo morreram durante o reinado de Nero</strong> — Paulo decapitado (por ser cidadão romano), Pedro crucificado de cabeça para baixo, segundo a tradição. A perseguição foi geograficamente concentrada em Roma.</p>
+<h3 id="2a_domiciano_(81-96_d.c.)" tabindex="-1">2ª — Domiciano (81–96 d.C.)</h3>
+<p>Domiciano exigiu ser adorado como “Senhor e Deus” (<em>Dominus et Deus</em>) e perseguiu tanto judeus quanto cristãos que recusavam o culto imperial. O apóstolo João foi exilado na ilha de Patmos durante este período (Ap 1:9). Eusébio relata perseguições a parentes de Jesus por serem descendentes de Davi. O livro do Apocalipse foi provavelmente escrito neste contexto como literatura de resistência.</p>
+<h3 id="3a_trajano_(98-117_d.c.)" tabindex="-1">3ª — Trajano (98–117 d.C.)</h3>
+<p>Trajano moderou as perseguições: em sua correspondência famosa com <a href="/009._plinio_o_jovem_e_trajano">Plínio, o Jovem</a> (c. 112 d.C.), orientou que cristãos não deviam ser caçados ativamente, mas caso fossem denunciados por nome (não anonimamente) e recusassem renegar a fé, deveriam ser punidos. O bispo <strong>Inácio de Antioquia</strong> foi martirizado em Roma durante este período, escrevendo suas famosas cartas enquanto era conduzido ao martírio. <strong>Simeão de Jerusalém</strong> (sobrinho de Jesus) teria sido martirizado com cerca de 120 anos.</p>
+<h3 id="4a_marco_aurelio_(161-180_d.c.)" tabindex="-1">4ª — Marco Aurélio (161–180 d.C.)</h3>
+<p>Paradoxalmente, o imperador filósofo estoico foi responsável por uma perseguição severa. <strong>Justino Mártir</strong> foi executado em Roma por volta de 165 d.C. Em Lião e Viena (Gália), uma perseguição brutal em 177 d.C. produziu muitos mártires, incluindo <strong>Blandina</strong> (uma escrava) e <strong>Potino</strong>, bispo de Lião com mais de 90 anos. A “Carta das Igrejas de Lião e Viena” preservada por Eusébio é um dos documentos mais vívidos sobre o martírio cristão.</p>
+<h3 id="5a_severo_(202-210_d.c.)" tabindex="-1">5ª — Severo (202–210 d.C.)</h3>
+<p>Septímio Severo proibiu a conversão ao judaísmo e ao cristianismo por édito em 202 d.C. A perseguição foi intensa no Norte da África e no Egito. <strong>Perpétua e Felicidade</strong> foram martirizadas em Cartago em 203 d.C. — seu diário de prisão (<em>Passio Perpetuae</em>) é um dos primeiros documentos cristãos escritos por uma mulher. <strong>Origens</strong> viu seu pai, Leônidas, martirizado neste período.</p>
+<h3 id="6a_maximino_tracio_(235-238_d.c.)" tabindex="-1">6ª — Maximino Trácio (235–238 d.C.)</h3>
+<p>Maximino perseguiu especificamente os líderes eclesiásticos, visando decapitar a Igreja. Foi uma perseguição direcionada ao clero. <strong>Hipólito de Roma</strong> e o papa <strong>Ponciano</strong> foram exilados para a Sardenha, onde morreram.</p>
+<h3 id="7a_decio_(249-251_d.c.)" tabindex="-1">7ª — Décio (249–251 d.C.)</h3>
+<p>A perseguição de Décio foi a <strong>primeira perseguição sistemática e universal</strong> de todo o Império. Décio exigiu que todos os cidadãos oferecessem sacrifício aos deuses e obtivessem um certificado (<em>libellus</em>) comprovando obediência. Quem não o fizesse seria preso, torturado ou morto. Produziu enorme número de <em>lapsi</em> (os que cederam) e abriu o debate sobre se eles podiam ser readmitidos à Igreja — crise abordada por <a href="/064._tertuliano">Cipriano de Cartago</a>. O papa <strong>Fabiano</strong> e o bispo <strong>Alexandre de Jerusalém</strong> morreram na perseguição.</p>
+<h3 id="8a_valeriano_(257-260_d.c.)" tabindex="-1">8ª — Valeriano (257–260 d.C.)</h3>
+<p>Valeriano primeiro foi favorável aos cristãos, mas reverteu a posição e emitiu éditos em 257 e 258 d.C. proibindo assembleias cristãs e exigindo sacrifícios dos líderes. <strong>Cipriano de Cartago</strong> foi martirizado em 258 d.C. O papa <strong>Sisto II</strong> foi executado, e seu diácono <strong>Lourenço</strong> foi morto na famosa grelha de ferro. A perseguição terminou abruptamente quando Valeriano foi capturado pelos persas — o único imperador romano a morrer prisioneiro de um inimigo estrangeiro.</p>
+<h3 id="9a_aureliano_(270-275_d.c.)" tabindex="-1">9ª — Aureliano (270–275 d.C.)</h3>
+<p>Aureliano preparava uma perseguição, mas morreu assassinado antes de executá-la. Alguns historiadores a incluem nas dez perseguições; outros consideram pouco substancial. Foi mais uma ameaça do que uma perseguição efetivamente consumada.</p>
+<h3 id="10a_diocleciano_(303-313_d.c.)" tabindex="-1">10ª — Diocleciano (303–313 d.C.)</h3>
+<p>A <strong>Grande Perseguição</strong> — a mais severa de todas. Diocleciano emitiu quatro éditos entre 303 e 304 d.C.: destruição das igrejas e Escrituras, prisão do clero, exigência de sacrifício a todos os cidadãos. Igrejas foram demolidas, Bíblias queimadas (daí o termo <em>traditores</em> — aqueles que “entregaram” as Escrituras, origem da palavra “traidor”). A perseguição foi mais intensa no Oriente (sob Galério) do que no Ocidente (sob Constâncio Cloro, mais tolerante). Terminou com o <strong>Édito de Milão</strong> (313 d.C.), emitido por Constantino e Licínio, concedendo liberdade religiosa.</p>
+<hr>
+<h2 id="fontes_e_autores_antigos" tabindex="-1">Fontes e Autores Antigos</h2>
+<p>Os eventos das perseguições chegaram até nós por meio de uma variedade de fontes — algumas cristãs, algumas pagãs — de valor histórico desigual.</p>
+<h3 id="fontes_pagas" tabindex="-1">Fontes Pagãs</h3>
+<p><strong>Tácito</strong> (<em>Anais</em>, c. 117 d.C.)<br>
+A passagem mais importante de um autor pagão sobre os cristãos. Em XV.44, descreve a perseguição de Nero após o incêndio de Roma, menciona “Cristo” executado por Pôncio Pilatos sob Tibério, e usa a expressão <em>exitiabilis superstitio</em> (“superstição perniciosa”) para o movimento. Fonte independente e hostil — por isso, de grande valor apologético.</p>
+<p><strong>Suetônio</strong> (<em>Vida dos Doze Césares</em>, c. 121 d.C.)<br>
+Duas referências relevantes: a expulsão dos judeus por Cláudio por causa de tumultos causados por “Cresto” (<em>Vita Claudii</em> 25.4) e a menção de que Nero puniu cristãos como “homens de nova e maléfica superstição” (<em>Vita Neronis</em> 16.2).</p>
+<p><strong>Plínio, o Jovem</strong> (<em>Epistulae</em> X.96-97, c. 112 d.C.)<br>
+Carta ao imperador Trajano descrevendo como ele lidava com cristãos na Bitínia. Documenta práticas cristãs (reuniões ao amanhecer, cânticos a Cristo “como a um deus”, refeição comunitária) e a política de Trajano. Fonte pagã de primeira grandeza sobre o comportamento e a doutrina cristã primitiva. Ver <a href="/009._plinio_o_jovem_e_trajano">009. Plínio, o Jovem e Trajano</a>.</p>
+<p><strong>Lúcio de Samósata</strong> (<em>Morte de Peregrino</em>, c. 165 d.C.)<br>
+Filósofo satírico grego que descreve com escárnio — mas com detalhes úteis — como cristãos apoiavam uns aos outros, especialmente prisioneiros. Fonte hostil mas reveladora dos costumes cristãos.</p>
+<h3 id="fontes_cristas" tabindex="-1">Fontes Cristãs</h3>
+<p><strong>Eusébio de Cesareia</strong> (<em>Historia Ecclesiastica</em>, c. 313 d.C.)<br>
+A fonte mais abrangente. Eusébio, bispo de Cesareia e “pai da história da Igreja”, escreveu a primeira história eclesiástica sistemática, cobrindo desde Cristo até Constantino. Preservou documentos primários que de outra forma seriam perdidos: cartas, atas de martírio, listas episcopais. Deve ser lido criticamente — Eusébio tinha agenda apologética — mas é insubstituível. Também escreveu <em>De Martyribus Palestinae</em> sobre os mártires da perseguição de Diocleciano.</p>
+<p><strong>Lactâncio</strong> (<em>De Mortibus Persecutorum</em>, c. 313–315 d.C.)<br>
+Obra polêmica e vívida que descreve os fins violentos de todos os imperadores que perseguiram cristãos — de Nero a Galério. Lactâncio foi tutor do filho de Constantino e escreveu como testemunha contemporânea da Grande Perseguição de Diocleciano. É a principal fonte para os detalhes dos éditos e para a morte de Galério. Teologicamente, interpreta as mortes dos perseguidores como julgamento divino.</p>
+<p><strong>Tertuliano</strong> (<em>Apologeticum</em>, c. 197 d.C.; <em>Ad Martyras</em>, <em>Ad Scapulam</em>)<br>
+<a href="/064._tertuliano">Tertuliano</a> de Cartago escreveu o <em>Apologeticum</em> como defesa jurídica do cristianismo endereçada aos magistrados romanos. Documenta as acusações contra cristãos (canibalismo, incesto, ateísmo), refuta-as e descreve as perseguições locais no Norte da África. <em>Ad Scapulam</em> é uma carta aberta ao procônsul da África advertindo sobre as consequências de perseguir cristãos. Cunhou a famosa frase: <em>“semen est sanguis Christianorum”</em> (“o sangue dos cristãos é semente”).</p>
+<p><strong>Cipriano de Cartago</strong> (<em>Cartas</em> e <em>De Lapsis</em>, c. 250–258 d.C.)<br>
+Bispo de Cartago durante a perseguição de Décio, Cipriano documentou extensamente a crise dos <em>lapsi</em> (os que apostataram para escapar da morte) e o debate sobre sua restauração. Suas cartas são fonte primária detalhada sobre como a perseguição afetava as comunidades locais, o papel do clero, e a pastoral do martírio.</p>
+<p><strong>Passio Perpetuae et Felicitatis</strong> (c. 203 d.C.)<br>
+Ata de martírio excepcional — parte dela escrita pela própria Perpétua em sua cela, dias antes da execução. Documento único da perspectiva interna de uma mártir cristã (mulher, nobre, com filho recém-nascido). Tertuliano possivelmente editou o texto final.</p>
+<p><strong>Orósio</strong> (<em>Historiae Adversus Paganos</em>, c. 418 d.C.)<br>
+Discípulo de Agostinho, sistematizou as <strong>dez perseguições</strong> como categoria histórica em analogia com as dez pragas do Egito. Embora escreva dois séculos depois dos eventos, compilou fontes anteriores e popularizou o framework das “dez perseguições” que influenciou toda a historiografia eclesiástica posterior.</p>
+<p><strong><a href="/052._justino_martir">052. Justino Mártir</a></strong> (<em>Apologias I e II</em>, c. 150-155 d.C.)<br>
+Dirigidas aos imperadores Antonino Pio e Marco Aurélio, as Apologias de Justino documentam as acusações contra cristãos e a arbitrariedade das perseguições durante o período antonino. Justino foi eventualmente martirizado em Roma — sua <em>Ata do Martírio</em> é um dos documentos mais antigos desse gênero.</p>
+<p><strong>Eusébio de Cesareia</strong> (<em>Carta das Igrejas de Lião e Viena</em>, preservada em <em>HE</em> V.1-4)<br>
+Eusébio preservou a carta enviada pelas comunidades de Lião e Viena às igrejas da Ásia em 177 d.C., descrevendo em detalhe chocante a perseguição sob Marco Aurélio. É um dos documentos patrísticos mais vívidos sobre o martírio.</p>
+<hr>
+<h2 id="ver_tambem" tabindex="-1">Ver também</h2>
 <ul>
-<li>em Jerusalém, a partir do Sinédrio</li>
-</ul>
-<h2 id="decada_de_40" tabindex="-1">década de 40</h2>
-<ul>
-<li>na Judéia, a partir do rei Agripa(?)</li>
-<li>em Roma, a partir de Cláudio</li>
-</ul>
-<h2 id="decada_de_60" tabindex="-1">década de 60</h2>
-<ul>
-<li>em todo o Império, sob Nero. Aqui morrem Paulo e Pedro</li>
-</ul>
-<h2 id="81-98" tabindex="-1">81-98</h2>
-<ul>
-<li>em todo o Império, sob Domiciano.</li>
-</ul>
-<h2 id="98-117" tabindex="-1">98-117</h2>
-<ul>
-<li>em todo o Império, sob Trajano. Aliviou a perseguição e recomendava prender apenas cristãos que fossem denunciados (não anonimamente) e deveriam ter a chance de renegar a fé.</li>
-</ul>
-<h2 id="161-180" tabindex="-1">161-180</h2>
-<ul>
-<li>em todo o Império, sob Marco Aurélio.</li>
-</ul>
-<h2 id="192-224" tabindex="-1">192-224</h2>
-<ul>
-<li>em todo o Império, sob Severo e Sétimo Severo e em menor grau por outros imperadores.</li>
-</ul>
-<h2 id="235-238" tabindex="-1">235-238</h2>
-<ul>
-<li>em todo Império, sob Máximo.</li>
-</ul>
-<h2 id="249-251" tabindex="-1">249-251</h2>
-<ul>
-<li>em todo Império, sob Décio. Uma grande perseguição.</li>
-</ul>
-<h2 id="257-259" tabindex="-1">257-259</h2>
-<ul>
-<li>em todo Império, sob Valeriano.</li>
-</ul>
-<h2 id="274" tabindex="-1">274</h2>
-<ul>
-<li>em todo Império, sob Aurélio.</li>
-</ul>
-<h2 id="303-306" tabindex="-1">303-306</h2>
-<ul>
-<li>em todo Império, sob Dioclesiano. Maior perseguição de todas. Aqui são queimadas as Escrituras dos Cristãos.</li>
+<li><a href="/029._02._desafios_da_igreja_primitiva">029. 02. Desafios da Igreja Primitiva</a></li>
+<li><a href="/009._plinio_o_jovem_e_trajano">009. Plínio, o Jovem e Trajano</a></li>
+<li><a href="/064._tertuliano">064. Tertuliano</a></li>
+<li><a href="/052._justino_martir">052. Justino Mártir</a></li>
+<li><a href="/045._irineu_de_lyon">045. Irineu de Lyon</a></li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

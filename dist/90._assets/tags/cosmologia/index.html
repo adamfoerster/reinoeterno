@@ -3,65 +3,54 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
-    Todos os textos da Tag - Reino Eterno Online
+    Notas por Tag - Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
-  </header>
-  <main><h1>Todos os textos da Tag</h1><h2 id="cosmologia" tabindex="-1">cosmologia</h2>
-<ul>
-<p><li><a href="/11._study_notes/d_-_doutrina_e_escatologia/037._sequencia_da_criacao/">037. Sequência da criação</a></li></p>
-<p><li><a href="/11._study_notes/d_-_doutrina_e_escatologia/045._nefilins/">045. Nefilins</a></li></p>
-<p><li><a href="/11._study_notes/a_-_apologetica_e_historia/084._perspectivas_da_criacao/">084. Perspectivas da Criação</a></li></p>
-<p><li><a href="/11._study_notes/h_-_apocrifos_e_pseudo-epigrafos/001._1o_e_2o_livro_de_adao_e_eva/">1o e 2o livro de Adão e Eva</a></li></p>
-<p><li><a href="/11._study_notes/l_-_livros_e_citacoes/008._eras_mais_primitivas_da_terra_-_gh_pember/">Eras mais primitivas da Terra</a></li></p>
-<p><li><a href="/11._study_notes/a_-_apologetica_e_historia/evolucao_teistica/">Evolução Teística</a></li></p>
-<p><li><a href="/11._study_notes/p_-_pregacoes/o_ceu_nao_e_o_que_voce_pensa/">O Céu não é o que você pensa</a></li></p>
-</ul>
-    <div class="article-footer">
-      <br />
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </header>
+
+  <main class="container"><section class="notas">
+  <div class="notas-band">
+    <span class="notas-band__title">Cosmologia</span>
+    <span class="notas-band__num">#COSMOLOGIA · 7 notas</span>
+  </div><div class="notas-intro">
+    <p>Como funciona a terra o céu e o inferno? O que a bíblia diz sobre isso?</p>
+  </div><div class="notas-grid"><a href="/11._study_notes/d_-_doutrina_e_escatologia/037._sequencia_da_criacao/" class="note-card"><span class="note-card__num">01</span><span><span class="note-card__pt">037. Sequência da criação</span><span class="note-card__author">Adam Foerster</span></span></a><a href="/11._study_notes/d_-_doutrina_e_escatologia/045._nefilins/" class="note-card"><span class="note-card__num">02</span><span><span class="note-card__pt">045. Nefilins</span><span class="note-card__author">Gavin Ortlund</span><span class="note-card__meta">2026</span></span></a><a href="/11._study_notes/a_-_apologetica_e_historia/084._perspectivas_da_criacao/" class="note-card"><span class="note-card__num">03</span><span><span class="note-card__pt">084. Perspectivas da Criação</span><span class="note-card__author">Mike Winger</span><span class="note-card__meta">2025</span></span></a><a href="/11._study_notes/h_-_apocrifos_e_pseudo-epigrafos/001._1o_e_2o_livro_de_adao_e_eva/" class="note-card"><span class="note-card__num">04</span><span><span class="note-card__pt">1o e 2o livro de Adão e Eva</span><span class="note-card__author">desconhecido</span></span></a><a href="/11._study_notes/l_-_livros_e_citacoes/008._eras_mais_primitivas_da_terra_-_gh_pember/" class="note-card"><span class="note-card__num">05</span><span><span class="note-card__pt">Eras mais primitivas da Terra</span><span class="note-card__author">G. H. Pember</span><span class="note-card__meta">2024</span></span></a><a href="/11._study_notes/a_-_apologetica_e_historia/evolucao_teistica/" class="note-card"><span class="note-card__num">06</span><span><span class="note-card__pt">Evolução Teística</span><span class="note-card__author">Redeemed Zoomer</span></span></a><a href="/11._study_notes/p_-_pregacoes/o_ceu_nao_e_o_que_voce_pensa/" class="note-card"><span class="note-card__num">07</span><span><span class="note-card__pt">O Céu não é o que você pensa</span><span class="note-card__author">Gavin Ortlund</span></span></a></div>
+  <div class="notas-all">
+    <a href="/#notas">← Todas as notas de estudo</a>
+  </div>
+</section>
+</main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

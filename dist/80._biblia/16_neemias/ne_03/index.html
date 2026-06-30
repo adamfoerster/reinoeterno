@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>ne 03</h1><h6 id="1" tabindex="-1">1</h6>
+
+  <main class="container"><article class="prose"><h1>ne 03</h1><h6 id="1" tabindex="-1">1</h6>
 <p>Então, se levantou o sumo sacerdote Eliasibe, juntamente com os sacerdotes, seus irmãos, e reedificaram a Entrada das Ovelhas. Consagraram-na e assentaram as suas duas portas; sim, consagraram-na até a Torre de Meá, até a Torre de Hananel.</p>
 <h6 id="2" tabindex="-1">2</h6>
 <p>Junto a ele, edificaram os homens de Jericó, ao lado dos quais edificou Zacur, filho de Inri.</p>
@@ -110,34 +96,40 @@
 <p>e, entre a câmara da esquina e a Entrada das Ovelhas, os ourives e os negociantes.</p>
 <h5 id="16_neemias_02_ou_chapters_ou_16_neemias_04_first_(1)_ou_last_(13)" tabindex="-1"><strong><a href="/80._biblia/16_neemias/ne_02">⏪ 16 Neemias 02</a> | <a href="/80._biblia/16_neemias/--_neemias_--">Chapters</a> | <a href="/80._biblia/16_neemias/ne_04">16 Neemias 04 ⏩</a></strong><br><strong><a href="/80._biblia/16_neemias/ne_01">First (1)</a> | <a href="/80._biblia/16_neemias/ne_13">Last (13)</a></strong></h5>
 
-    <div class="article-footer">
-      <br />TB © 1917, 2010 Sociedade Bíblica do Brasil. Todos os direitos reservados.
+      <div class="article-footer">
+        <br />TB © 1917, 2010 Sociedade Bíblica do Brasil. Todos os direitos reservados.
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/80._biblia/16_neemias/--_neemias_--">/80._biblia/16_neemias/--_neemias_--</a>
+          </li>
+          
+          <li>
+            <a href="/80._biblia/16_neemias/ne_02">/80._biblia/16_neemias/ne_02</a>
+          </li>
+          
+          <li>
+            <a href="/80._biblia/16_neemias/ne_04">/80._biblia/16_neemias/ne_04</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/80._biblia/16_neemias/--_neemias_--">/80._biblia/16_neemias/--_neemias_--</a>
-        </li>
-        
-        <li>
-          <a href="/80._biblia/16_neemias/ne_02">/80._biblia/16_neemias/ne_02</a>
-        </li>
-        
-        <li>
-          <a href="/80._biblia/16_neemias/ne_04">/80._biblia/16_neemias/ne_04</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

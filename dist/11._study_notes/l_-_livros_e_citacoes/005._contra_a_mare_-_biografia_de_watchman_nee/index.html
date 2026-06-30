@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Watchman Nee - Contra a maré - Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>Watchman Nee - Contra a maré</h1>📇 Referências: <a href="/80._biblia/47_2_corintios/2co_01#24">2Co 1:24</a>,<a href="/80._biblia/47_2_corintios/2co_05#7">2Co 5:7</a>,<a href="/80._biblia/41_marcos/mc_09#23">Mc 9:23</a>,<a href="/80._biblia/45_romanos/rm_06#6">Rm 6:6</a>,<a href="/80._biblia/45_romanos/rm_06#11">Rm 6:11</a>,<a href="/80._biblia/46_1_corintios/1co_01#30">1Co 1:30</a><br />🔖 <a href="/90._assets/tags/biografia/" class="tag-link">biografia</a>, <a href="/90._assets/tags/livros_e_citacoes/" class="tag-link">Livros_e_Citações</a>, <a href="/90._assets/tags/nao-ficcao/" class="tag-link">Não-Ficção</a><br /><p><img src="/90._assets/watchmannee.png" alt="watchmannee.png" loading="lazy"></p>
+
+  <main class="container"><article class="prose"><h1>Watchman Nee - Contra a maré</h1>📇 Referências: <a href="/80._biblia/47_2_corintios/2co_01#24">2Co 1:24</a>,<a href="/80._biblia/47_2_corintios/2co_05#7">2Co 5:7</a>,<a href="/80._biblia/41_marcos/mc_09#23">Mc 9:23</a>,<a href="/80._biblia/45_romanos/rm_06#6">Rm 6:6</a>,<a href="/80._biblia/45_romanos/rm_06#11">Rm 6:11</a>,<a href="/80._biblia/46_1_corintios/1co_01#30">1Co 1:30</a><br />🔖 <a href="/90._assets/tags/biografia/" class="tag-link">biografia</a>, <a href="/90._assets/tags/livros_e_citacoes/" class="tag-link">Livros_e_Citações</a>, <a href="/90._assets/tags/nao-ficcao/" class="tag-link">Não-Ficção</a><br /><p><img src="/90._assets/watchmannee.png" alt="watchmannee.png" loading="lazy"></p>
 <h2 id="1.0_raizes_e_pressagios:_o_mundo_que_moldou_um_vigia" tabindex="-1">1.0 Raízes e Presságios: O Mundo que Moldou um Vigia</h2>
 <p>Para compreender a trajetória singular de Watchman Nee, é imperativo mergulhar no cenário tumultuado da China no final do século XIX e início do século XX. Foi um período de convulsão e transformação, precipitado pela humilhação da Guerra do Ópio, que não apenas forçou a abertura ao Ocidente, mas também desmantelou a autoimagem da nação como o autossuficiente “Reino do Meio”. O florescente comércio de chá, que surgira para satisfazer a demanda europeia, criou os próprios portos, como Fuzhou, pelos quais ideias ocidentais, missionários e novas ideologias revolucionárias colidiriam com tradições confucianas milenares. Foi neste cadinho de crise de identidade nacional e agitação política que as raízes da família Nee se firmaram, preparando o terreno para a ascensão de uma das figuras mais influentes do cristianismo chinês.</p>
 <h3 id="a_heranca_espiritual_e_cultural" tabindex="-1">A Herança Espiritual e Cultural</h3>
@@ -225,26 +211,32 @@ A vitalidade do trabalho em Xangai logo atrairia a atenção internacional, prep
 <p>A avaliação final do legado de Watchman Nee deve reconhecer sua complexidade. Sua influência duradoura se manifesta através de seus escritos, que continuam a impactar milhões de cristãos em todo o mundo. Ele permanece como uma figura seminal para a igreja doméstica na China—um movimento indígena e resiliente que sobreviveu e floresceu. No entanto, um retrato honesto não pode ignorar seus erros de julgamento. Sua incursão na indústria farmacêutica foi uma aventura mal concebida que o alienou de seus próprios irmãos.</p>
 <p>O poder de seu legado reside precisamente no fato de que sua fé permaneceu inabalável <em>apesar</em> dessas fragilidades humanas, tornando seu testemunho final ainda mais convincente. A vida de Watchman Nee foi a de um homem cuja fé não pôde ser contida ou silenciada pelas paredes de uma prisão, permanecendo, como a palavra de Deus no final do livro de Atos, “desimpedida” até o fim.</p>
 <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40reinoeterno.online%3A7%2FContra-a-mar%C3%A9---Watchman-Nee%3A9?r=GFQxFrqfdUB7yEHYkJszi1a4ad3eEATX" allowfullscreen></iframe>
-    <div class="article-footer">
-      👨‍💼 Angus |. Kinnear<br />
+      <div class="article-footer">
+        👨‍💼 Angus |. Kinnear<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang">/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang">/11._study_notes/d_-_doutrina_e_escatologia/048._g._h._lang</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

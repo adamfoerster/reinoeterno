@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>098. Ratramno de Corbie</h1>📆 Quando: século IX<br />🧭 Onde: Corbie na atual França<br />⚔️ Refuta: <a href="/eucaristia">eucaristia</a>,<a href="/livre-arbitrio">Livre-Arbítrio</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a><br /><p><strong>Ratramno de Corbie</strong> foi um monge e teólogo do século IX, ativo no período carolíngio, especialmente na região da atual França. Viveu aproximadamente entre <strong>c. 800 e c. 868</strong>, sendo membro do mosteiro de Corbie, um importante centro intelectual do Império Carolíngio. Sua atuação se deu no contexto das controvérsias teológicas promovidas sob o patrocínio de reis como Carlos, o Calvo.</p>
+
+  <main class="container"><article class="prose"><h1>098. Ratramno de Corbie</h1>📆 Quando: século IX<br />🧭 Onde: Corbie na atual França<br />⚔️ Refuta: <a href="/eucaristia">eucaristia</a>,<a href="/livre-arbitrio">Livre-Arbítrio</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a><br /><p><strong>Ratramno de Corbie</strong> foi um monge e teólogo do século IX, ativo no período carolíngio, especialmente na região da atual França. Viveu aproximadamente entre <strong>c. 800 e c. 868</strong>, sendo membro do mosteiro de Corbie, um importante centro intelectual do Império Carolíngio. Sua atuação se deu no contexto das controvérsias teológicas promovidas sob o patrocínio de reis como Carlos, o Calvo.</p>
 <p>Ratramno é mais conhecido por sua participação na controvérsia eucarística contra Paschásio Radberto. Em sua obra <em>De corpore et sanguine Domini</em> (c. 844, provavelmente em Corbie), ele argumentou que a presença de Cristo na Eucaristia é <strong>espiritual e simbólica</strong>, não uma transformação física literal. Essa posição foi significativa por antecipar debates que só ganhariam maior força na Reforma muitos séculos depois. Além disso, escreveu também sobre <a href="/predestinacao">predestinação</a>, em resposta às controvérsias envolvendo Gottschalk de Orbais, defendendo uma forma moderada de dupla predestinação.</p>
 <h2 id="posicoes_teologicas_e_filosoficas" tabindex="-1">Posições Teológicas e Filosóficas</h2>
 <p>Ratramno não pode ser facilmente encaixado em sistemas posteriores (como calvinismo ou arminianismo), mas suas ideias revelam nuances importantes:</p>
@@ -74,14 +60,20 @@
 <li>Representa a vitalidade intelectual do chamado “Renascimento Carolíngio”.</li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

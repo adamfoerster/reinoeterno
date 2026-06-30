@@ -24,6 +24,38 @@ function slugifyKeep(str) {
   return "/" + target.split("/").map(slugify).join("/") + (anchor ? "#" + anchor : "")
 }
 
+// Parse the "Notas de Estudo" tag list from the vault markdown table at
+// 90. Assets/reinoeterno.online/TagsList.md → [{ pt, desc, tagDisplay, slug }].
+// Only tags listed there are shown on the home page; note counts are resolved
+// at render time against the `tagMap` collection.
+function parseTagsList() {
+  const file = path.join(obsidianVault, "90. Assets/reinoeterno.online/TagsList.md");
+  const entries = [];
+  try {
+    const content = fs.readFileSync(file, "utf8");
+    for (const line of content.split("\n")) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith("|")) continue;
+      const cells = trimmed.split("|").slice(1, -1).map(c => c.trim());
+      if (cells.length < 3) continue;
+      const [tag, title, tagline] = cells;
+      // Skip the header row and the |---|---| separator row.
+      if (tag.toLowerCase() === "tag") continue;
+      if (/^:?-+:?$/.test(tag)) continue;
+      const tagClean = tag.replace(/^#/, "");
+      entries.push({
+        pt: title,
+        desc: tagline,
+        tagDisplay: "#" + tagClean.toUpperCase(),
+        slug: slugify(tagClean),
+      });
+    }
+  } catch (e) {
+    console.warn(`[notasTags] could not read ${file}:`, e);
+  }
+  return entries;
+}
+
 module.exports = async function (eleventyConfig) {
   // Strip Obsidian Templater syntax (<% %>) from frontmatter before Eleventy parses it,
   // so files like template notes don't cause invalid date/field errors.
@@ -175,6 +207,79 @@ module.exports = async function (eleventyConfig) {
     return map;
   });
 
+  // Publications shown on the home "Publicações" section: one card per book.
+  // Two kinds of book are supported, both surfaced just by tagging:
+  //   1. Multi-chapter book — notes sharing a `chapter-of` value (the book's
+  //      title). They collapse to one card whose details come from the first
+  //      chapter (by `chapter` order); it links to the chapter-list tag page
+  //      (the `chapter-of` slug matches the chapters' per-book tag).
+  //   2. Standalone book — a published note tagged `publication` that has no
+  //      `chapter-of` and isn't a loose part of a book. Links to its own page.
+  // Returns normalized plain objects, sorted by `pubOrder`, then title.
+  eleventyConfig.addCollection("publications", function (collectionApi) {
+    const all = collectionApi.getAll().filter(i => i.data && i.data.published);
+    const tagsOf = d => (d.tags ? (Array.isArray(d.tags) ? d.tags : [d.tags]) : []);
+    const authorsOf = a => (a ? (Array.isArray(a) ? a.filter(Boolean).join(", ") : String(a)) : "").trim();
+    const chapterNum = p => {
+      const c = p.data ? p.data.chapter : undefined;
+      const n = (c === 0 || c) ? Number(c) : NaN;
+      return Number.isNaN(n) ? Infinity : n;
+    };
+    // A translation has a `translator`; otherwise it is an authored book.
+    const kindOf = (translator, author) => translator
+      ? "Tradução · " + (authorsOf(author) || authorsOf(translator))
+      : "Livro · Autoral";
+
+    const entries = [];
+
+    // 1. Multi-chapter books: group notes sharing a `chapter-of` value.
+    const books = {};
+    for (const item of all) {
+      const co = item.data["chapter-of"];
+      if (co) (books[co] = books[co] || []).push(item);
+    }
+    const bookSlugs = new Set(Object.keys(books).map(slugify));
+    for (const [title, chaps] of Object.entries(books)) {
+      chaps.sort((a, b) => chapterNum(a) - chapterNum(b));
+      const fromChaps = field => {
+        for (const c of chaps) {
+          const v = c.data[field];
+          if (v != null && v !== "") return v;
+        }
+        return undefined;
+      };
+      entries.push({
+        url: `/90._assets/tags/${slugify(title)}/`,
+        title,
+        kind: kindOf(fromChaps("translator"), fromChaps("author")),
+        desc: fromChaps("description") || "",
+        cover: fromChaps("pubCover") || fromChaps("cover") || "",
+        order: fromChaps("pubOrder") ?? 999,
+      });
+    }
+
+    // 2. Standalone publications: tagged `publication`, no `chapter-of`, and not
+    //    a loose member of a book (i.e. not carrying a book's per-book tag).
+    for (const item of all) {
+      const d = item.data;
+      if (d["chapter-of"]) continue;
+      if (!tagsOf(d).some(t => String(t).toLowerCase() === "publication")) continue;
+      if (tagsOf(d).some(t => bookSlugs.has(slugify(String(t))))) continue;
+      entries.push({
+        url: item.url,
+        title: d.title || item.fileSlug,
+        kind: kindOf(d.translator, d.author),
+        desc: d.description || d.pubDesc || "",
+        cover: d.pubCover || d.cover || "",
+        order: d.pubOrder ?? 999,
+      });
+    }
+
+    return entries.sort((a, b) =>
+      a.order !== b.order ? a.order - b.order : a.title.localeCompare(b.title, "pt")
+    );
+  });
+
   // Backlinks collection
   eleventyConfig.addCollection("backlinks", function (collectionApi) {
     const backlinks = {};
@@ -300,8 +405,26 @@ module.exports = async function (eleventyConfig) {
   //   postsMatching: "src/posts/*/*.md",
   // });
   eleventyConfig.addGlobalData("layout", "layout.njk");
+  const notasTags = parseTagsList();
+  eleventyConfig.addGlobalData("notasTags", notasTags);
+  // Same data keyed by slug, so a tag page can look up its title/tagline directly.
+  eleventyConfig.addGlobalData(
+    "notasTagsBySlug",
+    Object.fromEntries(notasTags.map(e => [e.slug, e]))
+  );
   eleventyConfig.addFilter("urlencode", str => encodeURIComponent(str));
   eleventyConfig.addFilter("remove_underline", str => str.replaceAll("_", " "));
+  // Normalize a frontmatter author (YAML list or string) into a comma-separated string.
+  eleventyConfig.addFilter("authors", function (a) {
+    if (!a) return "";
+    return (Array.isArray(a) ? a.filter(Boolean).join(", ") : String(a)).trim();
+  });
+  // Extract a 4-digit year from a frontmatter date (Date object or string); "" if absent/invalid.
+  eleventyConfig.addFilter("year", function (d) {
+    if (!d) return "";
+    const date = d instanceof Date ? d : new Date(d);
+    return isNaN(date.getTime()) ? "" : date.getFullYear();
+  });
   eleventyConfig.addFilter("wikilinks_attr", function (str) {
     return replaceWikiLinks(str);
   })
@@ -323,6 +446,23 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addFilter("sortByTitle", function (posts) {
     if (!posts || !Array.isArray(posts)) return posts;
     return posts.slice().sort((a, b) => {
+      const titleA = (a.data.title || a.fileSlug || "").toLowerCase();
+      const titleB = (b.data.title || b.fileSlug || "").toLowerCase();
+      return titleA.localeCompare(titleB, 'pt');
+    });
+  });
+  // Order notes by their `chapter` frontmatter (numeric) when present, falling
+  // back to title. Notes without a `chapter` sort after those with one.
+  eleventyConfig.addFilter("sortByChapter", function (posts) {
+    if (!posts || !Array.isArray(posts)) return posts;
+    const chapterNum = p => {
+      const c = p.data ? p.data.chapter : undefined;
+      const n = (c === 0 || c) ? Number(c) : NaN;
+      return Number.isNaN(n) ? Infinity : n;
+    };
+    return posts.slice().sort((a, b) => {
+      const ca = chapterNum(a), cb = chapterNum(b);
+      if (ca !== cb) return ca - cb;
       const titleA = (a.data.title || a.fileSlug || "").toLowerCase();
       const titleB = (b.data.title || b.fileSlug || "").toLowerCase();
       return titleA.localeCompare(titleB, 'pt');

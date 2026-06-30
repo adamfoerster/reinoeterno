@@ -3,69 +3,58 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>006. Genealogia de Jesus</h1>📇 Referências: <a href="/80._biblia/42_lucas/lc_03#23">Lc 3:23-38</a>,<a href="/80._biblia/40_mateus/mt_01#1">Mat 1:1-17</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p>A genealogia de Jesus difere entre Mateus e Lucas.</p>
+
+  <main class="container"><article class="prose"><h1>006. Genealogia de Jesus</h1>🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><p>A genealogia de Jesus difere entre Mateus e Lucas.</p>
 <div class="callout callout-bible">
-<p></p>
-<ol>
-<li>Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão. 2. A Abraão nasceu Isaque; a Isaque nasceu Jacó; a Jacó nasceram Judá e seus irmãos; 3. a Judá nasceram, de Tamar, Farés e Zará; a Farés nasceu Esrom; a Esrom nasceu Arão; 4. a Arão nasceu Aminadabe; a Aminadabe nasceu Nasom; a Nasom nasceu Salmom; 5. a Salmom nasceu, de Raabe, Booz; a Booz nasceu, de Rute, Obede; a Obede nasceu Jessé; 6. e a Jessé nasceu o rei Davi. A Davi nasceu Salomão da que fora mulher de Urias; 7. a Salomão nasceu Roboão; a Roboão nasceu Abias; a Abias nasceu Asafe; 8. a Asafe nasceu Josafá; a Josafá nasceu Jorão; a Jorão nasceu Ozias; 9. a Ozias nasceu Joatão; a Joatão nasceu Acaz; a Acaz nasceu Ezequias; 10. a Ezequias nasceu Manassés; a Manassés nasceu Amom; a Amom nasceu Josias; 11. a Josias nasceram Jeconias e seus irmãos, no tempo da deportação para Babilônia. 12. Depois da deportação para Babilônia nasceu a Jeconias, Salatiel; a Salatiel nasceu Zorobabel; 13. a Zorobabel nasceu Abiúde; a Abiúde nasceu Eliaquim; a Eliaquim nasceu Azor; 14. a Azor nasceu Sadoque; a Sadoque nasceu Aquim; a Aquim nasceu Eliúde; 15. a Eliúde nasceu Eleazar; a Eleazar nasceu Matã; a Matã nasceu Jacó; 16. e a Jacó nasceu José, marido de Maria, da qual nasceu JESUS, que se chama Cristo. 17. De sorte que todas as gerações, desde Abraão até Davi, são catorze gerações; e desde Davi até a deportação para Babilônia, catorze gerações; e desde a deportação para Babilônia até o Cristo, catorze gerações.</li>
-</ol>
+<p><a href="/80._biblia/40_mateus/mt_01#1">1</a>. Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão. 2. A Abraão nasceu Isaque; a Isaque nasceu Jacó; a Jacó nasceram Judá e seus irmãos; 3. a Judá nasceram, de Tamar, Farés e Zará; a Farés nasceu Esrom; a Esrom nasceu Arão; 4. a Arão nasceu Aminadabe; a Aminadabe nasceu Nasom; a Nasom nasceu Salmom; 5. a Salmom nasceu, de Raabe, Booz; a Booz nasceu, de Rute, Obede; a Obede nasceu Jessé; 6. e a Jessé nasceu o rei Davi. A Davi nasceu Salomão da que fora mulher de Urias; 7. a Salomão nasceu Roboão; a Roboão nasceu Abias; a Abias nasceu Asafe; 8. a Asafe nasceu Josafá; a Josafá nasceu Jorão; a Jorão nasceu Ozias; 9. a Ozias nasceu Joatão; a Joatão nasceu Acaz; a Acaz nasceu Ezequias; 10. a Ezequias nasceu Manassés; a Manassés nasceu Amom; a Amom nasceu Josias; 11. a Josias nasceram Jeconias e seus irmãos, no tempo da deportação para Babilônia. 12. Depois da deportação para Babilônia nasceu a Jeconias, Salatiel; a Salatiel nasceu Zorobabel; 13. a Zorobabel nasceu Abiúde; a Abiúde nasceu Eliaquim; a Eliaquim nasceu Azor; 14. a Azor nasceu Sadoque; a Sadoque nasceu Aquim; a Aquim nasceu Eliúde; 15. a Eliúde nasceu Eleazar; a Eleazar nasceu Matã; a Matã nasceu Jacó; 16. e a Jacó nasceu José, marido de Maria, da qual nasceu JESUS, que se chama Cristo. 17. De sorte que todas as gerações, desde Abraão até Davi, são catorze gerações; e desde Davi até a deportação para Babilônia, catorze gerações; e desde a deportação para Babilônia até o Cristo, catorze gerações.</p>
 </div>
 <p><a href="https://www.biblegateway.com/passage/?search=Matthew+1:1-17&amp;version=almeida">Mateus 1:1-17 - ALMEIDA</a></p>
-<blockquote>
-<p>Lucas 3:23 ‘Ora, Jesus tinha cerca de trinta anos quando começou o seu ministério. Era, conforme se pensava, filho de José, filho de Eli,’</p>
-</blockquote>
+<div class="callout callout-bible">
+<h3 class="callout-title"><a href="/80._biblia/42_lucas/lc_03#23">Lucas 3:23</a></h3><p>‘Ora, Jesus tinha cerca de trinta anos quando começou o seu ministério. Era, conforme se pensava, filho de José, filho de Eli,’</p>
+</div>
 <p>A expressão traduzida como “conforme se pensava” significa “reconhecido legalmente como”. Essa expressão pode significar que a genealogia lucana segue o entendimento romano de descendência enquanto Mateus segue o entendimento semita.</p>
 <p>Lucas segue uma <a href="/11._study_notes/m_-_notas_expositivas_e_miscelanea/025._numerologia_da_genealogia_lucana_de_jesus">ordem numerológica</a> em grupos de 7.</p>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

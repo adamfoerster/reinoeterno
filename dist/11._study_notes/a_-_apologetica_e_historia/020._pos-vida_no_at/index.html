@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>020. Pós-vida no AT</h1>📇 Referências: <a href="/80._biblia/19_salmos/sl_049#13">Sl 49:13-15</a>,<a href="/80._biblia/18_jo/jo_19#25">Jó 19:25-26</a>,<a href="/80._biblia/28_oseias/os_13#14">Os 13:14</a>,<a href="/80._biblia/01_genesis/gn_05#24">Gn 5:24</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/morte_e_ressurreicao/" class="tag-link">Morte_e_ressurreição</a><br /><p>Críticos afirmam que não havia conceito de existência pós-vida antes do exílio babilônico, mas um olhar atento nos mostra que houve uma revelação progressiva do destino das almas após a morte.</p>
+
+  <main class="container"><article class="prose"><h1>020. Pós-vida no AT</h1>📇 Referências: <a href="/80._biblia/19_salmos/sl_049#13">Sl 49:13-15</a>,<a href="/80._biblia/18_jo/jo_19#25">Jó 19:25-26</a>,<a href="/80._biblia/28_oseias/os_13#14">Os 13:14</a>,<a href="/80._biblia/01_genesis/gn_05#24">Gn 5:24</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/morte_e_ressurreicao/" class="tag-link">Morte_e_ressurreição</a><br /><p>Críticos afirmam que não havia conceito de existência pós-vida antes do exílio babilônico, mas um olhar atento nos mostra que houve uma revelação progressiva do destino das almas após a morte.</p>
 <div class="callout callout-bible">
 <h3 class="callout-title">Salmos 49:13-15 - ALMEIDA</h3><p><a href="/80._biblia/19_salmos/sl_049#13">13</a>. Este é o destino dos que confiam em si mesmos; o fim dos que se satisfazem com as suas próprias palavras. <a href="/80._biblia/19_salmos/sl_049#14">14</a>. Como ovelhas são arrebanhados ao Seol; a morte os pastoreia; ao romper do dia os retos terão domínio sobre eles; e a sua formosura se consumirá no Seol, que lhes será por habitação. <a href="/80._biblia/19_salmos/sl_049#15">15</a>. Mas Deus remirá a minha alma do poder do Seol, pois me receberá.</p>
 </div>
@@ -136,14 +122,20 @@ O texto ainda diz que os ímpios se tornarão <strong>cinzas</strong> debaixo do
 </ul>
 <p>É por isso que o aniquilacionismo afirma não ser uma inovação moderna, mas uma leitura que <strong>leva o AT radicalmente a sério</strong> — antes que o debate se torne metafísico.</p>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

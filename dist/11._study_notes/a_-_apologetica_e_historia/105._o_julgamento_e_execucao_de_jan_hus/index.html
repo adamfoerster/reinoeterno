@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>105. O julgamento e execução de Jan Hus</h1>📆 Quando: 1415<br />🧭 Onde: Praga, Bohemia (atualmente na República Checa)<br />✍🏻 <a href="https://www.youtube.com/watch?v=YVYB_bsluJo">https://www.youtube.com/watch?v=YVYB_bsluJo</a><br />🔖 <a href="/90._assets/tags/historia_da_igreja/" class="tag-link">História_da_Igreja</a><br /><p>O julgamento e a execução de <a href="/11._study_notes/a_-_apologetica_e_historia/046._jan_hus">Jan Hus</a> em 1415 não representam apenas um capítulo trágico da biografia eclesiástica, mas um <em>locus</em> privilegiado para a análise da jurisprudência medieval e da lógica de poder do século XV. Sob a égide do 16º Concílio Ecumênico (1414-1418), a erradicação da heresia foi elevada à categoria de imperativo estratégico para a restauração da unidade da Igreja e a manutenção da paz social. O que se testemunhou em Constança foi a cristalização de uma teologia de extermínio, onde a preservação da instituição justificava a aniquilação do indivíduo mediante um simulacro de justiça.</p>
+
+  <main class="container"><article class="prose"><h1>105. O julgamento e execução de Jan Hus</h1>📆 Quando: 1415<br />🧭 Onde: Praga, Bohemia (atualmente na República Checa)<br />✍🏻 <a href="https://www.youtube.com/watch?v=YVYB_bsluJo">https://www.youtube.com/watch?v=YVYB_bsluJo</a><br />🔖 <a href="/90._assets/tags/historia_da_igreja/" class="tag-link">História_da_Igreja</a><br /><p>O julgamento e a execução de <a href="/11._study_notes/a_-_apologetica_e_historia/046._jan_hus">Jan Hus</a> em 1415 não representam apenas um capítulo trágico da biografia eclesiástica, mas um <em>locus</em> privilegiado para a análise da jurisprudência medieval e da lógica de poder do século XV. Sob a égide do 16º Concílio Ecumênico (1414-1418), a erradicação da heresia foi elevada à categoria de imperativo estratégico para a restauração da unidade da Igreja e a manutenção da paz social. O que se testemunhou em Constança foi a cristalização de uma teologia de extermínio, onde a preservação da instituição justificava a aniquilação do indivíduo mediante um simulacro de justiça.</p>
 <h2 id="1._contextualizacao_da_teologia_de_exterminio_da_heresia" tabindex="-1">1. Contextualização da Teologia de Extermínio da Heresia</h2>
 <p>O Concílio de Constança buscou sanar o Grande Cisma e, simultaneamente, purificar o “corpo da Igreja”. Em 6 de julho de 1415, o Bispo de Lodi, Jacob Barlotti Aragoni, proferiu o sermão inaugural da sessão final, fundamentado em <a href="/80._biblia/45_romanos/rm_06#6">Romanos 6:6</a>: “para que o corpo do pecado seja destruído”. Em sua retórica, o prelado defendeu que a <strong>“extermínio de heréticos era uma obra sumamente agradável a Deus”</strong>. A heresia era apresentada como um câncer social que exigia a aplicação do <strong>“ferro de cauterização”</strong> antes que infectasse todo o organismo.</p>
 <p>O Bispo empregou uma série de metáforas biológicas para desumanizar o réu, rotulando-o como <strong>“carne podre”</strong>, uma <strong>“ovelha sarnenta”</strong> que infecta o rebanho, e uma <strong>“faísca”</strong> que, se não extinguida imediatamente, consumiria a casa inteira. Ao comparar Hus a <a href="/11._study_notes/a_-_apologetica_e_historia/arius">Ário</a> (em Alexandria) e a Sabélio, o Bispo de Lodi não apenas o isolou como um dissidente local, mas o elevou ao status de ameaça global e histórica, cuja “extirpação” absoluta — o extermínio total — era a única cura possível para as feridas laceradas da Igreja.</p>
@@ -102,26 +88,32 @@
 <li><strong>A Ilusão da Neutralidade do Braço Secular:</strong> A delegação da violência física ao Estado não exime a autoridade religiosa da responsabilidade moral. A união entre coerção estatal e autoridade doutrinária cria um sistema onde a consciência individual é tratada como um crime capital.</li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Gavin Ortlund<br />
+      <div class="article-footer">
+        👨‍💼 Gavin Ortlund<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/a_-_apologetica_e_historia/046._jan_hus">/11._study_notes/a_-_apologetica_e_historia/046._jan_hus</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/a_-_apologetica_e_historia/046._jan_hus">/11._study_notes/a_-_apologetica_e_historia/046._jan_hus</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

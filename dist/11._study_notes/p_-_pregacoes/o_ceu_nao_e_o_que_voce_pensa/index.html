@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>O Céu não é o que você pensa</h1>✍🏻 <a href="https://www.youtube.com/watch?v=6wsSu6YrR1o">https://www.youtube.com/watch?v=6wsSu6YrR1o</a><br />🔖 <a href="/90._assets/tags/cosmologia/" class="tag-link">Cosmologia</a>, <a href="/90._assets/tags/esperanca_da_ressurreicao/" class="tag-link">Esperança_da_Ressurreição</a><br /><p>Muitas pessoas lutam para olhar para o céu ou vê-lo como um lugar feliz de qualquer forma. Como pastor, descobri que muitos cristãos têm medo do céu. Por que isso seria? Acho que um fator é que não entendemos que será físico.</p>
+
+  <main class="container"><article class="prose"><h1>O Céu não é o que você pensa</h1>✍🏻 <a href="https://www.youtube.com/watch?v=6wsSu6YrR1o">https://www.youtube.com/watch?v=6wsSu6YrR1o</a><br />🔖 <a href="/90._assets/tags/cosmologia/" class="tag-link">Cosmologia</a>, <a href="/90._assets/tags/esperanca_da_ressurreicao/" class="tag-link">Esperança_da_Ressurreição</a><br /><p>Muitas pessoas lutam para olhar para o céu ou vê-lo como um lugar feliz de qualquer forma. Como pastor, descobri que muitos cristãos têm medo do céu. Por que isso seria? Acho que um fator é que não entendemos que será físico.</p>
 <p>Embora no Credo dos Apóstolos digamos, <em>eu acredito na ressurreição do corpo e na vida eterna</em>, o que tendemos a pensar é mais como, <em>eu acredito na sobrevivência da alma e na vida eterna</em>. No meu vídeo sobre o Credo dos Apóstolos, falo um pouco mais sobre isso. Acho que isso é muito importante porque quando entendemos mal a natureza do céu, isso afeta meio que tudo.</p>
 <p>Para os cristãos, para os seguidores de Jesus, o céu é supostamente a grande esperança da nossa vida. Se você não é cristão, a ideia do céu deve ser talvez uma das coisas que mais faria você considerar o cristianismo, porque se é tão feliz assim, vale a pena investigar. Queremos entender o céu com precisão.</p>
 <p>Deixe-me fazer apenas uma pergunta para o propósito deste vídeo e é: comeremos e beberemos no céu? Haverá comida, por exemplo, no céu? Quero argumentar que <strong>sim, teremos</strong>. Embora isso possa parecer uma conclusão muito específica para se chegar, acho que na verdade é uma janela para algumas questões mais amplas que podem nos ajudar a olhar para o céu e entender sua fisicalidade. No final deste vídeo, vou desenvolver isso um pouco mais.</p>
@@ -80,14 +66,20 @@
 <p>O melhor deste mundo não será… você nunca olhará para trás e dirá, <em>oh, eu queria poder fazer isso ou aquilo de novo</em>. E haverá imenso planejamento e alegria e inteligência e vida. O céu agora está cheio de vida, com anjos e assim por diante.</p>
 <p>Estou lendo Apocalipse, ouvindo sobre anjos sendo soltos e todas essas coisas, e você percebe que o céu é mais real do que este mundo. Esse é o lugar real, e nós estamos numa espécie de reino de sombras. Então, espero que isso nos ajude a colocar nossos corações nele um pouco mais.</p>
 
-    <div class="article-footer">
-      👨‍💼 Gavin Ortlund<br />
+      <div class="article-footer">
+        👨‍💼 Gavin Ortlund<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

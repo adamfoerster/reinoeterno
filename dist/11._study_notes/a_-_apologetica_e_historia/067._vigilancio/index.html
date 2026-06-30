@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>067. Vigilâncio</h1>📆 Quando: Séculos IV e V<br />🧭 Onde: Aquitânea (atual França); Espanha<br />⚔️ Refuta: <a href="/soli_deo_gloria">soli Deo gloria</a>,<a href="/celibato">celibato</a>,<a href="/100._ascetismo">100. Ascetísmo</a>,<a href="/oracao_pelos_mortos">oração pelos mortos</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a><br /><p>Vigilâncio se opôs ao ascetismo monástico e às superstições associadas a ele. Jerônimo atacou Vigilâncio, chegando a chamá-lo de monstro; por “acreditar que os túmulos dos mártires e santos não deveriam ser venerados, opor-se à virgindade e ser contra o jejum pelos santos.”</p>
+
+  <main class="container"><article class="prose"><h1>067. Vigilâncio</h1>📆 Quando: Séculos IV e V<br />🧭 Onde: Aquitânea (atual França); Espanha<br />⚔️ Refuta: <a href="/soli_deo_gloria">soli Deo gloria</a>,<a href="/celibato">celibato</a>,<a href="/100._ascetismo">100. Ascetísmo</a>,<a href="/oracao_pelos_mortos">oração pelos mortos</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a><br /><p>Vigilâncio se opôs ao ascetismo monástico e às superstições associadas a ele. Jerônimo atacou Vigilâncio, chegando a chamá-lo de monstro; por “acreditar que os túmulos dos mártires e santos não deveriam ser venerados, opor-se à virgindade e ser contra o jejum pelos santos.”</p>
 <h2 id="veneracao_das_reliquias" tabindex="-1">Veneração das Relíquias</h2>
 <p>Vigilâncio se opôs à reverência paga às relíquias dos mártires, particularmente à prática de carregá-las em recipientes caros, envolvê-las em seda e beijá-las. Ele via isso como uma adoração supersticiosa de “poeira e cinzas” em vez de uma devoção genuína.</p>
 <h2 id="vigilias_noturnas" tabindex="-1">Vigílias Noturnas</h2>
@@ -60,14 +46,20 @@
 <h2 id="conclusoes" tabindex="-1">Conclusões</h2>
 <p>Os ataques de Jerônimo nos mostram que no século V ainda havia uma expressiva parcela da Igreja que considerava as práticas emergentes da nascente instituição católica como abomináveis.</p>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

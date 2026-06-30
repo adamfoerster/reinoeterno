@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>052. Justino Mártir</h1>📆 Quando: ca. 100-165<br />🧭 Onde: Samaria<br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a>, <a href="/90._assets/tags/igreja_primitiva/" class="tag-link">Igreja_Primitiva</a><br /><p><strong>Época e região:</strong> Justino Mártir viveu aproximadamente entre <strong>100–165 d.C.</strong>, atuando principalmente no mundo greco-romano, com origem em <strong>Flávia Neápolis (atual Nablus, na Palestina)</strong> e ministério em <strong>Roma</strong>, durante o período do Império Romano sob imperadores como Antonino Pio e Marco Aurélio.</p>
+
+  <main class="container"><article class="prose"><h1>052. Justino Mártir</h1>📆 Quando: ca. 100-165<br />🧭 Onde: Samaria<br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/patristica/" class="tag-link">Patrística</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a>, <a href="/90._assets/tags/igreja_primitiva/" class="tag-link">Igreja_Primitiva</a><br /><p><strong>Época e região:</strong> Justino Mártir viveu aproximadamente entre <strong>100–165 d.C.</strong>, atuando principalmente no mundo greco-romano, com origem em <strong>Flávia Neápolis (atual Nablus, na Palestina)</strong> e ministério em <strong>Roma</strong>, durante o período do Império Romano sob imperadores como Antonino Pio e Marco Aurélio.</p>
 <p>Justino nasceu em um contexto pagão e buscou a verdade por meio de várias escolas filosóficas (estoicismo, platonismo, etc.). Por volta de <strong>c. 130 d.C.</strong>, após um encontro com um cristão idoso (relatado em seu <em>Diálogo com Trifão</em>), converteu-se ao cristianismo, convencido de que este era a “verdadeira filosofia”. Em <strong>Roma</strong>, abriu uma espécie de escola filosófica cristã e escreveu suas principais obras, como as <em>Apologias</em> (endereçadas ao imperador) e o <em>Diálogo com Trifão</em> (c. 155–160 d.C.), defendendo a fé cristã contra acusações pagãs e judaicas. Por volta de <strong>165 d.C., em Roma</strong>, foi denunciado por um filósofo rival e executado por decapitação, tornando-se um dos primeiros grandes mártires apologistas da Igreja.</p>
 <h2 id="perspectiva_teologica_e_filosofica" tabindex="-1">Perspectiva teológica e filosófica</h2>
 <p>Justino Mártir é um dos principais representantes dos <strong>apologistas do século II</strong>, e sua teologia reflete um esforço de diálogo entre o cristianismo e a filosofia grega, especialmente o platonismo.</p>
@@ -69,30 +55,36 @@
 <li><a href="/amilenismo">amilenismo</a></li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/d_-_doutrina_e_escatologia/045._nefilins">/11._study_notes/d_-_doutrina_e_escatologia/045._nefilins</a>
+          </li>
+          
+          <li>
+            <a href="/11._study_notes/o_-_ortopraxia_etica_e_eclesiologia/002._culto_cristao_(150dc)_segundo_justino_martir">/11._study_notes/o_-_ortopraxia_etica_e_eclesiologia/002._culto_cristao_(150dc)_segundo_justino_martir</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/d_-_doutrina_e_escatologia/045._nefilins">/11._study_notes/d_-_doutrina_e_escatologia/045._nefilins</a>
-        </li>
-        
-        <li>
-          <a href="/11._study_notes/o_-_ortopraxia_etica_e_eclesiologia/002._culto_cristao_(150dc)_segundo_justino_martir">/11._study_notes/o_-_ortopraxia_etica_e_eclesiologia/002._culto_cristao_(150dc)_segundo_justino_martir</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

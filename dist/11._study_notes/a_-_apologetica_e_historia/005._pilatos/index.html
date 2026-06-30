@@ -3,64 +3,65 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     005. Pilatos - Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>005. Pilatos</h1>📇 Referências: <a href="/80._biblia/42_lucas/lc_13#1">Lc 13:1</a><br />🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><div class="callout callout-bible">
-<h3 class="callout-title"><a href="https://www.biblegateway.com/passage/?search=Lucas+13:1&amp;version=almeida">Lucas 13:1 - ALMEIDA</a></h3><p></p>
-<ol>
-<li>Ora, naquele mesmo tempo estavam presentes alguns que lhe falavam dos galileus cujo sangue Pilatos misturara com os sacrifícios deles.</li>
-</ol>
+
+  <main class="container"><article class="prose"><h1>005. Pilatos</h1>🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a><br /><div class="callout callout-bible">
+<h3 class="callout-title"><a href="https://www.biblegateway.com/passage/?search=Lucas+13:1&amp;version=almeida">Lucas 13:1 - ALMEIDA</a></h3><p><a href="/80._biblia/42_lucas/lc_13#1">1</a>. Ora, naquele mesmo tempo estavam presentes alguns que lhe falavam dos galileus cujo sangue Pilatos misturara com os sacrifícios deles.</p>
 </div>
 <p>Nesta passagem é relatado que alguns galileus transgressores da lei foram a Jerusalém para fazer sacrifícios. A proximidade do altar deveria ser o lugar mais seguro para um judeu, pois os romanos não poderiam entrar lá. Mesmo assim, Pilatos invade o Templo durante o sacrifício, profanando-o pela presença estrangeira e pelo derramamento de sangue. O Templo de Jerusalém continha um sistema de comportas que inundavam o átrio para lavar o sangue dos sacrifícios, mas dessa vez sangue humano teve que ser lavado junto.</p>
 <p>É possível que aqueles que contaram essa estória para Jesus criam que alguém que sofreu um destino tão terrível num lugar tão santo deveria ser profundamente malvado e sua execução representaria a recusa de Deus em receber seus sacrifícios.</p>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/a_-_apologetica_e_historia/106._argumentos_da_veracidade_da_ressurreicao">/11._study_notes/a_-_apologetica_e_historia/106._argumentos_da_veracidade_da_ressurreicao</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

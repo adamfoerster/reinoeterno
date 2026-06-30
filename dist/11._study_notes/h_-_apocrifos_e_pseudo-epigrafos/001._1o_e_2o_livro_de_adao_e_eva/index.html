@@ -3,48 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     1o e 2o livro de Adão e Eva - Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>1o e 2o livro de Adão e Eva</h1>📆 Quando: ca. século VI<br />🔖 <a href="/90._assets/tags/livros_e_citacoes/" class="tag-link">Livros_e_Citações</a>, <a href="/90._assets/tags/cosmologia/" class="tag-link">Cosmologia</a>, <a href="/90._assets/tags/apocrifos/" class="tag-link">Apócrifos</a><br /><h1 id="1o_e_2o_livro_de_adao_e_eva_(ca._6_sec)" tabindex="-1">1⁠º e 2⁠º livro de Adão e Eva (ca. 6 séc)</h1>
+
+  <main class="container"><article class="prose"><h1>1o e 2o livro de Adão e Eva</h1>📆 Quando: ca. século VI<br />🔖 <a href="/90._assets/tags/livros_e_citacoes/" class="tag-link">Livros_e_Citações</a>, <a href="/90._assets/tags/cosmologia/" class="tag-link">Cosmologia</a>, <a href="/90._assets/tags/apocrifos/" class="tag-link">Apócrifos</a><br /><h1 id="1o_e_2o_livro_de_adao_e_eva_(ca._6_sec)" tabindex="-1">1⁠º e 2⁠º livro de Adão e Eva (ca. 6 séc)</h1>
 <p>Livro ge`ez etíope que conta a história de Adão e Eva logo após a queda. Parte da Caverna dos Tesouros (siríaco).</p>
 <p>Claramente escrito por cristãos que conheciam o Gênesis e o Novo Testamento.</p>
 <p>Mesmo se excluirmos o fato de ninguém mencionar o livro antes do 6o século o feel da narrativa cai nos mesmos erros que outros apócrifos. Tenta explicar demais as coisas. Uma narrativa repetitiva e arrastada…</p>
@@ -68,14 +54,20 @@
 <li>Satã e seus anjos tem relações com as mulheres descendentes de Caim, mostrando um meio termo entre a crença que os Filhos de Deus em Gn6 seriam anjos e a que diz que seriam os descendentes de Seth</li>
 </ul>
 
-    <div class="article-footer">
-      👨‍💼 desconhecido<br />
+      <div class="article-footer">
+        👨‍💼 desconhecido<br />
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 

@@ -3,73 +3,65 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
   </header>
-  <main><h1>086. Peter Ruckman</h1>🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a><br /><h3 id="peter_ruckman" tabindex="-1">Peter Ruckman</h3>
+
+  <main class="container"><article class="prose"><h1>086. Peter Ruckman</h1>🔖 <a href="/90._assets/tags/apologetica_e_historia/" class="tag-link">Apologética_e_história</a>, <a href="/90._assets/tags/pessoas/" class="tag-link">Pessoas</a><br /><h3 id="peter_ruckman" tabindex="-1">Peter Ruckman</h3>
 <p>Peter Ruckman foi um pastor e teólogo batista fundamentalista dos Estados Unidos que teve uma influência importante no crescimento do movimento King James Only. Ruckman defendia a Bíblia King James como a única tradução precisa e inspirada, considerando todas as demais traduções inferiores e corruptas. Ruckman fundamentou suas opiniões na convicção de que a Bíblia King James foi inspirada divinamente e, por isso, não poderia apresentar erros ou discrepâncias. Ele também afirmou que as traduções contemporâneas da Bíblia foram afetadas pela teologia liberal e que isso fazia parte de uma conspiração maior para enfraquecer a autoridade bíblica.</p>
 <p>Ruckman teve um impacto considerável no movimento King James Only, e seus ensinamentos foram amplamente disseminados por meio de suas obras, pregações e cursos em instituições de ensino bíblico. Os adeptos de Ruckman assumiram sua posição rígida em relação à Bíblia King James, e muitos deles interpretaram qualquer crítica à tradução como uma ofensa à integridade da Bíblia em si. O crescimento de um movimento mais amplo de cristãos conservadores, que rejeitavam os estudos modernos e as abordagens críticas da Bíblia, em favor de uma leitura mais fundamentalista do texto, foi também influenciado por Ruckman. Apesar de as opiniões de Ruckman ainda serem polêmicas, seu legado no movimento King James Only continua a impactar as convicções e práticas de muitos cristãos fundamentalistas nos dias atuais.</p>
 <p>Atualmente, muitos movimentos rejeitam o Ruckmanismo publicamente, mas adotam várias de suas doutrinas na prática. Incluem-se entre esses os que veem o Textus Receptus ou o Texto Majoritário como infalíveis. Geralmente, consideram a ACF em português, a Reina Valera em espanhol e a King James em inglês como as únicas versões adequadas para leitura em cada idioma.</p>
 <p>Quase todos os líderes evangélicos mais respeitados e conhecidos hoje em dia não aceitam que uma tradução possa ser inspirada.</p>
 
-    <div class="article-footer">
-      👨‍💼 Adam Foerster<br />
+      <div class="article-footer">
+        👨‍💼 Adam Foerster<br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/11._study_notes/a_-_apologetica_e_historia/004._preservacao_das_escrituras">/11._study_notes/a_-_apologetica_e_historia/004._preservacao_das_escrituras</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
     </div>
-    
-    <hr />
-    <div class="backlinks">
-      <h3>Links para esta página</h3>
-      <ul>
-        
-        <li>
-          <a href="/11._study_notes/a_-_apologetica_e_historia/004._preservacao_das_escrituras">/11._study_notes/a_-_apologetica_e_historia/004._preservacao_das_escrituras</a>
-        </li>
-        
-      </ul>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
   </footer>
 </body>
 

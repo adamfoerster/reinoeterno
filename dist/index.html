@@ -3,90 +3,180 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     Início - Reino Eterno Online
   </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle")
-      if (!btn) return // guarda contra null
-
-      btn.onclick = () => {
-        document.body.classList.toggle("dark")
-        btn.textContent = document.body.classList.contains("dark")
-          ? "☀️"
-          : "🌙"
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        )
-      }
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark")
-        btn.textContent = "☀️"
-      }
-    })
-  </script>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="/90._assets/reinoeterno-logo.png" alt="Reino Eterno - Online" loading="lazy" />
-      <h1>Reino Eterno<br /><span class="online">ONLINE</span></h1>
-    </a>
-  </header>
-  <main><h1>Início</h1><p>Seja bem-vindo ao Reino Eterno Online. Posto aqui alguns textos que produzi, outros que traduzi (sempre com os créditos). Aqui Você encontrará material que usei ou uso para conhecer melhor o cristianismo e crescer na fé.</p>
-<p>Caso queira conhecer um pouco do básico da fé cristã, um bom ponto de princípio é a série <a href="/90._assets/tags/cristianismo_para_criancas/">Cristianismo para Crianças</a> que fiz para ensinar minha filha, na época ainda não alfabetizada. Tento explicar a fé de maneira simples e objetiva.</p>
-<p>A sessão <a href="/90._assets/tags/notas_de_estudo/">Notas de Estudo</a> contém notas sequenciais referenciadas por código que faço em minha Bíblia.</p>
-<p>A maior parte das notas ainda é um trabalho em andamento. Meu foco tem sido em <a href="/90._assets/tags/apologetica_e_historia/">apologética</a> (defesa da fé) em geral e mais especificamente na <a href="/90._assets/tags/patristica/">patrística</a>, para entender qual a real fé apostólica.</p>
-<p>Veja também resumos de <a href="/90._assets/tags/biografia/">biografias</a> de cristãos do passado com os quais aprendi muito.</p>
-<h1 id="explore_pelas_tags" tabindex="-1">Explore pelas Tags</h1>
-<ul>
-  <li><a href="/90._assets/tags/apologetica_e_historia/">apologética e história</a></li>
-  <li><a href="/90._assets/tags/apocrifos/">apócrifos</a></li>
-  <li><a href="/90._assets/tags/argumentos_a_favor/">argumentos a favor</a></li>
-  <li><a href="/90._assets/tags/biografia/">biografia</a></li>
-  <li><a href="/90._assets/tags/comentarios/">comentários</a></li>
-  <li><a href="/90._assets/tags/cosmologia/">cosmologia</a></li>
-  <li><a href="/90._assets/tags/cristianismo_para_criancas/">cristianismo para crianças</a></li>
-  <li><a href="/90._assets/tags/doutrina_e_escatologia/">doutrina e escatologia</a></li>
-  <li><a href="/90._assets/tags/eclesiologia/">eclesiologia</a></li>
-  <li><a href="/90._assets/tags/esperanca_da_ressurreicao/">esperança da ressurreição</a></li>
-  <li><a href="/90._assets/tags/evangelismo/">evangelismo</a></li>
-  <li><a href="/90._assets/tags/familia_foerster/">família foerster</a></li>
-  <li><a href="/90._assets/tags/geografia/">geografia</a></li>
-  <li><a href="/90._assets/tags/hermeneutica/">hermenêutica</a></li>
-  <li><a href="/90._assets/tags/historia_da_igreja/">história da igreja</a></li>
-  <li><a href="/90._assets/tags/igreja_primitiva/">igreja primitiva</a></li>
-  <li><a href="/90._assets/tags/livros_e_citacoes/">livros e citações</a></li>
-  <li><a href="/90._assets/tags/morte_e_ressurreicao/">morte e ressurreição</a></li>
-  <li><a href="/90._assets/tags/nao-ficcao/">não-ficção</a></li>
-  <li><a href="/90._assets/tags/objecoes_ao_cristianismo/">objeções ao cristianismo</a></li>
-  <li><a href="/90._assets/tags/ortopraxia/">ortopraxia</a></li>
-  <li><a href="/90._assets/tags/patristica/">patrística</a></li>
-  <li><a href="/90._assets/tags/pessoas/">pessoas</a></li>
-  <li><a href="/90._assets/tags/pregacoes/">pregações</a></li>
-  <li><a href="/90._assets/tags/sobre_nos/">sobre nós</a></li>
-  <li><a href="/90._assets/tags/traducao_filosofia_e_manuscritos/">tradução filosofia e manuscritos</a></li>
-  <li><a href="/90._assets/tags/versao_lucas/">versão lucas</a></li>
-</ul>
-    <div class="article-footer">
-      <br />
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
     </div>
-    
-  </main>
-  <footer>
-    <p>AF</p>
-    <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+  </header>
+
+  <main class="container"><!-- HERO -->
+    <section id="top" class="hero">
+      <div class="hero__title">
+        <div class="hero-eyebrow">EST. — Soli Deo Gloria</div>
+        <h1>Um arquivo do<br />Reino que<br />não passa.</h1>
+      </div>
+      <div class="hero__lede">
+        <p>Escritos, traduções e estudo bíblico reunidos num só lugar.
+          <span class="i muted-3">Writing, translation, and Bible study notes — gathered in one place.</span>
+        </p>
+        <div class="cta">
+          <a href="/#notas" class="cta-btn cta-btn--solid">Ler as notas →</a>
+          <a href="#publicacoes" class="cta-btn cta-btn--ghost">Publicações</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROSE INTRO (real index.md content) --><section class="home-prose">
+      <article class="prose"><p><em>Seja bem-vindo ao Reino Eterno Online. Posto aqui alguns textos que produzi, outros que traduzi (sempre com os créditos). Aqui Você encontrará material que usei ou uso para conhecer melhor o cristianismo e crescer na fé.</em></p>
+</article>
+    </section><!-- NOTAS DE ESTUDO -->
+    <section id="notas" class="notas">
+      <div class="notas-band">
+        <span class="notas-band__title">Notas de Estudo</span><span class="notas-band__num">08 / Study Notes</span>
+      </div>
+      <div class="notas-intro">
+        <p>Estudos verso a verso e ensaios sobre as doutrinas que estruturam a esperança cristã.
+          <span class="i muted-3">The heart of this archive.</span>
+        </p>
+      </div>
+      <div class="notas-grid"><a href="/90._assets/tags/apologetica_e_historia/" class="note-card">
+          <span class="note-card__num">01</span>
+          <span>
+            <span class="note-card__pt">Apologética e História</span>
+            <span class="note-card__desc">Defesa razoável da fé diante das objeções de cada época.</span>
+            <span class="note-card__meta">#APOLOGÉTICA_E_HISTÓRIA 48 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/doutrina_e_escatologia/" class="note-card">
+          <span class="note-card__num">02</span>
+          <span>
+            <span class="note-card__pt">Doutrina e Escatologia</span>
+            <span class="note-card__desc">Artigos sobre a doutrina ortodoxa cristã e sobre últimas coisas.</span>
+            <span class="note-card__meta">#DOUTRINA_E_ESCATOLOGIA 9 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/pessoas/" class="note-card">
+          <span class="note-card__num">03</span>
+          <span>
+            <span class="note-card__pt">Pessoas</span>
+            <span class="note-card__desc">Pessoas dignas de nota para a história do cristianismo (nem sempre pelos motivos certos).</span>
+            <span class="note-card__meta">#PESSOAS 14 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/patristica/" class="note-card">
+          <span class="note-card__num">04</span>
+          <span>
+            <span class="note-card__pt">Patrística</span>
+            <span class="note-card__desc">Perfis e escritos dos pais da igreja.</span>
+            <span class="note-card__meta">#PATRÍSTICA 9 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/biografia/" class="note-card">
+          <span class="note-card__num">05</span>
+          <span>
+            <span class="note-card__pt">Biografias</span>
+            <span class="note-card__desc">Biografias de grandes cristãos do passado.</span>
+            <span class="note-card__meta">#BIOGRAFIA 5 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/morte_e_ressurreicao/" class="note-card">
+          <span class="note-card__num">06</span>
+          <span>
+            <span class="note-card__pt">Morte e Ressurreição</span>
+            <span class="note-card__desc">Qual o destino para todos os homens? Qual a importância da ressurreição?</span>
+            <span class="note-card__meta">#MORTE_E_RESSURREIÇÃO 4 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/cosmologia/" class="note-card">
+          <span class="note-card__num">07</span>
+          <span>
+            <span class="note-card__pt">Cosmologia</span>
+            <span class="note-card__desc">Como funciona a terra o céu e o inferno? O que a bíblia diz sobre isso?</span>
+            <span class="note-card__meta">#COSMOLOGIA 7 NOTAS</span>
+          </span>
+        </a><a href="/90._assets/tags/geografia/" class="note-card">
+          <span class="note-card__num">08</span>
+          <span>
+            <span class="note-card__pt">Geografia</span>
+            <span class="note-card__desc">Saiba mais sobre os locais onde a bíblia aconteceu.</span>
+            <span class="note-card__meta">#GEOGRAFIA 3 NOTAS</span>
+          </span>
+        </a></div>
+      <div class="notas-all">
+        <a href="/#notas">Ver todas as notas de estudo →</a>
+      </div>
+    </section>
+
+    <!-- PUBLICAÇÕES + APPS -->
+    <section class="pubapps">
+
+      <div id="publicacoes" class="pubapps__col">
+        <div class="section-head">
+          <span class="section-head__title">Publicações</span><span class="section-head__num">03 / Books</span>
+        </div>
+        <div class="pubapps__body"><a href="/90._assets/tags/cristianismo_para_criancas/" class="book book--divider">
+            <div class="cover"><span>capa</span></div>
+            <div>
+              <div class="book__kicker">Livro · Autoral</div>
+              <div class="book__title">Cristianismo Para Crianças</div>
+              <div class="book__desc">A fé histórica contada de forma simples e fiel - para os pequenos e quem os ensina.</div>
+            </div>
+          </a><a href="/90._assets/tags/plena_certeza/" class="book book--divider">
+            <div class="cover"><span>capa</span></div>
+            <div>
+              <div class="book__kicker">Tradução · H. A. Ironside</div>
+              <div class="book__title">Plena Certeza</div>
+              <div class="book__desc">Ao tratar da segurança da salvação Ironside explica sobre evangelismo e tira diversas dúvidas que podem ajudar tanto cristãos mais novos quanto mais experientes.</div>
+            </div>
+          </a><a href="/10._christian/seguranca_certeza_e_gozo/" class="book">
+            <div class="cover"><span>capa</span></div>
+            <div>
+              <div class="book__kicker">Tradução · George Cutting</div>
+              <div class="book__title">Segurança, Certeza e Gozo</div>
+              <div class="book__desc">Folheto clássico sobre a segurança da salvação com base na fé no evangelho.</div>
+            </div>
+          </a></div>
+      </div>
+
+      <div id="apps" class="pubapps__col">
+        <div class="section-head">
+          <span class="section-head__title">Apps</span><span class="section-head__num">01 / Software</span>
+        </div>
+        <div class="pubapps__body pubapps__body--apps"><a href="/90._assets/reinoeterno.online/kidshabits/" class="app-row">
+            <div class="app-icon app-icon--img" style="background-image:url('/90._assets/reinoeterno.online/kidshabits-icon.png')"></div>
+            <div class="app-row__text">
+              <div class="app-row__name">KidsHabits</div>
+              <div class="app-row__desc">Tarefas, pontos e recompensas para manter as crianças motivadas — pensado para famílias ocupadas.</div>
+            </div>
+            <span class="app-row__arrow">→</span>
+          </a></div>
+      </div>
+
+    </section></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
   </footer>
 </body>
 
