@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    The Board: Terrain, Regions and Settlements - Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container"><article class="prose"><h1>The Board: Terrain, Regions and Settlements</h1><blockquote>
+<p>Languages: <strong>English</strong> · <a href="/60._projects/promised_land_-_manual/es/territorios">Español</a> · <a href="/60._projects/promised_land_-_manual/pt/territorios">Português</a></p>
+<p><a href="/60._projects/promised_land_-_manual/en/index">← Back to the manual index</a></p>
+</blockquote>
+<p>The Promised Land board is a hex map. Every hex has a <strong>terrain</strong>, which sets the cost of crossing it and which events can strike it. On top of that map sit the <strong>settlements</strong> — the villages and cities that generate income and that, grouped into <strong>regions</strong>, are worth the game’s victory points.</p>
+<h2 id="terrain_types" tabindex="-1">Terrain Types</h2>
+<p>There are four types, identified by the colour of the hex:</p>
+<p><img src="/60._projects/promised_land_-_manual/assets/terrain-map.svg" alt="terrain-map.svg" loading="lazy"></p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Terrain</th>
+<th>Colour on the map</th>
+<th>Movement cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Plain</td>
+<td>Dark brown</td>
+<td>1 point</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mountains</td>
+<td>Grey</td>
+<td>2 points</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Desert</td>
+<td>Sand</td>
+<td>2 points</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Water</td>
+<td>Blue (with a red ✕)</td>
+<td>Impassable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1._plain" tabindex="-1">1. Plain</h3>
+<p>The most common terrain on the map and the cheapest to cross: <strong>1 movement point</strong> per hex. Most villages sit on the plains, and it is the terrain that allows the longest marches in a single round.</p>
+<p>The plain is also the only terrain with a direct effect in combat: a general carrying the <strong>Chariot</strong> gains <strong>+3 strength</strong> when fighting on the plains — but only in the open field, never inside a settlement.</p>
+<p>During the <a href="/60._projects/promised_land_-_manual/en/announcements">Announcements phase</a>, an event card lands on the plains when the six-sided die rolls a <strong>1 or 2</strong>.</p>
+<h3 id="2._mountains" tabindex="-1">2. Mountains</h3>
+<p>Rough ground: entering a mountain hex costs <strong>2 movement points</strong>, twice a plain. A mountain range acts as a natural barrier — crossing one eats up a slow general’s entire round, which makes mountains a good line of defence between regions.</p>
+<p>Beyond the cost, mountains impose no restrictions: generals may stop, fight, and defend on them normally.</p>
+<p>During the Announcements phase, an event card lands on the mountains when the die rolls a <strong>3 or 4</strong>.</p>
+<h3 id="3._desert" tabindex="-1">3. Desert</h3>
+<p>Entering a desert hex also costs <strong>2 movement points</strong>. The desert covers the eastern belt and the southern edge of the map.</p>
+<p>What makes the desert dangerous is the <strong>Sandstorm</strong>: of the four event cards, it is the only one tied to a fixed terrain — it always lands in the desert and is never rolled onto another. While a sandstorm is active:</p>
+<ul>
+<li>Every desert hex <strong>and every hex adjacent to a desert hex</strong> is sealed. They are marked on the map with a <strong>red ✕</strong>.</li>
+<li>No general may enter, leave, or cross a sealed hex. A general standing on one <strong>cannot move at all</strong> that round.</li>
+<li><strong>No combat takes place on desert hexes</strong> that round. (Adjacent hexes are blocked for movement only; combat there resolves normally.)</li>
+</ul>
+<p>The <a href="/60._projects/promised_land_-_manual/en/cards">single-use</a> <strong>Secret Passage</strong> card ignores this seal for one move, letting a general enter or leave the desert during the storm. The sandstorm expires after one round.</p>
+<p>During the Announcements phase, the other event cards land in the desert when the die rolls a <strong>5 or 6</strong>.</p>
+<h3 id="4._water" tabindex="-1">4. Water</h3>
+<p>Water is <strong>impassable</strong>. No general may enter or cross a water hex under any circumstances — there are no boats, and no card lifts the restriction. That is why every water hex is permanently marked with a <strong>red ✕</strong>, showing it is out of play.</p>
+<p>Water holds no settlements, generates no income, and never receives event cards. Its role is geographic: the great sea to the west defines the coast, and the inland waters narrow the passages through the centre of the map, creating chokepoints worth defending.</p>
+<h2 id="movement_rules" tabindex="-1">Movement Rules</h2>
+<p>Every general has a <strong>movements</strong> value printed on their card (<strong>2</strong>, <strong>3</strong>, or <strong>4</strong>, depending on the general). That value is the total number of points they may spend in the Movement phase, and each hex’s cost is charged <strong>on entering</strong> it. The game always works out the cheapest route to the chosen destination.</p>
+<p>Some examples with a <strong>3-point</strong> general:</p>
+<ul>
+<li>3 plain hexes (1 + 1 + 1);</li>
+<li>1 plain and 1 mountain (1 + 2);</li>
+<li>1 mountain and 1 desert would be 4 points — <strong>out of range</strong>.</li>
+</ul>
+<p>Beyond terrain cost, other rules limit where a general may go:</p>
+<ul>
+<li><strong>Enemy or neutral settlements</strong> may be the destination of a move (that is how you attack them), but they <strong>cannot be crossed</strong> to reach hexes beyond.</li>
+<li>A hex <a href="/60._projects/promised_land_-_manual/en/movement">**under siege**</a> by another player is sealed: no general enters or leaves it — except those of the player conducting the siege. A besieged general cannot move.</li>
+<li>A settlement already holding a player’s <strong>maximum of 2 defending generals</strong> will not accept another.</li>
+<li>During a <strong>Sandstorm</strong>, the desert and its fringe are sealed (see above).</li>
+<li>A <a href="/60._projects/promised_land_-_manual/en/combat">**captive general**</a>, moved by their captor, may never enter a hex holding an enemy presence: they can only be marched through friendly or empty territory.</li>
+<li>The <strong>Secret Passage</strong> waives both the siege seal and the sandstorm seal for a single move.</li>
+</ul>
+<h2 id="terrain_and_events" tabindex="-1">Terrain and Events</h2>
+<p>During the Announcements phase, each card in the Events Area is rolled onto a terrain with a six-sided die — <strong>1-2 plain, 3-4 mountains, 5-6 desert</strong>. Water never receives events. When a prophet is in play, their owner chooses each card’s terrain instead of rolling (the Sandstorm stays tied to the desert).</p>
+<p>The terrain struck determines who suffers the effect:</p>
+<ul>
+<li><strong>Abundance</strong> — each settlement on that terrain earns <strong>+1</strong> income for the round.</li>
+<li><strong>Hunger</strong> — each settlement on that terrain earns <strong>−1</strong>.</li>
+<li><strong>Plague</strong> — rolls against every garrison and every general standing on that terrain.</li>
+<li><strong>Sandstorm</strong> — seals the desert, as described above.</li>
+</ul>
+<hr>
+<h2 id="regions" tabindex="-1">Regions</h2>
+<p>A region is <strong>not a contiguous area of the map</strong>: it is a <em>named group of settlements</em>. An empty hex’s terrain never belongs to any region — only villages and cities carry that mark. On the board, a region shows as a <strong>coloured dashed ring</strong> around each of its settlements.</p>
+<p>Of the map’s 40 settlements, <strong>31 belong to one of the six regions</strong> and <strong>9 belong to none</strong>.</p>
+<p><img src="/60._projects/promised_land_-_manual/assets/region-map.svg" alt="region-map.svg" loading="lazy"></p>
+<p>On the map above, each region uses the colour the game itself uses in its legend. The number identifies the settlement in the tables below, and the colour of the badge shows its starting situation:</p>
+<ul>
+<li><strong>White badge</strong> — settlement free at the start of the game.</li>
+<li><strong>Black badge</strong> — settlement held by the Canaanites at the start of the game.</li>
+</ul>
+<h3 id="why_regions_matter" tabindex="-1">Why regions matter</h3>
+<p>A region is the path to a <a href="/60._projects/promised_land_-_manual/en/acquisitions">**Judge title**</a>, worth <strong>1 victory point</strong> (and 3 are needed to win). To buy a region’s title during the Acquisitions phase, for <strong>10 coins</strong>, all of these must hold at once:</p>
+<ul>
+<li>the region has <strong>at least 4 settlements</strong>;</li>
+<li>there is <strong>no judge</strong> in that region yet, and it has <strong>no city</strong> yet;</li>
+<li>you control <strong>every</strong> settlement of the region — no exceptions;</li>
+<li>you own a <strong>walled village</strong> there, which will become the judge city;</li>
+<li>you have a <strong>free</strong> general (not captive) who does not already hold another title.</li>
+</ul>
+<p>The 9 region-less settlements never grant any title: they are worth their income and strategic position, and count toward no judge’s eligibility.</p>
+<p>There is also an end-game condition tied to regions: once <strong>fewer than 3 regions</strong> can still support a judge (each needs 4 standing settlements), the game ends and <strong>everyone loses</strong> — razing too many settlements ruins the board for all players.</p>
+<h3 id="settlements_by_region" tabindex="-1">Settlements by region</h3>
+<p>Some settlements only exist from a certain player count upward. The count includes <strong>every player, computer-controlled ones included</strong>, and does not count the neutral Canaanite tribe.</p>
+<p>Canaanite-held settlements start the game with <strong>1 wall</strong> and a garrison set by the difficulty chosen when the game is created (<em>Weak</em> 1 troop, <em>Medium</em> 2, <em>Strong</em> 4).</p>
+<h4 id="syrophoenicia_4_settlements_all_canaanite" tabindex="-1">🟤 Syrophoenicia — 4 settlements, all Canaanite</h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Damascus</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sidon</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tire</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hatzor</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+</tbody>
+</table>
+<p>With exactly 4 settlements the region sits at the bare minimum for a judge — and every one of them has to be taken from the Canaanites.</p>
+<h4 id="gilead_5_settlements_1_canaanite" tabindex="-1">🟢 Gilead — 5 settlements, 1 Canaanite</h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Astaroth</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Edrei</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ramote-Gileade</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Mahanaim</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Jazer</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<h4 id="israel_7_settlements_1_canaanite" tabindex="-1">🔴 Israel — 7 settlements, 1 Canaanite</h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>Megiddo</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Jezreel</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Tirza</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Shechem</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Shiloh</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Bethel</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Gilgal</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<p>The largest region on the map: seven settlements to control, but only one in Canaanite hands.</p>
+<h4 id="judah_6_settlements_3_canaanite" tabindex="-1">🔵 Judah — 6 settlements, 3 Canaanite</h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17</td>
+<td>Jerusalem</td>
+<td>Mountains</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Jericho</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Lachish</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Hebrom</td>
+<td>Mountains</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Debir</td>
+<td>Mountains</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Berseba</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<h4 id="philistia_5_settlements_4_canaanite" tabindex="-1">🟠 Philistia — 5 settlements, 4 Canaanite</h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>23</td>
+<td>Ashdod</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Ashquelom</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Gate</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Gaza</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Gerar</td>
+<td>Plain</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<h4 id="edom_4_settlements_all_canaanite_(6-player_games_only)" tabindex="-1">🟣 Edom — 4 settlements, all Canaanite <em>(6-player games only)</em></h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>28</td>
+<td>Zoar</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Tamar</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Zalmuna</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Bosra</td>
+<td>Plain</td>
+<td>Canaanite</td>
+</tr>
+</tbody>
+</table>
+<p>Edom is the only region gated entirely on player count: its four settlements appear on the board only in <strong>6-player</strong> games. With fewer players, the region simply does not exist.</p>
+<h4 id="no_region_9_settlements_1_canaanite" tabindex="-1">⚪ No region — 9 settlements, 1 Canaanite</h4>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Settlement</th>
+<th>Terrain</th>
+<th>Start</th>
+<th>Appears with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32</td>
+<td>Dan</td>
+<td>Plain</td>
+<td>Free</td>
+<td>always</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Hamath</td>
+<td>Plain</td>
+<td>Free</td>
+<td>5+ players</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Joppa</td>
+<td>Plain</td>
+<td>Free</td>
+<td>5+ players</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Rabba</td>
+<td>Mountains</td>
+<td>Canaanite</td>
+<td>4+ players</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Gezer</td>
+<td>Plain</td>
+<td>Free</td>
+<td>5+ players</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Heshbon</td>
+<td>Mountains</td>
+<td>Free</td>
+<td>4+ players</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Jaaza</td>
+<td>Mountains</td>
+<td>Free</td>
+<td>4+ players</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Quirnaserete</td>
+<td>Mountains</td>
+<td>Free</td>
+<td>4+ players</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Kadesh</td>
+<td>Plain</td>
+<td>Free</td>
+<td>6+ players</td>
+</tr>
+</tbody>
+</table>
+<p>These settlements pay income and hold valuable positions, but they <strong>never count toward a Judge title</strong>.</p>
+<hr>
+<h2 id="settlement_types" tabindex="-1">Settlement Types</h2>
+<p>There are two kinds of settlement — <strong>village</strong> and <strong>city</strong> — and the map tells them apart by their icon:</p>
+<p><img src="/60._projects/promised_land_-_manual/assets/settlement-types.svg" alt="settlement-types.svg" loading="lazy"></p>
+<ol>
+<li><strong>Unwalled village</strong> — house icon.</li>
+<li><strong>Walled village</strong> — tower icon. It is the same village: buying the wall changes the drawing.</li>
+<li><strong>City</strong> — castle icon. The golden gears above it count the developments built there.</li>
+</ol>
+<p>The number in the middle of the icon is the <strong>garrison</strong>: how many troops are stationed there.</p>
+<p>One detail matters at setup: <strong>all 40 settlements on the board start as villages</strong>. There is no city at the beginning of the game — every city is the result of some player claiming a Judge title.</p>
+<h3 id="differences_in_behaviour" tabindex="-1">Differences in behaviour</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Village</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base income per round</strong></td>
+<td>1 coin</td>
+<td>2 coins</td>
+</tr>
+<tr>
+<td><strong>Defence bonus</strong></td>
+<td>+4, and <strong>only if it has a wall</strong></td>
+<td>+6, <strong>always</strong> (no wall needed)</td>
+</tr>
+<tr>
+<td><strong>Decay under siege</strong></td>
+<td>4 → 2 → 0 (from the 3rd siege round)</td>
+<td>6 → 4 → 2 → 0 (from the 4th)</td>
+</tr>
+<tr>
+<td><strong>Loot value when destroyed</strong></td>
+<td>20 coins</td>
+<td>30 coins</td>
+</tr>
+<tr>
+<td><strong>Judge title</strong></td>
+<td>cannot hold one</td>
+<td>it is the region’s <strong>capital</strong> and holds the title (1 VP)</td>
+</tr>
+<tr>
+<td><strong>Tabernacle</strong></td>
+<td>cannot receive it</td>
+<td>can receive it (only one per game)</td>
+</tr>
+<tr>
+<td><strong>How it comes about</strong></td>
+<td>on the board from the start</td>
+<td>created by buying the Judge title on a walled village you own</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond the numbers, a city behaves differently in three situations:</p>
+<ul>
+<li><strong>A city is permanent.</strong> Once a walled village becomes a city, it never reverts to a village — not even if the region loses settlements and drops below the 4 a judge requires. The only way to remove a city is to <strong>raze</strong> it.</li>
+<li><strong>Conquering the city conquers the title.</strong> Whoever takes a region’s capital city takes the Judge title with it, choosing which of their generals assumes it (or leaving it vacant, if they have no eligible general).</li>
+<li><strong>Losing its owner suspends the title.</strong> If the city ends up with no owner — for example when a plague wipes out the whole garrison and no general stands on it — the region loses the Judge title, the icon reverts to white (unowned), and the victory point disappears.</li>
+</ul>
+<p>Two income rules are worth remembering, and they apply to both types: a settlement <strong>under siege produces no income at all</strong>, and a settlement in a <strong>taxed</strong> region pays its owner nothing that round — the player who played the Tax card collects twice its value instead.</p>
+<hr>
+<h2 id="settlement_improvements" tabindex="-1">Settlement Improvements</h2>
+<p>Every improvement is bought during the <strong>Acquisitions phase</strong> (phase 4), and none of them can be bought in a settlement <strong>under siege</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Improvement</th>
+<th>Cost</th>
+<th>Effect</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Troop</strong></td>
+<td>2 coins</td>
+<td>Strengthens the garrison defending the settlement</td>
+<td>6 per settlement</td>
+</tr>
+<tr>
+<td><strong>Wall</strong></td>
+<td>10 coins</td>
+<td>+4 defence; makes the village eligible to become a judge city</td>
+<td>1 per settlement</td>
+</tr>
+<tr>
+<td><strong>Development</strong></td>
+<td>6 coins</td>
+<td>+2 income per round; +6 coins on loot</td>
+<td>2 per settlement and <strong>7 on the whole board</strong></td>
+</tr>
+<tr>
+<td><strong>Tabernacle</strong></td>
+<td>30 coins</td>
+<td>1 victory point; unlocks Sacrifice for the Guilt</td>
+<td><strong>1 in the entire game</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="walls" tabindex="-1">Walls</h3>
+<p>A wall is an improvement of <strong>presence</strong>, not of quantity: you can only build one per settlement, and one is all it ever offers. It grants <strong>+4 defence</strong> to the defending side, but that bonus <strong>melts under siege</strong> — worth +4 in the first round, +2 in the second, and <strong>zero from the third onward</strong>. That is why laying siege before storming pays off.</p>
+<p>The wall bonus is also <strong>cancelled</strong> when the attacker plays <strong>Siege Weapons</strong> or enters the settlement with the <strong>Secret Passage</strong>. (The Ark’s bonus, by contrast, is cancelled by neither.)</p>
+<p>Beyond defence, the wall plays a decisive role in the race for points: <strong>only a walled village can be chosen as the judge city</strong>. Without a wall, there is no way to turn control of a region into a victory point.</p>
+<p>Canaanite settlements start the game already <strong>holding 1 wall</strong>.</p>
+<h3 id="developments" tabindex="-1">Developments</h3>
+<p>Each development adds <strong>+2 coins of income</strong> per round to the settlement and appears as a golden gear above the icon. A settlement holds up to <strong>2 developments</strong>.</p>
+<p>The limit that bites hardest, though, is global: <strong>at most 7 developments may exist on the board at the same time</strong>, counting every player’s. Once the seventh is built, nobody can buy another until one is destroyed — which makes developments a contested resource rather than merely a question of having coins.</p>
+<p>Developments also fatten the prize for whoever destroys the settlement: each one adds <strong>+6 coins</strong> to the loot.</p>
+<p>Note that <strong>walls and developments survive conquest</strong> and pass to the new owner — taking a settlement means inheriting its improvements. The garrison, on the other hand, is wiped to zero.</p>
+<h3 id="the_tabernacle" tabindex="-1">The Tabernacle</h3>
+<p>The Tabernacle is the most restricted improvement in the game. To build it, for <strong>30 coins</strong>, you need:</p>
+<ul>
+<li>one of your generals to be carrying the <strong>Ark</strong>;</li>
+<li>to control a <strong>city</strong> (a village will not do);</li>
+<li><strong>no Tabernacle to exist</strong> anywhere in the game at that moment.</li>
+</ul>
+<p>It brings two advantages:</p>
+<ul>
+<li><strong>1 victory point</strong>, valid while the general carrying the Ark stands on the Tabernacle’s hex. If the Ark walks away the point disappears — and returns when it comes back.</li>
+<li><strong>Sacrifice for the Guilt</strong>: a new option in Acquisitions that lets you pay <strong>20 coins to shed 3 points of the Wrath of God</strong>. In a game where the <a href="/60._projects/promised_land_-_manual/en/wrath-of-god">cup</a> is nearing the brim, it is the only way to make the meter fall.</li>
+</ul>
+<p>Since only one Tabernacle can exist per game, it is also a denial: while yours stands, no opponent can raise theirs. <strong>Razing</strong> the city that holds it frees the slot for another player; <strong>conquering</strong> that city transfers the Tabernacle to its new owner.</p>
+
+      <div class="article-footer">
+        <br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/announcements">/60._projects/promised_land_-_manual/en/announcements</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/combat">/60._projects/promised_land_-_manual/en/combat</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/acquisitions">/60._projects/promised_land_-_manual/en/acquisitions</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/cards">/60._projects/promised_land_-_manual/en/cards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/draw-cards">/60._projects/promised_land_-_manual/en/draw-cards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/events-area">/60._projects/promised_land_-_manual/en/events-area</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/index">/60._projects/promised_land_-_manual/en/index</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/judges-and-kings">/60._projects/promised_land_-_manual/en/judges-and-kings</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/movement">/60._projects/promised_land_-_manual/en/movement</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/player-boards">/60._projects/promised_land_-_manual/en/player-boards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/wrath-of-god">/60._projects/promised_land_-_manual/en/wrath-of-god</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/pt/territorios">/60._projects/promised_land_-_manual/pt/territorios</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/territorios">/60._projects/promised_land_-_manual/es/territorios</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
+  </footer>
+</body>
+
+</html>

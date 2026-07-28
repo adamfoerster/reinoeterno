@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    The Combat Phase - Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container"><article class="prose"><h1>The Combat Phase</h1><blockquote>
+<p>Languages: <strong>English</strong> · <a href="/60._projects/promised_land_-_manual/es/combate">Español</a> · <a href="/60._projects/promised_land_-_manual/pt/combate">Português</a></p>
+<p><a href="/60._projects/promised_land_-_manual/en/index">← Back to the manual index</a></p>
+</blockquote>
+<p><strong>Combat</strong> is the sixth of the seven phases of each round. It does not always happen: there is combat only where Movement left generals of different players on the same hex. If you have no pending encounters, the phase passes straight through.</p>
+<h2 id="attacker_and_defender" tabindex="-1">Attacker and defender</h2>
+<p>On every contested hex the roles are already settled before the phase begins: <strong>whoever arrived first defends</strong>, and whoever arrived later is the attacker. The same holds after a battle — the winner of a hex becomes its defender in later battles, for as long as they stay there.</p>
+<p>These roles matter because the <strong>defence bonus</strong> (wall or city) belongs to the original defender, and because only the original attacker may play <strong>Siege Weapons</strong>.</p>
+<h2 id="stage_1_declare" tabindex="-1">Stage 1 — Declare</h2>
+<p>Each side opens the Combat window and decides <strong>whether to attack</strong>. Nobody is forced to fight: if <strong>neither side declares</strong>, no battle happens on that hex at all, and the encounter simply expires at the end of the round.</p>
+<p>The window describes the situation you are in:</p>
+<ul>
+<li><strong>you are <a href="/60._projects/promised_land_-_manual/en/movement">besieged</a></strong> — you can attack to try to break out, or stay put and let the siege continue;</li>
+<li><strong>you are besieging</strong> — you can press the attack, or keep the siege going (and let the wall melt one more round);</li>
+<li><strong>you ended up on the same hex</strong> — with no siege and no declared attack, you may attack or simply ignore your neighbour;</li>
+<li><strong>you are being attacked</strong> — there is no way out: all that is left is choosing how many troops to answer with.</li>
+</ul>
+<p>Whoever declares first becomes the <strong>aggressor</strong> of that battle.</p>
+<h2 id="stage_2_respond" tabindex="-1">Stage 2 — Respond</h2>
+<p>Once one side declares, the other <strong>must respond</strong>, choosing how many troops to commit — even if their turn in the phase has already passed. They get an extra turn just for that, and nobody’s turn ends while a declared battle is still unanswered.</p>
+<h2 id="committing_troops_what_you_commit_you_lose" tabindex="-1">Committing troops — what you commit, you lose</h2>
+<p>Each general commits up to the number of troops they command, and the settlement’s owner may also commit <strong>garrison</strong> troops.</p>
+<p>Here is the rule that costs the most to whoever ignores it: <strong>committed troops are lost either way</strong> — whether you win or lose the battle. Committing is sacrificing. The winner keeps the hex, but goes home without the troops they threw into the fight.</p>
+<p>The losing side loses more still: <strong>the hex’s whole garrison is wiped to zero</strong> and <strong>every one of their generals there becomes a captive</strong> of the winner (losing, along the way, every item they carried).</p>
+<h2 id="effective_strength" tabindex="-1">Effective strength</h2>
+<p>The winner is decided by comparing the two sides’ <strong>effective strength</strong>:</p>
+<p><strong>Attacker</strong> = strength of the committed generals (+ item bonuses) + committed troops + Mercenaries (+4)</p>
+<p><strong>Defender</strong> = the same + the <strong>defence bonus</strong> + the <a href="/60._projects/promised_land_-_manual/en/cards">**Ark**</a> (+3) + Mercenaries (+4)</p>
+<p>The <strong>defence bonus</strong> comes from the <a href="/60._projects/promised_land_-_manual/en/terrain">wall or the city</a> and <strong>melts with each siege round</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Defence</th>
+<th style="text-align:center">Siege rd. 1</th>
+<th style="text-align:center">rd. 2</th>
+<th style="text-align:center">rd. 3</th>
+<th style="text-align:center">rd. 4+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walled village</td>
+<td style="text-align:center">+4</td>
+<td style="text-align:center">+2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>Judge city</td>
+<td style="text-align:center">+6</td>
+<td style="text-align:center">+4</td>
+<td style="text-align:center">+2</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>That bonus is <strong>cancelled</strong> in three situations: when the attacker plays <strong>Siege Weapons</strong>, when they entered the settlement with the <strong>Secret Passage</strong>, and — easy to forget — when <strong>the defender is the one who declares the battle</strong>. Counter-attacking means stepping out from behind the walls, and the bonus does not apply.</p>
+<p>The <strong>Ark</strong>’s bonus is the exception: nothing cancels it.</p>
+<p>And one rule that decides close fights: <strong>the attacker must be strictly greater</strong>. Equal strength means the defender wins.</p>
+<h2 id="cards_playable_during_a_battle" tabindex="-1">Cards playable during a battle</h2>
+<table>
+<thead>
+<tr>
+<th>Card</th>
+<th>Who may play it</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Siege Weapons</strong></td>
+<td>the original attacker only</td>
+<td>Cancels the defender’s wall bonus.</td>
+</tr>
+<tr>
+<td><strong>Ambush</strong></td>
+<td>either side</td>
+<td>Kills every enemy general on the hex. Their leftover troops stay but do not fight, and are eliminated if their side loses.</td>
+</tr>
+<tr>
+<td><strong>Mercenaries</strong></td>
+<td>either side</td>
+<td>+4 strength. Adds +1 Wrath of God.</td>
+</tr>
+<tr>
+<td><strong>Assassin</strong></td>
+<td>either side</td>
+<td>Like the Ambush, it kills the enemy generals there — but it adds Wrath of God.</td>
+</tr>
+</tbody>
+</table>
+<p>A general carrying the <strong>Squire</strong> survives an Ambush or an Assassin: the squire dies in their place.</p>
+<h2 id="stage_3_conquer_or_loot" tabindex="-1">Stage 3 — Conquer or loot</h2>
+<p>If the battle was over a settlement and the attacker won, they are given a choice — an extra turn just for it:</p>
+<ul>
+<li><strong>Conquer</strong> — take ownership of the settlement with its <strong>walls and developments intact</strong>. If it was a judge’s city, the <a href="/60._projects/promised_land_-_manual/en/acquisitions">**title comes with it**</a>.</li>
+<li><strong>Loot and Slave</strong> — destroy the settlement and carry off its riches: <strong>20 coins</strong> for a village, <strong>30</strong> for a city, plus <strong>6 per development</strong>. The settlement is razed and leaves the game for good — and the choice adds <strong>+3</strong> <a href="/60._projects/promised_land_-_manual/en/wrath-of-god">Wrath of God</a>.</li>
+</ul>
+<p>Looting pays more immediately, but destroys a settlement that would have counted toward a Judge title — for the other players too. Razing too much shortens the game for everyone.</p>
+<h2 id="canaanite_invaders" tabindex="-1">Canaanite invaders</h2>
+<p>Battles against the Wrath of God invaders follow their own rules: the Canaanites <strong>never take or become captives</strong>. A defeated invader pair <strong>dies</strong>, and every general defeated by invaders is <strong>executed</strong>. When the invaders win, the settlement is <strong>always razed</strong> — no choice, no coins, no wrath.</p>
+<h2 id="reviewing_and_following_up" tabindex="-1">Reviewing and following up</h2>
+<p>A battle already committed stays available in the Combat window, marked <strong>✓ Locked in</strong> and showing, read-only, the troops committed and the cards played.</p>
+<p>Once the phase ends, both sides of each battle get a notification with the <strong>Battle Report</strong>: each side’s strength line by line, the cards used, the generals killed or captured, and the settlement’s fate.</p>
+
+      <div class="article-footer">
+        <br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/acquisitions">/60._projects/promised_land_-_manual/en/acquisitions</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/cards">/60._projects/promised_land_-_manual/en/cards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/income-and-victory">/60._projects/promised_land_-_manual/en/income-and-victory</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/draw-cards">/60._projects/promised_land_-_manual/en/draw-cards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/index">/60._projects/promised_land_-_manual/en/index</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/judges-and-kings">/60._projects/promised_land_-_manual/en/judges-and-kings</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/terrain">/60._projects/promised_land_-_manual/en/terrain</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/movement">/60._projects/promised_land_-_manual/en/movement</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/player-boards">/60._projects/promised_land_-_manual/en/player-boards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/wrath-of-god">/60._projects/promised_land_-_manual/en/wrath-of-god</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/pt/combate">/60._projects/promised_land_-_manual/pt/combate</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/combate">/60._projects/promised_land_-_manual/es/combate</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
+  </footer>
+</body>
+
+</html>

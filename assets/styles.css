@@ -593,13 +593,13 @@ img {
   margin: 0;
 }
 
-.prose a {
+.prose a:not(.tag):not(.tag-link) {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 
-.prose a:hover {
+.prose a:not(.tag):not(.tag-link):hover {
   color: var(--accent-hover);
   border-bottom-color: currentColor;
 }
@@ -610,6 +610,72 @@ img {
 
 .prose a.wikilink:hover {
   border-bottom-style: solid;
+}
+
+/* Imagens dos artigos, centralizadas */
+.prose img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tabelas */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8em 0;
+  font-size: 0.94em;
+  line-height: 1.45;
+}
+
+.prose thead th {
+  font-family: var(--mono);
+  font-size: 0.76em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  white-space: nowrap;
+  padding: 0 0.9em 0.7em;
+  border-bottom: 1px solid var(--rule-faint);
+}
+
+/* markdown sem linha de título gera <th> vazios: viram só o filete do topo */
+.prose thead th:empty {
+  padding-bottom: 0;
+}
+
+.prose tbody th,
+.prose tbody td {
+  padding: 0.62em 0.9em;
+  border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+
+.prose tbody th {
+  font-weight: 600;
+  text-align: left;
+}
+
+.prose tbody tr:last-child th,
+.prose tbody tr:last-child td {
+  border-bottom-color: var(--rule-faint);
+}
+
+.prose tbody tr:hover {
+  background: var(--panel-hover);
+}
+
+/* colunas das pontas alinhadas à margem do texto */
+.prose table th:first-child,
+.prose table td:first-child {
+  padding-left: 0;
+}
+
+.prose table th:last-child,
+.prose table td:last-child {
+  padding-right: 0;
 }
 
 blockquote {
@@ -829,5 +895,11 @@ hr {
 
   .prose h1 {
     font-size: 32px;
+  }
+
+  /* tabelas largas rolam na horizontal em vez de espremer */
+  .prose table {
+    display: block;
+    overflow-x: auto;
   }
 }

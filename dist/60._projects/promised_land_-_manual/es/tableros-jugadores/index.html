@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Los Tableros de los Jugadores - Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container"><article class="prose"><h1>Los Tableros de los Jugadores</h1><blockquote>
+<p>Idiomas: <a href="/60._projects/promised_land_-_manual/en/player-boards">English</a> · <strong>Español</strong> · <a href="/60._projects/promised_land_-_manual/pt/tabuleiros-jogadores">Português</a></p>
+<p><a href="/60._projects/promised_land_-_manual/es/index">← Volver al índice del manual</a></p>
+</blockquote>
+<p>A la izquierda del mapa está el panel <strong>Jugadores</strong>: un rectángulo por jugador, pintado con una versión atenuada del color de ese jugador. Es donde se lee de un vistazo la situación de todo el mundo en la partida.</p>
+<p>Todo lo que aparece en los tableros es <strong>información pública</strong> — los generales de cada jugador, sus atributos, los objetos que portan y los títulos que ostentan. La única excepción es la <strong>mano</strong>, que aparece solo como un montón de cartas boca abajo: puedes ver <em>cuántas</em> cartas tiene un rival, nunca <em>cuáles</em>.</p>
+<p><img src="/90._assets/pasted_image_20260728110737.png" alt="Pasted image 20260728110737.png" loading="lazy"></p>
+<h2 id="anatomia_de_un_tablero" tabindex="-1">Anatomía de un tablero</h2>
+<p><img src="/60._projects/promised_land_-_manual/assets/players-board.svg" alt="players-board.svg" loading="lazy"></p>
+<ol>
+<li><strong>La franja del jugador</strong> — el nombre arriba y el fondo del color del jugador. Cada jugador tiene su franja; los jugadores <strong>eliminados</strong> desaparecen del panel.</li>
+<li><strong>Espacio de general</strong> — la carta de uno de tus generales que está en el mapa. Cada jugador tiene <strong>4 espacios</strong>. Una barra clara sobre la carta lleva el nombre del general. Mantener pulsada la carta abre sus detalles.</li>
+<li><strong>Atributos</strong> — la línea de tres números bajo la carta: <strong>movimientos · fuerza · tropas al mando</strong>. Los dos primeros vienen de la carta; el tercero cambia según el general reciba o entregue tropas.</li>
+<li><strong>Objeto acoplado</strong> — cuando un general porta un objeto, la carta del objeto aparece <strong>debajo</strong> de la suya, con alrededor de una quinta parte a la vista. Varios objetos se apilan, cada uno a su propia profundidad.</li>
+<li><strong>Etiquetas</strong> — barras de color bajo los atributos, una por cada condición del general:
+<ul>
+<li><strong>verde azulada</strong> — el nombre de un objeto que porta (una etiqueta por objeto);</li>
+<li><strong>marrón</strong> — el título de <strong>Juez</strong> que ostenta;</li>
+<li><strong>azul oscura</strong> — ⛓ <strong>Cautivo</strong>, cuando ha sido <a href="/60._projects/promised_land_-_manual/es/combate">capturado por otro jugador</a>;</li>
+<li><strong>morada</strong> — 🗡 <strong>Asesino</strong>, cuando lleva esa marca;</li>
+<li><strong>dorada</strong> — 👑 <strong>Rey</strong>.</li>
+</ul>
+</li>
+<li><strong>Espacio vacío</strong> — un espacio sin general: o todavía no has colocado uno ahí, o el que estaba ha muerto.</li>
+<li><strong>Montón de la mano</strong> — las cartas de tu mano, boca abajo. Solo tu propio montón es pulsable, y abre la ventana de la Mano.</li>
+</ol>
+<p>Un detalle de uso: mientras estás <strong>acoplando un objeto</strong>, tus generales del panel empiezan a <strong>parpadear en verde</strong> y se vuelven pulsables — así es como eliges cuál de ellos recibe el objeto.</p>
+<h2 id="que_significa_el_orden_de_los_tableros" tabindex="-1">Qué significa el orden de los tableros</h2>
+<p>Los tableros <strong>no</strong> están en un orden fijo. Cada ronda se reapilan según el <strong>orden de turnos de esa ronda</strong>: el tablero de arriba es el del jugador que juega <strong>primero</strong>, el segundo el del siguiente, y así hasta el último.</p>
+<p>El orden inicial se <strong>sortea al crear la partida</strong>. Los jugadores se barajan, de modo que no siguen la secuencia en que fueron registrados en la pantalla de Nueva Partida — por eso, ya en la ronda 1, la cima del panel puede ser el “Player 6” y el “Player 1” aparecer en medio del montón.</p>
+<p>Y ese orden <strong>gira una posición cada ronda</strong>. Quien abrió la ronda 1 pasa a ser el último en la ronda 2, y el segundo jugador toma la delantera:</p>
+<p><img src="/60._projects/promised_land_-_manual/assets/turn-order.svg" alt="turn-order.svg" loading="lazy"></p>
+<p>En la figura, las columnas doradas son las <strong>rondas</strong> y las filas grises son las <strong>posiciones en el panel</strong>, de arriba abajo. Con cuatro jugadores (A, B, C, D):</p>
+<table>
+<thead>
+<tr>
+<th>Ronda</th>
+<th>Orden de los tableros</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A · B · C · D</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B · C · D · A</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C · D · A · B</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D · A · B · C</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A · B · C · D (vuelve a empezar)</td>
+</tr>
+</tbody>
+</table>
+<p>Es decir, cada jugador va primero <strong>una vez cada N rondas</strong>, siendo N el número de jugadores. Nadie queda atrapado en la última posición.</p>
+<p>Por qué importa en la práctica:</p>
+<ul>
+<li><strong>Leer el panel de arriba abajo es leer quién actúa antes que tú</strong> esa ronda. Si tu tablero está en tercer lugar, dos jugadores mueven y atacan antes de que puedas reaccionar.</li>
+<li><strong>Abrir la ronda tiene valor</strong>: reclamas <a href="/60._projects/promised_land_-_manual/es/territorios">asentamientos</a>, ocupas hexágonos y declaras batallas antes de que los demás se coloquen.</li>
+<li><strong>Cerrar la ronda también lo tiene</strong>: entras en tu turno sabiendo ya lo que han hecho todos.</li>
+</ul>
+<p>Un detalle importante: los <strong>jugadores eliminados se retiran antes</strong> de aplicar la rotación. Cuando alguien queda fuera, el ciclo gira entre los que quedan — el panel se encoge y la secuencia cambia.</p>
+<h2 id="generales_y_objetos" tabindex="-1">Generales y Objetos</h2>
+<p>Dos de las cuatro categorías de carta del juego aparecen en los tableros de los jugadores: <strong>generales</strong> y <strong>objetos</strong>. (Las otras dos no: las cartas de <strong>evento</strong> van directas al Área de Eventos, y las de <strong>un solo uso</strong> se quedan en la mano hasta jugarse.)</p>
+<p>La diferencia esencial es simple: <strong>un general es una pieza; un objeto no lo es.</strong></p>
+<p>El <strong>general</strong> se convierte en una pieza sobre el mapa. Tiene posición propia, ocupa un hexágono, se mueve, manda tropas y lucha. Por eso ocupa uno de los cuatro espacios de tu tablero — el espacio representa a un general tuyo que está en campo.</p>
+<p>El <strong>objeto</strong> nunca va al mapa por sí solo. Se <strong>acopla a un general ya colocado</strong> y viaja con él allá donde vaya. En el tablero, el objeto no obtiene espacio propio: aparece encajado bajo la carta de su portador.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>General</th>
+<th>Objeto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dónde se coloca</strong></td>
+<td>en un hexágono del mapa</td>
+<td>sobre un general ya colocado</td>
+</tr>
+<tr>
+<td><strong>Ocupa espacio en el tablero</strong></td>
+<td>sí, 1 de 4</td>
+<td>no — va junto a su portador</td>
+</tr>
+<tr>
+<td><strong>Se mueve solo</strong></td>
+<td>sí, según sus movimientos</td>
+<td>no, viaja con quien lo lleva</td>
+</tr>
+<tr>
+<td><strong>Atributos propios</strong></td>
+<td>movimientos y fuerza</td>
+<td>ninguno; concede efectos al portador</td>
+</tr>
+<tr>
+<td><strong>Repetición</strong></td>
+<td>puedes tener varios generales distintos</td>
+<td>un general <strong>no puede</strong> llevar dos objetos iguales</td>
+</tr>
+<tr>
+<td><strong>Cuando cae el portador</strong></td>
+<td>vuelve a la pila de descarte</td>
+<td><strong>todos sus objetos</strong> se descartan con él</td>
+</tr>
+</tbody>
+</table>
+<p>Algunas reglas prácticas que valen para ambos:</p>
+<ul>
+<li>Puedes tener como máximo <strong>4 generales en el mapa</strong> a la vez — es el número de espacios de tu tablero.</li>
+<li>En la <strong>primera ronda</strong>, cada jugador recibe dos generales y debe colocar <strong>los dos</strong> antes de terminar el turno.</li>
+<li>Tu <strong>mano</strong> admite como máximo <strong>4 cartas</strong>; si te pasas, el turno no termina hasta que descartes.</li>
+<li>Los objetos se acoplan en la <a href="/60._projects/promised_land_-_manual/es/robo-de-cartas">fase de **Robar Cartas**</a>: pulsa <em>Colocar</em> en la carta del objeto y después en el general que lo recibirá.</li>
+<li>Cuando un general <strong>muere o es capturado</strong>, todos los objetos que portaba vuelven a la pila de descarte y pueden volver a robarse.</li>
+</ul>
+<p>Lo que hace cada general y cada objeto — atributos, efectos y cómo usarlos — queda para el capítulo <a href="/60._projects/promised_land_-_manual/es/cartas">Las Cartas del Juego</a>.</p>
+
+      <div class="article-footer">
+        <br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/player-boards">/60._projects/promised_land_-_manual/en/player-boards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/pt/tabuleiros-jogadores">/60._projects/promised_land_-_manual/pt/tabuleiros-jogadores</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/index">/60._projects/promised_land_-_manual/es/index</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/cartas">/60._projects/promised_land_-_manual/es/cartas</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/ingresos-y-victoria">/60._projects/promised_land_-_manual/es/ingresos-y-victoria</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/robo-de-cartas">/60._projects/promised_land_-_manual/es/robo-de-cartas</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
+  </footer>
+</body>
+
+</html>

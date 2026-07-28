@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    The Player Boards - Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
+        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container"><article class="prose"><h1>The Player Boards</h1><blockquote>
+<p>Languages: <strong>English</strong> · <a href="/60._projects/promised_land_-_manual/es/tableros-jugadores">Español</a> · <a href="/60._projects/promised_land_-_manual/pt/tabuleiros-jogadores">Português</a></p>
+<p><a href="/60._projects/promised_land_-_manual/en/index">← Back to the manual index</a></p>
+</blockquote>
+<p>To the left of the map sits the <strong>Players</strong> panel: one rectangle per player, painted in a muted version of that player’s colour. It is where you read everyone’s situation at a glance.</p>
+<p>Everything shown on the boards is <strong>public information</strong> — each player’s generals, their stats, the items they carry and the titles they hold. The one exception is the <strong>hand</strong>, which appears only as a pile of face-down cards: you can see <em>how many</em> cards an opponent holds, never <em>which</em>.</p>
+<p><img src="/90._assets/pasted_image_20260728110737.png" alt="Pasted image 20260728110737.png" loading="lazy"></p>
+<h2 id="anatomy_of_a_board" tabindex="-1">Anatomy of a board</h2>
+<p><img src="/60._projects/promised_land_-_manual/assets/players-board.svg" alt="players-board.svg" loading="lazy"></p>
+<ol>
+<li><strong>The player’s strip</strong> — the name at the top and the background in that player’s colour. Every player gets a strip; <strong>eliminated</strong> players vanish from the panel.</li>
+<li><strong>General slot</strong> — the card of one of your generals that is on the map. Each player has <strong>4 slots</strong>. A light bar above the card carries the general’s name. Long-pressing the card opens its details.</li>
+<li><strong>Stats</strong> — the three-number line under the card: <strong>movements · strength · commanded troops</strong>. The first two come from the card; the third changes as the general takes on or hands over troops.</li>
+<li><strong>Attached item</strong> — when a general carries an item, the item’s card appears <strong>underneath</strong> theirs with about a fifth of it showing. Several items stack, each at its own depth.</li>
+<li><strong>Pills</strong> — coloured bars below the stats, one per condition of that general:
+<ul>
+<li><strong>teal</strong> — the name of an item they carry (one pill per item);</li>
+<li><strong>brown</strong> — the <strong>Judge</strong> title they hold;</li>
+<li><strong>dark blue</strong> — ⛓ <strong>Captive</strong>, when <a href="/60._projects/promised_land_-_manual/en/combat">taken prisoner by another player</a>;</li>
+<li><strong>purple</strong> — 🗡 <strong>Assassin</strong>, when they carry that mark;</li>
+<li><strong>gold</strong> — 👑 <strong>King</strong>.</li>
+</ul>
+</li>
+<li><strong>Empty slot</strong> — a slot with no general: either you have not placed one there yet, or the general who was there has died.</li>
+<li><strong>Hand pile</strong> — the cards in your hand, face down. Only your own pile is clickable, and it opens the Hand window.</li>
+</ol>
+<p>One usage detail: while you are <strong>attaching an item</strong>, your generals in the panel start <strong>pulsing green</strong> and become clickable — that is how you pick which of them receives the item.</p>
+<h2 id="what_the_order_of_the_boards_means" tabindex="-1">What the order of the boards means</h2>
+<p>The boards are <strong>not</strong> in a fixed order. Each round they are restacked in that round’s <strong>turn order</strong>: the board on top belongs to the player who acts <strong>first</strong>, the second to whoever is next, and so on down to the last.</p>
+<p>The starting order is <strong>drawn at random when the game is created</strong>. The players are shuffled, so they do not follow the sequence in which they were entered on the New Game screen — which is why, as early as round 1, the top of the panel might be “Player 6” with “Player 1” sitting in the middle of the stack.</p>
+<p>And that order <strong>rotates by one seat every round</strong>. Whoever opened round 1 becomes the last in round 2, and the second player takes the lead:</p>
+<p><img src="/60._projects/promised_land_-_manual/assets/turn-order.svg" alt="turn-order.svg" loading="lazy"></p>
+<p>In the figure, the gold columns are the <strong>rounds</strong> and the grey rows are the <strong>positions in the panel</strong>, top to bottom. With four players (A, B, C, D):</p>
+<table>
+<thead>
+<tr>
+<th>Round</th>
+<th>Order of the boards</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A · B · C · D</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B · C · D · A</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C · D · A · B</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D · A · B · C</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A · B · C · D (starts over)</td>
+</tr>
+</tbody>
+</table>
+<p>In other words, every player leads <strong>once every N rounds</strong>, N being the number of players. Nobody is stuck in last place.</p>
+<p>Why this matters in play:</p>
+<ul>
+<li><strong>Reading the panel top to bottom is reading who acts before you</strong> that round. If your board is third, two players move and attack before you can react.</li>
+<li><strong>Opening the round has value</strong>: you claim <a href="/60._projects/promised_land_-_manual/en/terrain">settlements</a>, occupy hexes and declare battles before the others get into position.</li>
+<li><strong>Closing the round has value too</strong>: you take your turn already knowing what everyone else did.</li>
+</ul>
+<p>One important detail: <strong>eliminated players are removed before</strong> the rotation is applied. When someone is knocked out, the cycle turns among those who remain — the panel shrinks and the sequence changes.</p>
+<h2 id="generals_and_items" tabindex="-1">Generals and Items</h2>
+<p>Two of the game’s four card categories show up on the player boards: <strong>generals</strong> and <strong>items</strong>. (The other two do not: <strong>event</strong> cards go straight to the Events Area, and <strong>single-use</strong> cards stay in your hand until played.)</p>
+<p>The essential difference is simple: <strong>a general is a piece; an item is not.</strong></p>
+<p>A <strong>general</strong> becomes a piece on the map. They have a position of their own, occupy a hex, move, command troops and fight. That is why a general takes up one of the four slots on your board — the slot stands for one of your generals in the field.</p>
+<p>An <strong>item</strong> never goes onto the map by itself. It is <strong>attached to a general already placed</strong> and travels with them wherever they go. On the board an item gets no slot of its own: it appears tucked under its bearer’s card.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>General</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Where it is placed</strong></td>
+<td>on a hex of the map</td>
+<td>onto a general already placed</td>
+</tr>
+<tr>
+<td><strong>Takes a board slot</strong></td>
+<td>yes, 1 of 4</td>
+<td>no — it sits with its bearer</td>
+</tr>
+<tr>
+<td><strong>Moves on its own</strong></td>
+<td>yes, according to its movements</td>
+<td>no, it travels with whoever carries it</td>
+</tr>
+<tr>
+<td><strong>Stats of its own</strong></td>
+<td>movements and strength</td>
+<td>none; it grants effects to its bearer</td>
+</tr>
+<tr>
+<td><strong>Duplicates</strong></td>
+<td>you may have several different generals</td>
+<td>a general <strong>cannot</strong> carry two items of the same kind</td>
+</tr>
+<tr>
+<td><strong>When the bearer falls</strong></td>
+<td>goes back to the discard pile</td>
+<td><strong>all of their items</strong> are discarded with them</td>
+</tr>
+</tbody>
+</table>
+<p>A few practical rules that apply to both:</p>
+<ul>
+<li>You may have at most <strong>4 generals on the map</strong> at a time — that is the number of slots on your board.</li>
+<li>In the <strong>first round</strong>, each player is dealt two generals and must place <strong>both</strong> before ending the turn.</li>
+<li>Your <strong>hand</strong> holds at most <strong>4 cards</strong>; go over that and the turn will not end until you discard.</li>
+<li>Items are attached during the <a href="/60._projects/promised_land_-_manual/en/draw-cards">**Draw Cards** phase</a>: tap <em>Place</em> on the item card, then tap the general who will receive it.</li>
+<li>When a general <strong>dies or is captured</strong>, every item they carried returns to the discard pile and can be drawn again.</li>
+</ul>
+<p>What each general and each item actually does — stats, effects and how to use them — is left to the chapter <a href="/60._projects/promised_land_-_manual/en/cards">The Game’s Cards</a>.</p>
+
+      <div class="article-footer">
+        <br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/cards">/60._projects/promised_land_-_manual/en/cards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/income-and-victory">/60._projects/promised_land_-_manual/en/income-and-victory</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/draw-cards">/60._projects/promised_land_-_manual/en/draw-cards</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/en/index">/60._projects/promised_land_-_manual/en/index</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/pt/tabuleiros-jogadores">/60._projects/promised_land_-_manual/pt/tabuleiros-jogadores</a>
+          </li>
+          
+          <li>
+            <a href="/60._projects/promised_land_-_manual/es/tableros-jugadores">/60._projects/promised_land_-_manual/es/tableros-jugadores</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">As coisas que permanecem.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno<br />Soli Deo Gloria
+    </div>
+  </footer>
+</body>
+
+</html>
