@@ -303,7 +303,14 @@ module.exports = async function (eleventyConfig) {
         console.warn(`[backlinks] Error reading file ${page.inputPath}:`, e);
       }
     });
-    return backlinks;
+
+    // A ordem de getAll() varia entre builds; ordena alfabeticamente para a
+    // seção "Links para esta página" sair sempre igual.
+    const sorted = {};
+    for (const url of Object.keys(backlinks).sort()) {
+      sorted[url] = [...backlinks[url]].sort((a, b) => a.localeCompare(b, "pt"));
+    }
+    return sorted;
   });
 
   // ---- Normalização de tags ----
