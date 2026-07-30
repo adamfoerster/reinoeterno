@@ -68,6 +68,87 @@ module.exports = async function (eleventyConfig) {
   const { default: markdownItCallouts } = await import("markdown-it-callouts");
   const markdownItFootnote = require("markdown-it-footnote");
 
+  // Um destino é externo (e fica como está) quando tem protocolo, começa com
+  // "//", é absoluto ("/…") ou é só uma âncora ("#…"). O resto é caminho do
+  // vault e passa por slugifyKeep(), igual aos wikilinks e aos permalinks.
+  function isExternalHref(href) {
+    return /^([a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(href);
+  }
+
+  // Obsidian também escreve links relativos e percent-encoded
+  // ("../../11.%20Study%20Notes/Nota.md"). Decodifica e resolve contra a pasta
+  // da nota atual, para chegar sempre a um caminho a partir da raiz do vault.
+  // `inputPath` vem do env do markdown-it (o Eleventy passa os dados da página).
+  function vaultPath(dest, inputPath) {
+    let clean = dest;
+    try {
+      clean = decodeURI(dest);
+    } catch (e) {
+      // destino não é uma URI válida; usa como veio
+    }
+    if (!/^\.{1,2}\//.test(clean) || !inputPath) return clean;
+    const noteDir = path.posix.dirname(
+      inputPath.replace(/\\/g, "/").substring(obsidianVault.length)
+    );
+    return path.posix.normalize(path.posix.join(noteDir, clean));
+  }
+
+  // Uma nota "…/pt/index.md" vira "…/pt/index.html" no dist (o permalink tira
+  // o segmento "index"), então o link precisa da extensão: sem ela a
+  // hospedagem procura a pasta "…/pt/index/", que não existe.
+  function pageHref(href) {
+    return href.replace(/\/index(?=$|#)/, "/index.html");
+  }
+
+  function internalHref(dest, inputPath) {
+    // O ".md" pode vir antes de uma âncora: "Nota.md#seção".
+    return pageHref(slugifyKeep(vaultPath(dest, inputPath).replace(/\.md(?=$|#)/i, "")));
+  }
+
+  const imageExtRegex = /\.(png|jpe?g|gif|svg|webp)$/i;
+  const wikiLinkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+  // [texto](caminho do vault) — o destino pode conter espaços; o prefixo
+  // descarta embeds (![…]) e wikilinks ([[…]]).
+  const mdLinkRegex = /(^|[^!\[])\[([^\[\]]+)\]\(([^()]+)\)/g;
+
+  // Alvos internos citados no texto, nas duas sintaxes, resolvidos para href
+  // do mesmo jeito que as regras de render resolvem — senão os backlinks não
+  // batem com a url das páginas.
+  function internalLinkHrefsIn(text, inputPath) {
+    const hrefs = [];
+    let match;
+    wikiLinkRegex.lastIndex = 0;
+    while ((match = wikiLinkRegex.exec(text)) !== null) {
+      hrefs.push(pageHref(slugifyKeep(match[1].trim())));
+    }
+    mdLinkRegex.lastIndex = 0;
+    while ((match = mdLinkRegex.exec(text)) !== null) {
+      const dest = match[3].trim();
+      if (dest && !isExternalHref(dest)) hrefs.push(internalHref(dest, inputPath));
+    }
+    return hrefs;
+  }
+
+  // Copia uma imagem do vault para dist/ no caminho já slugificado e devolve o
+  // src público. Efeito colateral do parsing, como no ![[wikilink]] de imagem.
+  function copyVaultImage(filenameRaw) {
+    const srcSlug = slugifyKeep(filenameRaw);
+    const srcPath = path.join(obsidianVault, filenameRaw);
+    const destPath = path.join(distFolder, srcSlug.replace(/^\/+/, ""));
+    try {
+      if (fs.existsSync(srcPath)) {
+        fs.mkdirSync(path.dirname(destPath), { recursive: true });
+        fs.copyFileSync(srcPath, destPath);
+        console.log(`[eleventy] copied image: ${filenameRaw} -> ${srcSlug}`);
+      } else {
+        console.warn(`[eleventy] imagem não encontrada: ${srcPath}`);
+      }
+    } catch (e) {
+      console.warn(`[eleventy] erro ao copiar imagem ${filenameRaw}:`, e);
+    }
+    return srcSlug;
+  }
+
   function replaceWikiLinks(text) {
     let stringsArray = [];
     if (!text) {
@@ -78,14 +159,20 @@ module.exports = async function (eleventyConfig) {
     } else {
       stringsArray.push(text);
     }
-    const wikiLinkRegex = /\[\[([^|]*?)(?:\|([^|]*?))?\]\]/g;
+    const attrWikiLinkRegex = /\[\[([^|]*?)(?:\|([^|]*?))?\]\]/g;
     const newArray = [];
     stringsArray.forEach(element => {
-      const el = element.replace(wikiLinkRegex, (match, link, text) => {
-        const displayText = text ? text.trim() : link.trim();
-        const url = link.trim();
-        return `<a href="${slugifyKeep(url)}">${displayText}</a>`;
-      });
+      const el = element
+        .replace(attrWikiLinkRegex, (match, link, text) => {
+          const displayText = text ? text.trim() : link.trim();
+          const url = link.trim();
+          return `<a href="${pageHref(slugifyKeep(url))}">${displayText}</a>`;
+        })
+        .replace(mdLinkRegex, (match, before, text, dest) => {
+          const url = dest.trim();
+          const href = isExternalHref(url) ? url : internalHref(url);
+          return `${before}<a href="${href}">${text.trim()}</a>`;
+        });
       newArray.push(el);
     });
     return newArray;
@@ -104,7 +191,7 @@ module.exports = async function (eleventyConfig) {
         const target = targetRaw.trim();
         const alias = aliasRaw ? aliasRaw.trim() : target;
         const href = target.indexOf("http") == -1
-          ? slugifyKeep(target)
+          ? pageHref(slugifyKeep(target))
           : target;
         const tokenOpen = state.push("link_open", "a", 1);
         tokenOpen.attrs = [["href", href]];
@@ -115,6 +202,103 @@ module.exports = async function (eleventyConfig) {
       state.pos = end + 2;
       return true;
     });
+  }
+
+  // Links markdown para notas do vault: [Mateus](80. Bíblia/40. Mateus/Mt 01).
+  // Caminhos do vault têm espaços e não têm extensão, então as regras "link" e
+  // "image" do markdown-it nem chegam a reconhecê-los (o destino termina no
+  // primeiro espaço) e o texto sai literal. Esta regra roda antes delas,
+  // resolve o destino com slugifyKeep() — o mesmo dos permalinks e wikilinks —
+  // e devolve `false` para destinos externos, deixando o padrão intacto.
+  function markdownItInternalLinks(md) {
+    md.inline.ruler.before("link", "internal_md_link", function (state, silent) {
+      const start = state.pos;
+      const isImage = state.src.charCodeAt(start) === 0x21 /* ! */;
+      const bracket = isImage ? start + 1 : start;
+      if (state.src.charCodeAt(bracket) !== 0x5B /* [ */) return false;
+      // "!" já consumido como texto: é um embed que a regra recusou acima, não
+      // um link — não vale gerar "!<a…>".
+      if (!isImage && start > 0 && state.src.charCodeAt(start - 1) === 0x21) return false;
+      // ![[imagem]] é do wikilink_image, que roda antes desta regra.
+      if (isImage && state.src.charCodeAt(bracket + 1) === 0x5B) return false;
+
+      const max = state.posMax;
+      const labelStart = bracket + 1;
+      const labelEnd = state.md.helpers.parseLinkLabel(state, bracket, true);
+      if (labelEnd < 0) return false;
+      if (state.src.charCodeAt(labelEnd + 1) !== 0x28 /* ( */) return false;
+
+      // Destinos de vault nunca têm parênteses, então o primeiro ")" fecha.
+      const close = state.src.indexOf(")", labelEnd + 2);
+      if (close === -1 || close > max) return false;
+
+      let dest = state.src.slice(labelEnd + 2, close).trim();
+      let title = "";
+      const withTitle = /^(.*?)\s+"([^"]*)"$/.exec(dest);
+      if (withTitle) {
+        dest = withTitle[1].trim();
+        title = withTitle[2];
+      }
+      if (!dest || isExternalHref(dest)) return false;
+      const inputPath = state.env && state.env.page && state.env.page.inputPath;
+      if (isImage && !imageExtRegex.test(dest)) return false;
+
+      if (!silent) {
+        if (isImage) {
+          const alt = state.src.slice(labelStart, labelEnd) || path.basename(dest);
+          const token = state.push("image", "img", 0);
+          token.attrs = [
+            ["src", copyVaultImage(vaultPath(dest, inputPath))],
+            ["alt", alt],
+            ["loading", "lazy"]
+          ];
+          token.content = alt;
+          if (title) token.attrs.push(["title", title]);
+          // renderInlineAsText percorre children; nunca podem ficar nulos.
+          token.children = [Object.assign(new state.Token("text", "", 0), { content: alt })];
+        } else {
+          state.pos = labelStart;
+          state.posMax = labelEnd;
+          const tokenOpen = state.push("link_open", "a", 1);
+          tokenOpen.attrs = [["href", internalHref(dest, inputPath)]];
+          if (title) tokenOpen.attrs.push(["title", title]);
+          state.md.inline.tokenize(state);
+          state.push("link_close", "a", -1);
+        }
+      }
+
+      state.pos = close + 1;
+      state.posMax = max;
+      return true;
+    });
+  }
+
+  // Capítulos bíblicos: cada versículo é "###### n" seguido do texto, e o
+  // capítulo é renderizado como texto corrido (ver .prose h6 no styles.css).
+  // A convenção do vault marca início de parágrafo deixando linhas em branco
+  // antes do versículo — sem elas, os versículos são do mesmo parágrafo. Como
+  // linha em branco não sobrevive ao parser, compara o `map` (linhas de
+  // origem) do versículo com o fim do bloco anterior e insere um separador
+  // em bloco, que quebra o texto corrido.
+  function markdownItVerseParagraphs(md) {
+    md.core.ruler.push("verse_paragraph", function (state) {
+      const tokens = state.tokens;
+      let prevEnd = null;
+      for (let i = 0; i < tokens.length; i++) {
+        const token = tokens[i];
+        if (
+          token.type === "heading_open" && token.tag === "h6" &&
+          token.map && prevEnd !== null && token.map[0] > prevEnd
+        ) {
+          const brk = new state.Token("verse_break", "", 0);
+          brk.block = true;
+          tokens.splice(i, 0, brk);
+          i++;
+        }
+        if (token.map) prevEnd = Math.max(prevEnd ?? 0, token.map[1]);
+      }
+    });
+    md.renderer.rules.verse_break = () => '<span class="verse-break"></span>\n';
   }
 
   function wikilink_images(md) {
@@ -136,30 +320,15 @@ module.exports = async function (eleventyConfig) {
       const altRaw = match[2] ? match[2].trim() : "";
 
       // só processa imagens com extensões comuns
-      if (!/\.(png|jpe?g|gif|svg|webp)$/i.test(filenameRaw)) {
+      if (!imageExtRegex.test(filenameRaw)) {
         return false;
       }
 
       if (!silent) {
         const altText = altRaw || path.basename(filenameRaw);
 
-        // gera o src público com seu slugifyKeep (ex: /90_Assets/pasted_image.png)
-        const srcSlug = slugifyKeep(filenameRaw);
-
-        // copia o arquivo do vault para dist (removendo a barra inicial para path.join)
-        const srcPath = path.join(obsidianVault, filenameRaw);
-        const destPath = path.join(distFolder, srcSlug.replace(/^\/+/, ""));
-        try {
-          if (fs.existsSync(srcPath)) {
-            fs.mkdirSync(path.dirname(destPath), { recursive: true });
-            fs.copyFileSync(srcPath, destPath);
-            console.log(`[eleventy] copied image: ${filenameRaw} -> ${srcSlug}`);
-          } else {
-            console.warn(`[eleventy] imagem não encontrada: ${srcPath}`);
-          }
-        } catch (e) {
-          console.warn(`[eleventy] erro ao copiar imagem ${filenameRaw}:`, e);
-        }
+        // gera o src público e copia o arquivo do vault para dist
+        const srcSlug = copyVaultImage(filenameRaw);
 
         // cria token de imagem real
         const token = state.push("image", "img", 0);
@@ -280,35 +449,39 @@ module.exports = async function (eleventyConfig) {
     );
   });
 
-  // Backlinks collection
+  // Backlinks collection — url da página → [{ url, title }] de quem aponta
+  // para ela; os layouts mostram o título e linkam pela url.
   eleventyConfig.addCollection("backlinks", function (collectionApi) {
     const backlinks = {};
     collectionApi.getAll().forEach(page => {
       if (!page.data.published || page.data.published === false) return;
       try {
         const fileContent = fs.readFileSync(page.inputPath, "utf8");
-        const regex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+        const source = {
+          url: pageHref(slugifyKeep(page.inputPath.substring(obsidianVault.length).replaceAll(".md", ""))),
+          title: page.data.title || page.fileSlug,
+        };
 
-        let match;
-        while ((match = regex.exec(fileContent)) !== null) {
-          const target = match[1].trim();
-          // Remove anchors from the target to get the base page url
-          const targetBase = target.split("#")[0];
-          let url = slugifyKeep(targetBase);
+        for (const href of internalLinkHrefsIn(fileContent, page.inputPath)) {
+          // Remove anchors from the target to get the base page url; a página
+          // de um "index.md" tem url da pasta, sem o index.html.
+          let url = href.split("#")[0].replace(/index\.html$/, "");
           if (!url.endsWith("/")) url += "/";
-          if (!backlinks[url]) backlinks[url] = new Set();
-          backlinks[url].add(slugifyKeep(page.inputPath.substring(obsidianVault.length).replaceAll(".md", "")));
+          if (!backlinks[url]) backlinks[url] = new Map();
+          backlinks[url].set(source.url, source);
         }
       } catch (e) {
         console.warn(`[backlinks] Error reading file ${page.inputPath}:`, e);
       }
     });
 
-    // A ordem de getAll() varia entre builds; ordena alfabeticamente para a
-    // seção "Links para esta página" sair sempre igual.
+    // A ordem de getAll() varia entre builds; ordena por título para a seção
+    // "Links para esta página" sair sempre igual.
     const sorted = {};
     for (const url of Object.keys(backlinks).sort()) {
-      sorted[url] = [...backlinks[url]].sort((a, b) => a.localeCompare(b, "pt"));
+      sorted[url] = [...backlinks[url].values()].sort((a, b) =>
+        a.title.localeCompare(b.title, "pt") || a.url.localeCompare(b.url, "pt")
+      );
     }
     return sorted;
   });
@@ -355,7 +528,9 @@ module.exports = async function (eleventyConfig) {
       permalink: false,
       slugify: slugify
     })
-    .use(markdownItWikiLinks);
+    .use(markdownItWikiLinks)
+    .use(markdownItInternalLinks)
+    .use(markdownItVerseParagraphs);
 
   eleventyConfig.setLibrary("md", mdLib);
   // Função para copiar imagens automaticamente

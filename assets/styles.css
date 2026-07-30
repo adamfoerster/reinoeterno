@@ -593,6 +593,30 @@ img {
   margin: 0;
 }
 
+/* Versículos: nas notas de capítulo "###### n" numera o versículo e o
+   parágrafo seguinte é o texto dele. Os dois ficam na mesma linha para o
+   capítulo correr contínuo, como numa bíblia impressa. Todo h6 do site é
+   número de versículo, daí não precisar de classe. */
+.prose h6 {
+  font-family: var(--sans);
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--accent);
+  vertical-align: super;
+  margin-right: 0.25em;
+}
+
+.prose h6 + p {
+  display: inline;
+}
+
+/* Separador emitido pelo build antes de um versículo que abre parágrafo:
+   um bloco vazio interrompe o texto corrido e abre o espaço do parágrafo. */
+.prose .verse-break {
+  display: block;
+  height: 0.9em;
+}
+
 .prose a:not(.tag):not(.tag-link) {
   color: var(--accent);
   text-decoration: none;
