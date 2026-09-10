@@ -3,8 +3,12 @@
   "configurations": [
     {
       "name": "dist-static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8099", "--directory", "dist"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "node_modules/@11ty/eleventy-dev-server/cmd.js",
+        "--dir=dist",
+        "--port=8099"
+      ],
       "port": 8099
     }
   ]

@@ -57,7 +57,7 @@
         <ul>
           {% for link in collections.backlinks[page.url] %}
           <li>
-            <a href="{{ link }}">{{ link }}</a>
+            <a href="{{ link.url }}">{{ link.title }}</a>
           </li>
           {% endfor %}
         </ul>
