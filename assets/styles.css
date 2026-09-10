@@ -163,15 +163,6 @@ img {
   border-right: 1px solid var(--rule);
 }
 
-.hero-eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 30px;
-}
-
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;

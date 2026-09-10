@@ -24,8 +24,7 @@
       </a>
       <nav class="nav-links">
         <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
-        <a href="/#apps">Apps</a><span class="nav-sep">/</span>
-        <a href="/#notas" class="is-current">Notas&nbsp;de&nbsp;Estudo</a>
+        <a href="/#apps">Apps</a>
       </nav>
     </div>
   </header>
@@ -36,15 +35,12 @@
     <!-- HERO -->
     <section id="top" class="hero">
       <div class="hero__title">
-        <div class="hero-eyebrow">EST. — Soli Deo Gloria</div>
         <h1>Um arquivo do<br />Reino que<br />não passa.</h1>
       </div>
       <div class="hero__lede">
-        <p>Escritos, traduções e estudo bíblico reunidos num só lugar.
-          <span class="i muted-3">Writing, translation, and Bible study notes — gathered in one place.</span>
-        </p>
+        <p>Apps, escritos e traduções feitos para os servos do caminho que esperam o reino que não terá fim.</p>
         <div class="cta">
-          <a href="/#notas" class="cta-btn cta-btn--solid">Ler as notas →</a>
+          <a href="#apps" class="cta-btn cta-btn--solid">Ver os apps →</a>
           <a href="#publicacoes" class="cta-btn cta-btn--ghost">Publicações</a>
         </div>
       </div>
@@ -56,36 +52,6 @@
       <article class="prose">{{ content | safe }}</article>
     </section>
     {%- endif -%}
-
-    <!-- NOTAS DE ESTUDO -->
-    <section id="notas" class="notas">
-      <div class="notas-band">
-        <span class="notas-band__title">Notas de Estudo</span>
-        {%- set notasCount = notasTags | length -%}
-        <span class="notas-band__num">{% if notasCount < 10 %}0{% endif %}{{ notasCount }} / Study Notes</span>
-      </div>
-      <div class="notas-intro">
-        <p>Estudos verso a verso e ensaios sobre as doutrinas que estruturam a esperança cristã.
-          <span class="i muted-3">The heart of this archive.</span>
-        </p>
-      </div>
-      <div class="notas-grid">
-        {%- for n in notasTags -%}
-        {%- set count = collections.tagMap[n.slug] | length -%}
-        <a href="/90._assets/tags/{{ n.slug }}/" class="note-card">
-          <span class="note-card__num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
-          <span>
-            <span class="note-card__pt">{{ n.pt }}</span>
-            <span class="note-card__desc">{{ n.desc }}</span>
-            <span class="note-card__meta">{{ n.tagDisplay }} {{ count }} NOTAS</span>
-          </span>
-        </a>
-        {%- endfor -%}
-      </div>
-      <div class="notas-all">
-        <a href="/#notas">Ver todas as notas de estudo →</a>
-      </div>
-    </section>
 
     <!-- PUBLICAÇÕES + APPS -->
     <section class="pubapps">
@@ -178,10 +144,10 @@
   <footer class="site-footer">
     <div>
       <div class="site-footer__name">Reino Eterno</div>
-      <div class="site-footer__tag">As coisas que permanecem.</div>
+      <div class="site-footer__tag">Acumulando um tesouro que não pode ser roubado. Esperando um reino que não acabará.</div>
     </div>
     <div class="site-footer__meta">
-      © 2026 Reino Eterno<br />Soli Deo Gloria
+      © 2026 Reino Eterno
     </div>
   </footer>
 </body>
