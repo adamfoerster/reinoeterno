@@ -163,15 +163,6 @@ img {
   border-right: 1px solid var(--rule);
 }
 
-.hero-eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 30px;
-}
-
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;
@@ -806,8 +797,10 @@ hr {
    ========================================================= */
 .tag,
 .tag-link {
-  display: inline-block;
-  padding: 0.22em 0.8em;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  padding: 0.4em 0.8em;
   margin: 0.2em 0.15em;
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -818,6 +811,7 @@ hr {
   border: 1px solid var(--rule-faint);
   border-radius: 9999px;
   text-decoration: none;
+  vertical-align: middle;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -826,6 +820,20 @@ hr {
 .tag-link:hover,
 .tag:focus {
   background: var(--accent);
+  color: #f4eee2;
+  border-color: var(--accent);
+}
+
+/* When pills appear inside article prose, the generic `.prose a` rule is more
+   specific and would flatten the pill's bottom border to transparent (making it
+   look cut off) and recolor it on hover. Restore the full pill here. */
+.prose a.tag,
+.prose a.tag-link {
+  border: 1px solid var(--rule-faint);
+}
+
+.prose a.tag:hover,
+.prose a.tag-link:hover {
   color: #f4eee2;
   border-color: var(--accent);
 }

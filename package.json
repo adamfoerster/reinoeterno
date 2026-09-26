@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "upload": "sh scripts/upload-sftp.sh",
+    "upload:rsync": "sh scripts/upload-rsync.sh",
+    "deploy": "npm run build && npm run upload",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
