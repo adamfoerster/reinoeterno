@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container"><article class="prose"><h1>MdBible - Versões</h1><h2 id="como_instalar_um_zip_no_mdbible" tabindex="-1">Como instalar um zip no MdBible</h2>
+<p>No app, abra <strong>Ajustes → Tradução → Instalar de um arquivo zip</strong> e escolha o arquivo. O app confere o zip inteiro antes de gravar qualquer coisa: se ele estiver danificado ou não for uma versão, nada é escrito no seu cofre. Se o cofre já tiver uma pasta com a mesma sigla, a instalação é recusada — exclua a versão antiga antes, pelo mesmo menu. Suas anotações e destaques não ficam na pasta da versão, então excluir uma versão não apaga nenhum deles.</p>
+<h2 id="como_montar_o_zip_de_uma_versao" tabindex="-1">Como montar o zip de uma versão</h2>
+<p>Qualquer texto bíblico que você tenha em Markdown pode virar uma versão instalável. O zip só precisa ter a forma abaixo.</p>
+<h3 id="1._uma_pasta_com_a_sigla_da_versao" tabindex="-1">1. Uma pasta com a sigla da versão</h3>
+<p>O nome da pasta é a sigla — a identidade da versão no app e o nome da pasta que ela vai ocupar no seu cofre. Use só letras e números, sem barras nem dois-pontos, e não use <code>footnotes</code>, que é reservado.</p>
+<pre><code>NAA/
+  version.md
+  01. Gênesis/
+    Gn 01.md
+    Gn 02.md
+    …
+  19. Salmos/
+    Sl 001.md
+    …
+  66. Apocalipse/
+    Ap 22.md
+</code></pre>
+<h3 id="2._o_version.md" tabindex="-1">2. O <code>version.md</code></h3>
+<p>Na raiz da pasta, um arquivo <code>version.md</code> diz como a versão se chama:</p>
+<pre><code class="language-markdown">---
+name: Nova Almeida Atualizada
+id: NAA
+version: 1.0.0
+language: pt-BR
+copyright: Todos os direitos reservados.
+---
+</code></pre>
+<ul>
+<li><code>name</code> é o nome que aparece na lista de versões;</li>
+<li><code>id</code> é a sigla mostrada no cabeçalho do leitor (a mesma da pasta);</li>
+<li><code>version</code> é a sua numeração — mude-a quando corrigir o texto;</li>
+<li><code>language</code> e <code>copyright</code> são informativos.</li>
+</ul>
+<h3 id="3._uma_pasta_por_livro_um_arquivo_por_capitulo" tabindex="-1">3. Uma pasta por livro, um arquivo por capítulo</h3>
+<ul>
+<li><strong>Pastas dos livros:</strong> <code>NN. Nome</code>, numeradas na ordem do cânon protestante, de <code>01. Gênesis</code> a <code>66. Apocalipse</code>. O que identifica o livro é o <strong>número</strong> no começo; os nomes vão em português, qualquer que seja o idioma do texto.</li>
+<li><strong>Arquivos dos capítulos:</strong> <code>Sigla NN.md</code> — <code>Gn 01.md</code>, <code>Mt 05.md</code>. O que identifica o capítulo são os <strong>dígitos no fim</strong> do nome. Salmos usa três dígitos (<code>Sl 001.md</code> a <code>Sl 150.md</code>).</li>
+<li>Uma versão não precisa ter todos os livros: um Novo Testamento só com <code>40. Mateus</code> a <code>66. Apocalipse</code> funciona, e o app mostra só o que a versão tem. Capítulos além do cânon (como o Salmo 151) também são lidos.</li>
+</ul>
+<p>As siglas dos livros são: Gn, Ex, Lv, Nm, Dt, Js, Jz, Rt, 1Sm, 2Sm, 1Rs, 2Rs, 1Cr, 2Cr, Ed, Ne, Et, Jó, Sl, Pv, Ec, Ct, Is, Jr, Lm, Ez, Dn, Os, Jl, Am, Ob, Jn, Mq, Na, Hc, Sf, Ag, Zc, Ml, Mt, Mc, Lc, Jo, At, Rm, 1Co, 2Co, Gl, Ef, Fp, Cl, 1Ts, 2Ts, 1Tm, 2Tm, Tt, Fm, Hb, Tg, 1Pe, 2Pe, 1Jo, 2Jo, 3Jo, Jd, Ap.</p>
+<h3 id="4._dentro_de_cada_capitulo" tabindex="-1">4. Dentro de cada capítulo</h3>
+<p>Cada versículo é um título de nível 6 com o número, seguido do texto:</p>
+<pre><code class="language-markdown">###### 1
+No princípio, Deus criou os céus e a terra.
+###### 2
+A terra, porém, estava sem forma e vazia…
+</code></pre>
+<p>Notas de rodapé do tradutor podem ficar no texto (<code>…vazia[^1]</code>, com <code>[^1]: a nota</code> no fim do arquivo): o app as mostra como notas de margem do versículo. Um frontmatter no topo do arquivo é permitido e ignorado.</p>
+<h3 id="5._compactar" tabindex="-1">5. Compactar</h3>
+<p>Compacte <strong>a pasta</strong> (não o conteúdo dela), em zip comum:</p>
+<ul>
+<li><strong>Windows:</strong> clique com o botão direito na pasta <code>NAA</code> → <em>Compactar para arquivo ZIP</em> (ou <em>Enviar para → Pasta compactada</em>). No PowerShell: <code>Compress-Archive -Path NAA -DestinationPath NAA.zip</code></li>
+<li><strong>macOS:</strong> clique com o botão direito na pasta → <em>Comprimir “NAA”</em>. (A pasta <code>__MACOSX</code> que o Finder acrescenta é ignorada.)</li>
+<li><strong>Linux:</strong> <code>zip -r NAA.zip NAA</code></li>
+</ul>
+<p>Se você compactar só o conteúdo da pasta, com o <code>version.md</code> na raiz do zip, também funciona: aí a sigla vem do <code>id</code> do <code>version.md</code>. Arquivos que não são <code>.md</code> e arquivos ocultos são ignorados. Um zip com mais de uma versão dentro é recusado — faça um zip por versão.</p>
+<h3 id="dica:_a_versao_ja_esta_no_seu_cofre" tabindex="-1">Dica: a versão já está no seu cofre?</h3>
+<p>Se você usa o MdBible com um cofre do Obsidian, não precisa de zip nenhum: basta copiar a pasta da versão, nesse mesmo formato, para dentro da pasta da Bíblia do cofre (<code>bible/</code>, ou a que você escolheu em Ajustes). Na próxima vez que o app ler o cofre, a versão aparece na lista.</p>
+<p>Read it in <a href="/90._assets/reinoeterno.online/mdbible_-_versions">English</a> · Léelo en <a href="/90._assets/reinoeterno.online/mdbible_-_versiones">español</a></p>
+
+      <div class="article-footer">
+        <br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/90._assets/reinoeterno.online/mdbible">MdBible</a>
+          </li>
+          
+          <li>
+            <a href="/90._assets/reinoeterno.online/mdbible_-_versiones">MdBible - Versiones</a>
+          </li>
+          
+          <li>
+            <a href="/90._assets/reinoeterno.online/mdbible_-_versions">MdBible - Versions</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">Acumulando um tesouro que não pode ser roubado. Esperando um reino que não acabará.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno
+    </div>
+  </footer>
+</body>
+
+</html>

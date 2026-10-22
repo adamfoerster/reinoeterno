@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Reino Eterno Online
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/reinoeterno-logo.png" alt="" width="36" height="36" />
+        <span class="brand-name">Reino&nbsp;Eterno</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#publicacoes">Publicações</a><span class="nav-sep">/</span>
+        <a href="/#apps">Apps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container"><article class="prose"><h1>MdBible - Versions</h1><h2 id="how_to_install_a_zip_in_mdbible" tabindex="-1">How to install a zip in MdBible</h2>
+<p>In the app, open <strong>Settings → Translation → Install from a zip file</strong> and pick the file. The app checks the whole zip before it writes anything: if the zip is damaged or is not a version, nothing is written to your vault. If your vault already has a folder with the same abbreviation, the install is refused — delete the old version first, from the same menu. Your notes and highlights are not kept in the version’s folder, so deleting a version removes none of them.</p>
+<h2 id="how_to_build_a_version's_zip" tabindex="-1">How to build a version’s zip</h2>
+<p>Any Bible text you have in Markdown can become an installable version. The zip only needs the shape below.</p>
+<h3 id="1._a_folder_named_for_the_version's_abbreviation" tabindex="-1">1. A folder named for the version’s abbreviation</h3>
+<p>The folder’s name is the abbreviation — the version’s identity in the app and the name of the folder it will take in your vault. Use only letters and digits, no slashes or colons, and do not use <code>footnotes</code>, which is reserved.</p>
+<pre><code>BSB/
+  version.md
+  01. Gênesis/
+    Gn 01.md
+    Gn 02.md
+    …
+  19. Salmos/
+    Sl 001.md
+    …
+  66. Apocalipse/
+    Ap 22.md
+</code></pre>
+<h3 id="2._the_version.md" tabindex="-1">2. The <code>version.md</code></h3>
+<p>At the top of the folder, a <code>version.md</code> file says what the version is called:</p>
+<pre><code class="language-markdown">---
+name: Berean Standard Bible
+id: BSB
+version: 1.0.0
+language: en
+copyright: Public domain.
+---
+</code></pre>
+<ul>
+<li><code>name</code> is what the list of versions shows;</li>
+<li><code>id</code> is the abbreviation shown in the reader’s header (the same as the folder’s);</li>
+<li><code>version</code> is your own numbering — change it when you correct the text;</li>
+<li><code>language</code> and <code>copyright</code> are for information.</li>
+</ul>
+<h3 id="3._a_folder_per_book_a_file_per_chapter" tabindex="-1">3. A folder per book, a file per chapter</h3>
+<ul>
+<li><strong>Book folders:</strong> <code>NN. Name</code>, numbered in the order of the Protestant canon, from <code>01. Gênesis</code> to <code>66. Apocalipse</code>. What identifies the book is the <strong>number</strong> at the start. The names are in Portuguese whatever the language of the text — that is the shape every version in the app shares.</li>
+<li><strong>Chapter files:</strong> <code>Abbreviation NN.md</code> — <code>Gn 01.md</code>, <code>Mt 05.md</code>. What identifies the chapter are the <strong>digits at the end</strong> of the name. Psalms uses three digits (<code>Sl 001.md</code> to <code>Sl 150.md</code>).</li>
+<li>A version does not need every book: a New Testament with only <code>40. Mateus</code> to <code>66. Apocalipse</code> works, and the app shows only what the version has. Chapters beyond the canon (such as Psalm 151) are read too.</li>
+</ul>
+<p>The book folders and their abbreviations, in order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Folder</th>
+<th>Abbr.</th>
+<th>#</th>
+<th>Folder</th>
+<th>Abbr.</th>
+<th>#</th>
+<th>Folder</th>
+<th>Abbr.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Gênesis</td>
+<td>Gn</td>
+<td>23</td>
+<td>Isaías</td>
+<td>Is</td>
+<td>45</td>
+<td>Romanos</td>
+<td>Rm</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Êxodo</td>
+<td>Ex</td>
+<td>24</td>
+<td>Jeremias</td>
+<td>Jr</td>
+<td>46</td>
+<td>1 Coríntios</td>
+<td>1Co</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Levítico</td>
+<td>Lv</td>
+<td>25</td>
+<td>Lamentações</td>
+<td>Lm</td>
+<td>47</td>
+<td>2 Coríntios</td>
+<td>2Co</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Números</td>
+<td>Nm</td>
+<td>26</td>
+<td>Ezequiel</td>
+<td>Ez</td>
+<td>48</td>
+<td>Gálatas</td>
+<td>Gl</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Deuteronômio</td>
+<td>Dt</td>
+<td>27</td>
+<td>Daniel</td>
+<td>Dn</td>
+<td>49</td>
+<td>Efésios</td>
+<td>Ef</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Josué</td>
+<td>Js</td>
+<td>28</td>
+<td>Oséias</td>
+<td>Os</td>
+<td>50</td>
+<td>Filipenses</td>
+<td>Fp</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Juízes</td>
+<td>Jz</td>
+<td>29</td>
+<td>Joel</td>
+<td>Jl</td>
+<td>51</td>
+<td>Colossenses</td>
+<td>Cl</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Rute</td>
+<td>Rt</td>
+<td>30</td>
+<td>Amós</td>
+<td>Am</td>
+<td>52</td>
+<td>1 Tessalonicenses</td>
+<td>1Ts</td>
+</tr>
+<tr>
+<td>09</td>
+<td>1 Samuel</td>
+<td>1Sm</td>
+<td>31</td>
+<td>Obadias</td>
+<td>Ob</td>
+<td>53</td>
+<td>2 Tessalonicenses</td>
+<td>2Ts</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2 Samuel</td>
+<td>2Sm</td>
+<td>32</td>
+<td>Jonas</td>
+<td>Jn</td>
+<td>54</td>
+<td>1 Timóteo</td>
+<td>1Tm</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1 Reis</td>
+<td>1Rs</td>
+<td>33</td>
+<td>Miquéias</td>
+<td>Mq</td>
+<td>55</td>
+<td>2 Timóteo</td>
+<td>2Tm</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2 Reis</td>
+<td>2Rs</td>
+<td>34</td>
+<td>Naum</td>
+<td>Na</td>
+<td>56</td>
+<td>Tito</td>
+<td>Tt</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1 Crônicas</td>
+<td>1Cr</td>
+<td>35</td>
+<td>Habacuque</td>
+<td>Hc</td>
+<td>57</td>
+<td>Filemom</td>
+<td>Fm</td>
+</tr>
+<tr>
+<td>14</td>
+<td>2 Crônicas</td>
+<td>2Cr</td>
+<td>36</td>
+<td>Sofonias</td>
+<td>Sf</td>
+<td>58</td>
+<td>Hebreus</td>
+<td>Hb</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Esdras</td>
+<td>Ed</td>
+<td>37</td>
+<td>Ageu</td>
+<td>Ag</td>
+<td>59</td>
+<td>Tiago</td>
+<td>Tg</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Neemias</td>
+<td>Ne</td>
+<td>38</td>
+<td>Zacarias</td>
+<td>Zc</td>
+<td>60</td>
+<td>1 Pedro</td>
+<td>1Pe</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Ester</td>
+<td>Et</td>
+<td>39</td>
+<td>Malaquias</td>
+<td>Ml</td>
+<td>61</td>
+<td>2 Pedro</td>
+<td>2Pe</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Jó</td>
+<td>Jó</td>
+<td>40</td>
+<td>Mateus</td>
+<td>Mt</td>
+<td>62</td>
+<td>1 João</td>
+<td>1Jo</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Salmos</td>
+<td>Sl</td>
+<td>41</td>
+<td>Marcos</td>
+<td>Mc</td>
+<td>63</td>
+<td>2 João</td>
+<td>2Jo</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Provérbios</td>
+<td>Pv</td>
+<td>42</td>
+<td>Lucas</td>
+<td>Lc</td>
+<td>64</td>
+<td>3 João</td>
+<td>3Jo</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Eclesiastes</td>
+<td>Ec</td>
+<td>43</td>
+<td>João</td>
+<td>Jo</td>
+<td>65</td>
+<td>Judas</td>
+<td>Jd</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Cânticos</td>
+<td>Ct</td>
+<td>44</td>
+<td>Atos</td>
+<td>At</td>
+<td>66</td>
+<td>Apocalipse</td>
+<td>Ap</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4._inside_each_chapter" tabindex="-1">4. Inside each chapter</h3>
+<p>Each verse is a level-6 heading with its number, followed by the text:</p>
+<pre><code class="language-markdown">###### 1
+In the beginning God created the heavens and the earth.
+###### 2
+Now the earth was formless and void…
+</code></pre>
+<p>A translator’s footnotes can stay in the text (<code>…void[^1]</code>, with <code>[^1]: the note</code> at the end of the file): the app shows them as the verse’s marginal notes. Frontmatter at the top of the file is allowed and ignored.</p>
+<h3 id="5._zip_it" tabindex="-1">5. Zip it</h3>
+<p>Zip <strong>the folder</strong> (not what is inside it), as an ordinary zip:</p>
+<ul>
+<li><strong>Windows:</strong> right-click the <code>BSB</code> folder → <em>Compress to ZIP file</em> (or <em>Send to → Compressed (zipped) folder</em>). In PowerShell: <code>Compress-Archive -Path BSB -DestinationPath BSB.zip</code></li>
+<li><strong>macOS:</strong> right-click the folder → <em>Compress “BSB”</em>. (The <code>__MACOSX</code> folder Finder adds is ignored.)</li>
+<li><strong>Linux:</strong> <code>zip -r BSB.zip BSB</code></li>
+</ul>
+<p>Zipping only the folder’s contents, with <code>version.md</code> at the top of the zip, works too: the abbreviation then comes from the <code>id</code> in <code>version.md</code>. Files that are not <code>.md</code> and hidden files are ignored. A zip with more than one version inside is refused — make one zip per version.</p>
+<h3 id="tip:_is_the_version_already_in_your_vault" tabindex="-1">Tip: is the version already in your vault?</h3>
+<p>If you use MdBible with an Obsidian vault, you need no zip at all: copy the version’s folder, in this same shape, into the vault’s Bible folder (<code>bible/</code>, or the one you chose in Settings). The next time the app reads the vault, the version appears in the list.</p>
+<p>Leia em <a href="/90._assets/reinoeterno.online/mdbible_-_versoes">português</a> · Léelo en <a href="/90._assets/reinoeterno.online/mdbible_-_versiones">español</a></p>
+
+      <div class="article-footer">
+        <br />
+      </div>
+      
+      <hr />
+      <div class="backlinks">
+        <h3>Links para esta página</h3>
+        <ul>
+          
+          <li>
+            <a href="/90._assets/reinoeterno.online/mdbible_-_versiones">MdBible - Versiones</a>
+          </li>
+          
+          <li>
+            <a href="/90._assets/reinoeterno.online/mdbible_-_versoes">MdBible - Versões</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </article></main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__name">Reino Eterno</div>
+      <div class="site-footer__tag">Acumulando um tesouro que não pode ser roubado. Esperando um reino que não acabará.</div>
+    </div>
+    <div class="site-footer__meta">
+      © 2026 Reino Eterno
+    </div>
+  </footer>
+</body>
+
+</html>
