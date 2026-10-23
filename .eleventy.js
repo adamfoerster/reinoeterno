@@ -106,6 +106,8 @@ module.exports = async function (eleventyConfig) {
   }
 
   const imageExtRegex = /\.(png|jpe?g|gif|svg|webp)$/i;
+  // Qualquer outra extensão, menos .md (embed de nota), é anexo baixável.
+  const attachmentExtRegex = /\.(?!md$)[a-z0-9]+$/i;
   const wikiLinkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
   // [texto](caminho do vault) — o destino pode conter espaços; o prefixo
   // descarta embeds (![…]) e wikilinks ([[…]]).
@@ -319,9 +321,22 @@ module.exports = async function (eleventyConfig) {
       const filenameRaw = match[1].trim();
       const altRaw = match[2] ? match[2].trim() : "";
 
-      // só processa imagens com extensões comuns
+      // Anexo que não é imagem nem nota (![[90. Assets/bible-NAA.zip|NAA]]):
+      // vira link de download. Só copia o arquivo para dist/ se a nota for
+      // publicada — notas não publicadas também passam pelo parser.
       if (!imageExtRegex.test(filenameRaw)) {
-        return false;
+        if (!attachmentExtRegex.test(filenameRaw)) return false;
+        if (!silent) {
+          const published = state.env && state.env.published;
+          const href = published ? copyVaultImage(filenameRaw) : slugifyKeep(filenameRaw);
+          const tokenOpen = state.push("link_open", "a", 1);
+          tokenOpen.attrs = [["href", href], ["download", path.basename(filenameRaw)]];
+          const textToken = state.push("text", "", 0);
+          textToken.content = altRaw || path.basename(filenameRaw);
+          state.push("link_close", "a", -1);
+        }
+        state.pos += wholeMatch.length;
+        return true;
       }
 
       if (!silent) {
