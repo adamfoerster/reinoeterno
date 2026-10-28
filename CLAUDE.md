@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git workflow
+
+Never commit, and never offer to commit. Leave the working tree ready and finish by suggesting a commit message; the user reviews the changes and commits manually.
+
 ## What this is
 
 Eleventy static site (`reinoeterno.online`) that publishes a subset of a **personal Obsidian vault** as an editorial-style archive of study notes, translations and app pages. Site content and UI are in Portuguese; part of the content (the Promised Land manual) is also in English and Spanish.
