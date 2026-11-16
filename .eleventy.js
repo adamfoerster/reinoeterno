@@ -596,6 +596,11 @@ module.exports = async function (eleventyConfig) {
 
 
   // ---- Outras configs ----
+  // Cópias do Syncthing (versões antigas e conflitos) herdam `published: true`
+  // e gerariam páginas duplicadas.
+  eleventyConfig.ignores.add("../obsidian/.stversions/**");
+  eleventyConfig.ignores.add("../obsidian/**/*.sync-conflict-*");
+
   eleventyConfig.addPassthroughCopy("assets");
   // eleventyConfig.addPlugin(pageAssetsPlugin, {
   //   mode: "parse",
